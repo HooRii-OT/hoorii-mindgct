@@ -59,3 +59,10 @@ own caches, so a graph's scores do not depend on the graphs compiled before it. 
 threads: units with nearly equal scores can swap ranks between thread counts, so compare runs at the same thread count.
 The INT8 layers make the scores differ slightly from the GPU release; the model card reports the measured recall and
 latency.
+
+Latency. On the server of the model card's Table 5 (2 × Xeon Platinum 8358P, one socket of a shared machine), we
+timed this path, serving saved graphs, and the deployment runtime behind the card's x86 numbers alternately, three
+rounds each, with 8, 16 and 32 cores on graphs of 1,962, 7,976 and 24,988 units. With the environment above (PyTorch
+2.15, CPU build), a request on this path took 1.04 times as long as on the deployment runtime at the median of the 27
+rounds, and between 0.95 and 1.07 times in the middle half; single rounds varied by up to 30% on that machine. With
+PyTorch 2.11 the median was 1.11.

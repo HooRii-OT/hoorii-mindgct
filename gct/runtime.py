@@ -258,7 +258,8 @@ class GCT:
         diff = sorted(k for k in set(mine) | set(theirs) if mine.get(k) != theirs.get(k))
         if diff:
             raise ValueError(f"{path} was compiled for other weights or settings (differs in {diff}): compile it again")
-        tensors = load_file(str(path / "tensors.safetensors"), device=str(self.device))
+        with torch.inference_mode():          # copied out of the file mapping, as inference tensors like those of compile_graph
+            tensors = {k: v.to(self.device, copy=True) for k, v in load_file(str(path / "tensors.safetensors")).items()}
         if sorted(tensors) != meta["tensors"]:
             raise ValueError(f"{path}: tensors.safetensors does not match graph.json")
         for k, n in meta["payload_tensors"].items():
