@@ -1,0 +1,244 @@
+{
+ "world_id": "example_en",
+ "lang": "en",
+ "meta": {
+  "owner": "e0",
+  "now": "2026-03-14 18:30",
+  "timezone": "Europe/London"
+ },
+ "entities": [
+  {
+   "id": "e0",
+   "kind": "person",
+   "name": "Sam Carter"
+  },
+  {
+   "id": "e1",
+   "kind": "person",
+   "name": "Lin Park"
+  },
+  {
+   "id": "e2",
+   "kind": "person",
+   "name": "Maya Carter"
+  },
+  {
+   "id": "e3",
+   "kind": "organization",
+   "name": "Northwind Labs"
+  },
+  {
+   "id": "e4",
+   "kind": "pet",
+   "name": "Biscuit"
+  },
+  {
+   "id": "e5",
+   "kind": "event",
+   "name": "Lin's birthday dinner"
+  }
+ ],
+ "edges": [
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "sibling_of",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "works_at",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "works_at",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "attends",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "subject": "e1",
+   "module": "health.allergies",
+   "value": "Lin is allergic to peanuts and carries an EpiPen.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-20"
+  },
+  {
+   "id": "f2",
+   "subject": "e1",
+   "module": "preferences.food",
+   "value": "Lin is vegetarian and loves Sichuan food.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-02"
+  },
+  {
+   "id": "f3",
+   "subject": "e1",
+   "module": "relationship.important_dates",
+   "value": "Lin's birthday is on March 21.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f4",
+   "subject": "e2",
+   "module": "contact.phone",
+   "value": "Maya's mobile number is +44 7700 900123.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f5",
+   "subject": "e2",
+   "module": "schedule.availability",
+   "value": "Maya works night shifts on weekdays and is free on weekends.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01"
+  },
+  {
+   "id": "f6",
+   "subject": "e4",
+   "module": "pet.diet",
+   "value": "Biscuit must not eat chicken; the vet put him on a fish-based diet.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-11"
+  },
+  {
+   "id": "f7",
+   "subject": "e4",
+   "module": "pet.veterinarian",
+   "value": "Biscuit's vet is Dr. Ellis at Riverside Animal Clinic.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f8",
+   "subject": "e0",
+   "module": "work.role",
+   "value": "Sam is a product manager at Northwind Labs.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f9",
+   "subject": "e0",
+   "module": "schedule.constraints",
+   "value": "Sam has a standing team meeting every Friday from 10:00 to 11:00.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f10",
+   "subject": "e0",
+   "module": "preferences.transport",
+   "value": "Sam does not drive and usually takes the train.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f11",
+   "subject": "e5",
+   "module": "notes.general",
+   "value": "Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-03-10"
+  },
+  {
+   "id": "f12",
+   "subject": "e1",
+   "module": "contact.preferred_channel",
+   "value": "Lin prefers to be reached on Signal, not by phone.",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f13",
+   "subject": "e0",
+   "module": "health.medications",
+   "value": "Sam takes a private medication every morning.",
+   "state": "confirmed",
+   "vis": []
+  }
+ ]
+}

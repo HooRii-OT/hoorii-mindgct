@@ -1,0 +1,53 @@
+[
+ {
+  "graph": "example_graph.json",
+  "text": "Can you book a restaurant for Lin's birthday dinner?",
+  "context": [],
+  "now": "2026-03-14 18:30"
+ },
+ {
+  "graph": "example_graph.json",
+  "text": "What should I feed him tonight?",
+  "context": [
+   {
+    "role": "user",
+    "content": "Biscuit has been a bit off today."
+   },
+   {
+    "role": "assistant",
+    "content": "Sorry to hear that. Is he eating normally?"
+   }
+  ],
+  "now": "2026-03-14 18:30"
+ },
+ {
+  "graph": "example_graph.json",
+  "text": "Send Lin a quick message that I'll be late on Friday.",
+  "context": [],
+  "now": "2026-03-14 18:30"
+ },
+ {
+  "graph": "example_graph.json",
+  "text": "Nice weather today, isn't it?",
+  "context": [],
+  "now": "2026-03-14 18:30"
+ },
+ {
+  "graph": "example_graph_zh.json",
+  "text": "帮我订周六中午和陈一帆吃饭的餐厅。",
+  "context": [],
+  "now": "2026-05-08 09:15"
+ },
+ {
+  "graph": "example_graph_zh.json",
+  "text": "提醒我把家里那辆白车的年检约上。",
+  "context": [],
+  "now": "2026-05-08 09:15"
+ },
+ {
+  "graph": "example_graph_zh.json",
+  "text": "今天心情不错。",
+  "context": [],
+  "now": "2026-05-08 09:15"
+ }
+]

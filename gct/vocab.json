@@ -1,0 +1,6413 @@
+{
+ "entity_kinds": {
+  "person": "人物",
+  "household": "家庭单元",
+  "pet": "宠物",
+  "organization": "组织",
+  "group": "群体",
+  "place": "地点",
+  "device": "设备",
+  "account": "账户",
+  "asset": "资产",
+  "vehicle": "车辆",
+  "document": "文件",
+  "service": "服务",
+  "subscription": "订阅",
+  "project": "项目",
+  "event": "事件",
+  "appointment": "预约",
+  "reservation": "预订",
+  "order": "订单",
+  "trip": "行程",
+  "policy": "政策规则",
+  "health_metric": "健康指标"
+ },
+ "relations": {
+  "has_health_metric": {
+   "label": "有健康指标",
+   "inverse": "metric_of",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "health_metric"
+   ],
+   "desc": "人物与健康指标身份的受限关系；不表示诊断",
+   "desc_en": "has health metric (person -> health_metric)"
+  },
+  "metric_of": {
+   "label": "属于健康档案",
+   "inverse": "has_health_metric",
+   "family": "care_education",
+   "src": [
+    "health_metric"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "健康指标归属于某人物；不表示诊断",
+   "desc_en": "metric of (health_metric -> person)"
+  },
+  "custom.has_driver": {
+   "label": "由其提供驾驶服务",
+   "inverse": "custom.drives_for",
+   "family": "service_commerce",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "来源人物由目标人物提供驾驶/接送服务；不代表已授权接送他人或透露家庭信息",
+   "desc_en": "has driver (person -> person)"
+  },
+  "custom.drives_for": {
+   "label": "为其提供驾驶服务",
+   "inverse": "custom.has_driver",
+   "family": "service_commerce",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "来源司机为目标人物提供驾驶/接送服务；并不自动建立雇佣关系",
+   "desc_en": "drives for (person -> person)"
+  },
+  "parent_of": {
+   "label": "parent_of",
+   "inverse": "child_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "来源人物是目标人物的父/母",
+   "desc_en": "parent of (person -> person)"
+  },
+  "child_of": {
+   "label": "child_of",
+   "inverse": "parent_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "来源人物是目标人物的子女",
+   "desc_en": "child of (person -> person)"
+  },
+  "guardian_of": {
+   "label": "guardian_of",
+   "inverse": "ward_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "来源人物承担目标的监护或法定照护",
+   "desc_en": "guardian of (person -> person/pet)"
+  },
+  "ward_of": {
+   "label": "ward_of",
+   "inverse": "guardian_of",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "来源人物受目标人物监护",
+   "desc_en": "ward of (person/pet -> person)"
+  },
+  "spouse_of": {
+   "label": "spouse_of",
+   "inverse": "spouse_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "婚姻关系；属性中记录起止时间和法律辖区",
+   "desc_en": "spouse of (person -> person)"
+  },
+  "partner_of": {
+   "label": "partner_of",
+   "inverse": "partner_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "伴侣关系；不默认等同婚姻",
+   "desc_en": "partner of (person -> person)"
+  },
+  "sibling_of": {
+   "label": "sibling_of",
+   "inverse": "sibling_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "兄弟姐妹关系",
+   "desc_en": "sibling of (person -> person)"
+  },
+  "grandparent_of": {
+   "label": "grandparent_of",
+   "inverse": "grandchild_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "祖辈关系",
+   "desc_en": "grandparent of (person -> person)"
+  },
+  "grandchild_of": {
+   "label": "grandchild_of",
+   "inverse": "grandparent_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "孙辈关系",
+   "desc_en": "grandchild of (person -> person)"
+  },
+  "relative_of": {
+   "label": "relative_of",
+   "inverse": "relative_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "未细分的亲属关系",
+   "desc_en": "relative of (person -> person)"
+  },
+  "friend_of": {
+   "label": "friend_of",
+   "inverse": "friend_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "朋友关系；可带亲密度和联系节奏",
+   "desc_en": "friend of (person -> person)"
+  },
+  "neighbor_of": {
+   "label": "neighbor_of",
+   "inverse": "neighbor_of",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "邻里关系",
+   "desc_en": "neighbor of (person -> person)"
+  },
+  "caregiver_of": {
+   "label": "caregiver_of",
+   "inverse": "cared_for_by",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "承担日常照护",
+   "desc_en": "caregiver of (person -> person/pet)"
+  },
+  "cared_for_by": {
+   "label": "cared_for_by",
+   "inverse": "caregiver_of",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "接受日常照护",
+   "desc_en": "cared for by (person/pet -> person)"
+  },
+  "dependent_of": {
+   "label": "dependent_of",
+   "inverse": "has_dependent",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "经济或生活上依赖目标主体",
+   "desc_en": "dependent of (person/pet -> person/household/organization)"
+  },
+  "has_dependent": {
+   "label": "has_dependent",
+   "inverse": "dependent_of",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "对来源对象承担扶养或照护",
+   "desc_en": "has dependent (person/household/organization -> person/pet)"
+  },
+  "emergency_contact_for": {
+   "label": "emergency_contact_for",
+   "inverse": "has_emergency_contact",
+   "family": "kinship_social",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "desc": "是目标对象的紧急联系人",
+   "desc_en": "emergency contact for (person -> person/household/pet)"
+  },
+  "has_emergency_contact": {
+   "label": "has_emergency_contact",
+   "inverse": "emergency_contact_for",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "目标对象的紧急联系人",
+   "desc_en": "has emergency contact (person/household/pet -> person)"
+  },
+  "pet_owner_of": {
+   "label": "pet_owner_of",
+   "inverse": "owned_pet_of",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "household"
+   ],
+   "tgt": [
+    "pet"
+   ],
+   "desc": "是宠物主人",
+   "desc_en": "pet owner of (person/household -> pet)"
+  },
+  "owned_pet_of": {
+   "label": "owned_pet_of",
+   "inverse": "pet_owner_of",
+   "family": "kinship_social",
+   "src": [
+    "pet"
+   ],
+   "tgt": [
+    "person",
+    "household"
+   ],
+   "desc": "宠物归属的个人或家庭",
+   "desc_en": "owned pet of (pet -> person/household)"
+  },
+  "member_of_household": {
+   "label": "member_of_household",
+   "inverse": "has_household_member",
+   "family": "kinship_social",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "household"
+   ],
+   "desc": "属于某家庭单元",
+   "desc_en": "member of household (person/pet -> household)"
+  },
+  "has_household_member": {
+   "label": "has_household_member",
+   "inverse": "member_of_household",
+   "family": "kinship_social",
+   "src": [
+    "household"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "家庭单元拥有成员",
+   "desc_en": "has household member (household -> person/pet)"
+  },
+  "doctor_of": {
+   "label": "doctor_of",
+   "inverse": "patient_of",
+   "family": "care_education",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "为目标人物提供医疗照护",
+   "desc_en": "doctor of (person/organization -> person)"
+  },
+  "patient_of": {
+   "label": "patient_of",
+   "inverse": "doctor_of",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "接受目标医生或机构的医疗照护",
+   "desc_en": "patient of (person -> person/organization)"
+  },
+  "veterinarian_of": {
+   "label": "veterinarian_of",
+   "inverse": "patient_pet_of",
+   "family": "care_education",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "pet"
+   ],
+   "desc": "为目标宠物提供兽医服务",
+   "desc_en": "veterinarian of (person/organization -> pet)"
+  },
+  "patient_pet_of": {
+   "label": "patient_pet_of",
+   "inverse": "veterinarian_of",
+   "family": "care_education",
+   "src": [
+    "pet"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "接受目标兽医或机构照护",
+   "desc_en": "patient pet of (pet -> person/organization)"
+  },
+  "teacher_of": {
+   "label": "teacher_of",
+   "inverse": "student_of",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "教授或指导目标人物",
+   "desc_en": "teacher of (person -> person)"
+  },
+  "student_of": {
+   "label": "student_of",
+   "inverse": "teacher_of",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "是目标人物的学生",
+   "desc_en": "student of (person -> person)"
+  },
+  "student_at": {
+   "label": "student_at",
+   "inverse": "has_student",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "organization",
+    "place"
+   ],
+   "desc": "在目标学校或场所就读",
+   "desc_en": "student at (person -> organization/place)"
+  },
+  "has_student": {
+   "label": "has_student",
+   "inverse": "student_at",
+   "family": "care_education",
+   "src": [
+    "organization",
+    "place"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "拥有该学生",
+   "desc_en": "has student (organization/place -> person)"
+  },
+  "insured_by": {
+   "label": "insured_by",
+   "inverse": "insures",
+   "family": "care_education",
+   "src": [
+    "person",
+    "household",
+    "pet",
+    "vehicle",
+    "asset"
+   ],
+   "tgt": [
+    "organization",
+    "policy"
+   ],
+   "desc": "受目标机构或保单保障",
+   "desc_en": "insured by (person/household/pet/vehicle/asset -> organization/policy)"
+  },
+  "insures": {
+   "label": "insures",
+   "inverse": "insured_by",
+   "family": "care_education",
+   "src": [
+    "organization",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet",
+    "vehicle",
+    "asset"
+   ],
+   "desc": "为来源对象提供保险保障",
+   "desc_en": "insures (organization/policy -> person/household/pet/vehicle/asset)"
+  },
+  "treated_by": {
+   "label": "treated_by",
+   "inverse": "treats",
+   "family": "care_education",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "接受目标主体治疗",
+   "desc_en": "treated by (person/pet -> person/organization/service)"
+  },
+  "treats": {
+   "label": "treats",
+   "inverse": "treated_by",
+   "family": "care_education",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "治疗或照护来源对象",
+   "desc_en": "treats (person/organization/service -> person/pet)"
+  },
+  "authorized_pickup_for": {
+   "label": "authorized_pickup_for",
+   "inverse": "has_authorized_pickup",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "event"
+   ],
+   "desc": "被授权接送目标人物或从目标机构接人",
+   "desc_en": "authorized pickup for (person -> person/organization/event)"
+  },
+  "has_authorized_pickup": {
+   "label": "has_authorized_pickup",
+   "inverse": "authorized_pickup_for",
+   "family": "care_education",
+   "src": [
+    "person",
+    "organization",
+    "event"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "拥有被授权接送的人",
+   "desc_en": "has authorized pickup (person/organization/event -> person)"
+  },
+  "care_plan_for": {
+   "label": "care_plan_for",
+   "inverse": "has_care_plan",
+   "family": "care_education",
+   "src": [
+    "document",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "照护计划适用于目标对象",
+   "desc_en": "care plan for (document/policy -> person/pet)"
+  },
+  "has_care_plan": {
+   "label": "has_care_plan",
+   "inverse": "care_plan_for",
+   "family": "care_education",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "document",
+    "policy"
+   ],
+   "desc": "拥有该照护计划",
+   "desc_en": "has care plan (person/pet -> document/policy)"
+  },
+  "prescription_for": {
+   "label": "prescription_for",
+   "inverse": "has_prescription",
+   "family": "care_education",
+   "src": [
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "pet"
+   ],
+   "desc": "处方适用于目标对象",
+   "desc_en": "prescription for (document -> person/pet)"
+  },
+  "has_prescription": {
+   "label": "has_prescription",
+   "inverse": "prescription_for",
+   "family": "care_education",
+   "src": [
+    "person",
+    "pet"
+   ],
+   "tgt": [
+    "document"
+   ],
+   "desc": "拥有该处方",
+   "desc_en": "has prescription (person/pet -> document)"
+  },
+  "enrolled_in": {
+   "label": "enrolled_in",
+   "inverse": "has_enrollee",
+   "family": "care_education",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "service",
+    "organization",
+    "group"
+   ],
+   "desc": "参加课程、服务或组织",
+   "desc_en": "enrolled in (person -> service/organization/group)"
+  },
+  "has_enrollee": {
+   "label": "has_enrollee",
+   "inverse": "enrolled_in",
+   "family": "care_education",
+   "src": [
+    "service",
+    "organization",
+    "group"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "拥有该参与者",
+   "desc_en": "has enrollee (service/organization/group -> person)"
+  },
+  "employed_by": {
+   "label": "employed_by",
+   "inverse": "employs",
+   "family": "work_organization",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "受雇于目标主体",
+   "desc_en": "employed by (person -> person/organization)"
+  },
+  "employs": {
+   "label": "employs",
+   "inverse": "employed_by",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "雇佣来源人物",
+   "desc_en": "employs (person/organization -> person)"
+  },
+  "works_at": {
+   "label": "works_at",
+   "inverse": "has_worker",
+   "family": "work_organization",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "place",
+    "organization"
+   ],
+   "desc": "在目标场所或组织工作",
+   "desc_en": "works at (person -> place/organization)"
+  },
+  "has_worker": {
+   "label": "has_worker",
+   "inverse": "works_at",
+   "family": "work_organization",
+   "src": [
+    "place",
+    "organization"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "拥有该工作人员",
+   "desc_en": "has worker (place/organization -> person)"
+  },
+  "reports_to": {
+   "label": "reports_to",
+   "inverse": "manages",
+   "family": "work_organization",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "向目标人物汇报",
+   "desc_en": "reports to (person -> person)"
+  },
+  "manages": {
+   "label": "manages",
+   "inverse": "reports_to",
+   "family": "work_organization",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "管理来源人物",
+   "desc_en": "manages (person -> person)"
+  },
+  "member_of": {
+   "label": "member_of",
+   "inverse": "has_member",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "organization",
+    "group"
+   ],
+   "desc": "属于目标组织或群体",
+   "desc_en": "member of (person/organization -> organization/group)"
+  },
+  "has_member": {
+   "label": "has_member",
+   "inverse": "member_of",
+   "family": "work_organization",
+   "src": [
+    "organization",
+    "group"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "拥有该成员",
+   "desc_en": "has member (organization/group -> person/organization)"
+  },
+  "colleague_of": {
+   "label": "colleague_of",
+   "inverse": "colleague_of",
+   "family": "work_organization",
+   "src": [
+    "person"
+   ],
+   "tgt": [
+    "person"
+   ],
+   "desc": "同事关系",
+   "desc_en": "colleague of (person -> person)"
+  },
+  "contractor_for": {
+   "label": "contractor_for",
+   "inverse": "has_contractor",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "project"
+   ],
+   "desc": "为目标主体承包工作",
+   "desc_en": "contractor for (person/organization -> person/organization/project)"
+  },
+  "has_contractor": {
+   "label": "has_contractor",
+   "inverse": "contractor_for",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "project"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "拥有承包方",
+   "desc_en": "has contractor (person/organization/project -> person/organization)"
+  },
+  "client_of": {
+   "label": "client_of",
+   "inverse": "has_client",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "是目标主体的客户",
+   "desc_en": "client of (person/organization -> person/organization/service)"
+  },
+  "has_client": {
+   "label": "has_client",
+   "inverse": "client_of",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "拥有该客户",
+   "desc_en": "has client (person/organization/service -> person/organization)"
+  },
+  "assistant_to": {
+   "label": "assistant_to",
+   "inverse": "has_assistant",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "为目标主体提供助理支持",
+   "desc_en": "assistant to (person/service -> person/organization)"
+  },
+  "has_assistant": {
+   "label": "has_assistant",
+   "inverse": "assistant_to",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "service"
+   ],
+   "desc": "拥有该助理",
+   "desc_en": "has assistant (person/organization -> person/service)"
+  },
+  "advisor_to": {
+   "label": "advisor_to",
+   "inverse": "advised_by",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "project"
+   ],
+   "desc": "为目标主体提供建议",
+   "desc_en": "advisor to (person/organization -> person/organization/project)"
+  },
+  "advised_by": {
+   "label": "advised_by",
+   "inverse": "advisor_to",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "project"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "接受目标主体建议",
+   "desc_en": "advised by (person/organization/project -> person/organization)"
+  },
+  "assigned_to": {
+   "label": "assigned_to",
+   "inverse": "has_assignee",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "project",
+    "event",
+    "appointment",
+    "order"
+   ],
+   "desc": "被分派到目标工作项",
+   "desc_en": "assigned to (person/organization -> project/event/appointment/order)"
+  },
+  "has_assignee": {
+   "label": "has_assignee",
+   "inverse": "assigned_to",
+   "family": "work_organization",
+   "src": [
+    "project",
+    "event",
+    "appointment",
+    "order"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "拥有该执行者",
+   "desc_en": "has assignee (project/event/appointment/order -> person/organization)"
+  },
+  "leads": {
+   "label": "leads",
+   "inverse": "led_by",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "organization",
+    "group",
+    "project",
+    "event"
+   ],
+   "desc": "领导目标对象",
+   "desc_en": "leads (person/organization -> organization/group/project/event)"
+  },
+  "led_by": {
+   "label": "led_by",
+   "inverse": "leads",
+   "family": "work_organization",
+   "src": [
+    "organization",
+    "group",
+    "project",
+    "event"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "由目标主体领导",
+   "desc_en": "led by (organization/group/project/event -> person/organization)"
+  },
+  "represents": {
+   "label": "represents",
+   "inverse": "represented_by",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "以目标主体名义行动",
+   "desc_en": "represents (person/organization/service -> person/household/organization)"
+  },
+  "represented_by": {
+   "label": "represented_by",
+   "inverse": "represents",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "由来源主体代表",
+   "desc_en": "represented by (person/household/organization -> person/organization/service)"
+  },
+  "responsible_for": {
+   "label": "responsible_for",
+   "inverse": "has_responsible_party",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "对目标对象负责",
+   "desc_en": "responsible for (person/organization/service -> place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "has_responsible_party": {
+   "label": "has_responsible_party",
+   "inverse": "responsible_for",
+   "family": "work_organization",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "拥有责任主体",
+   "desc_en": "has responsible party (place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> person/organization/service)"
+  },
+  "delegates_to": {
+   "label": "delegates_to",
+   "inverse": "delegated_by",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "把权限或任务委托给目标主体",
+   "desc_en": "delegates to (person/organization/policy -> person/organization/service)"
+  },
+  "delegated_by": {
+   "label": "delegated_by",
+   "inverse": "delegates_to",
+   "family": "work_organization",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "policy"
+   ],
+   "desc": "接受来源主体委托",
+   "desc_en": "delegated by (person/organization/service -> person/organization/policy)"
+  },
+  "lives_at": {
+   "label": "lives_at",
+   "inverse": "residence_of",
+   "family": "spatial",
+   "src": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "常住于目标地点",
+   "desc_en": "lives at (person/household/pet -> place)"
+  },
+  "residence_of": {
+   "label": "residence_of",
+   "inverse": "lives_at",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "desc": "是来源对象住所",
+   "desc_en": "residence of (place -> person/household/pet)"
+  },
+  "located_at": {
+   "label": "located_at",
+   "inverse": "contains",
+   "family": "spatial",
+   "src": [
+    "organization",
+    "group",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "位于目标地点",
+   "desc_en": "located at (organization/group/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order -> place)"
+  },
+  "contains": {
+   "label": "contains",
+   "inverse": "located_at",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "organization",
+    "group",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order"
+   ],
+   "desc": "空间内包含来源对象",
+   "desc_en": "contains (place -> organization/group/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order)"
+  },
+  "part_of": {
+   "label": "part_of",
+   "inverse": "has_part",
+   "family": "spatial",
+   "src": [
+    "place",
+    "organization",
+    "group",
+    "device",
+    "document",
+    "project",
+    "event",
+    "trip"
+   ],
+   "tgt": [
+    "place",
+    "organization",
+    "group",
+    "device",
+    "document",
+    "project",
+    "event",
+    "trip"
+   ],
+   "desc": "是目标对象的组成部分",
+   "desc_en": "part of (place/organization/group/device/document/project/event/trip -> place/organization/group/device/document/project/event/trip)"
+  },
+  "has_part": {
+   "label": "has_part",
+   "inverse": "part_of",
+   "family": "spatial",
+   "src": [
+    "place",
+    "organization",
+    "group",
+    "device",
+    "document",
+    "project",
+    "event",
+    "trip"
+   ],
+   "tgt": [
+    "place",
+    "organization",
+    "group",
+    "device",
+    "document",
+    "project",
+    "event",
+    "trip"
+   ],
+   "desc": "由来源对象包含组成部分",
+   "desc_en": "has part (place/organization/group/device/document/project/event/trip -> place/organization/group/device/document/project/event/trip)"
+  },
+  "primary_location_for": {
+   "label": "primary_location_for",
+   "inverse": "has_primary_location",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "asset",
+    "vehicle",
+    "service",
+    "project"
+   ],
+   "desc": "是目标对象的主要地点",
+   "desc_en": "primary location for (place -> person/household/organization/device/asset/vehicle/service/project)"
+  },
+  "has_primary_location": {
+   "label": "has_primary_location",
+   "inverse": "primary_location_for",
+   "family": "spatial",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "asset",
+    "vehicle",
+    "service",
+    "project"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "主要地点为来源地点",
+   "desc_en": "has primary location (person/household/organization/device/asset/vehicle/service/project -> place)"
+  },
+  "frequently_visits": {
+   "label": "frequently_visits",
+   "inverse": "visited_by",
+   "family": "spatial",
+   "src": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "tgt": [
+    "place",
+    "organization",
+    "service"
+   ],
+   "desc": "经常访问目标地点或主体",
+   "desc_en": "frequently visits (person/household/pet -> place/organization/service)"
+  },
+  "visited_by": {
+   "label": "visited_by",
+   "inverse": "frequently_visits",
+   "family": "spatial",
+   "src": [
+    "place",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet"
+   ],
+   "desc": "经常被来源对象访问",
+   "desc_en": "visited by (place/organization/service -> person/household/pet)"
+  },
+  "pickup_point_for": {
+   "label": "pickup_point_for",
+   "inverse": "has_pickup_point",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "person",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "是目标对象的接送点",
+   "desc_en": "pickup point for (place -> person/event/appointment/reservation/order/trip)"
+  },
+  "has_pickup_point": {
+   "label": "has_pickup_point",
+   "inverse": "pickup_point_for",
+   "family": "spatial",
+   "src": [
+    "person",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "接送点为来源地点",
+   "desc_en": "has pickup point (person/event/appointment/reservation/order/trip -> place)"
+  },
+  "origin_for": {
+   "label": "origin_for",
+   "inverse": "has_origin",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "event",
+    "trip",
+    "order"
+   ],
+   "desc": "是目标行程或履约的起点",
+   "desc_en": "origin for (place -> event/trip/order)"
+  },
+  "has_origin": {
+   "label": "has_origin",
+   "inverse": "origin_for",
+   "family": "spatial",
+   "src": [
+    "event",
+    "trip",
+    "order"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "起点为来源地点",
+   "desc_en": "has origin (event/trip/order -> place)"
+  },
+  "destination_for": {
+   "label": "destination_for",
+   "inverse": "has_destination",
+   "family": "spatial",
+   "src": [
+    "place"
+   ],
+   "tgt": [
+    "event",
+    "trip",
+    "order"
+   ],
+   "desc": "是目标行程或履约的终点",
+   "desc_en": "destination for (place -> event/trip/order)"
+  },
+  "has_destination": {
+   "label": "has_destination",
+   "inverse": "destination_for",
+   "family": "spatial",
+   "src": [
+    "event",
+    "trip",
+    "order"
+   ],
+   "tgt": [
+    "place"
+   ],
+   "desc": "终点为来源地点",
+   "desc_en": "has destination (event/trip/order -> place)"
+  },
+  "registered_at": {
+   "label": "registered_at",
+   "inverse": "registration_location_of",
+   "family": "spatial",
+   "src": [
+    "person",
+    "organization",
+    "account",
+    "asset",
+    "vehicle"
+   ],
+   "tgt": [
+    "place",
+    "organization"
+   ],
+   "desc": "登记于目标地点或机构",
+   "desc_en": "registered at (person/organization/account/asset/vehicle -> place/organization)"
+  },
+  "registration_location_of": {
+   "label": "registration_location_of",
+   "inverse": "registered_at",
+   "family": "spatial",
+   "src": [
+    "place",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "account",
+    "asset",
+    "vehicle"
+   ],
+   "desc": "是来源对象的登记地",
+   "desc_en": "registration location of (place/organization -> person/organization/account/asset/vehicle)"
+  },
+  "owns": {
+   "label": "owns",
+   "inverse": "owned_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "subscription",
+    "project"
+   ],
+   "desc": "拥有目标对象",
+   "desc_en": "owns (person/household/organization -> place/device/account/asset/vehicle/document/subscription/project)"
+  },
+  "owned_by": {
+   "label": "owned_by",
+   "inverse": "owns",
+   "family": "ownership_access",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "subscription",
+    "project"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "归来源主体所有",
+   "desc_en": "owned by (place/device/account/asset/vehicle/document/subscription/project -> person/household/organization)"
+  },
+  "uses": {
+   "label": "uses",
+   "inverse": "used_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription"
+   ],
+   "desc": "使用目标对象",
+   "desc_en": "uses (person/household/organization/group/service -> place/device/account/asset/vehicle/document/service/subscription)"
+  },
+  "used_by": {
+   "label": "used_by",
+   "inverse": "uses",
+   "family": "ownership_access",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "被来源主体使用",
+   "desc_en": "used by (place/device/account/asset/vehicle/document/service/subscription -> person/household/organization/group/service)"
+  },
+  "controls": {
+   "label": "controls",
+   "inverse": "controlled_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "service",
+    "policy"
+   ],
+   "tgt": [
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "service"
+   ],
+   "desc": "可以控制目标对象",
+   "desc_en": "controls (person/household/organization/device/service/policy -> device/account/asset/vehicle/service)"
+  },
+  "controlled_by": {
+   "label": "controlled_by",
+   "inverse": "controls",
+   "family": "ownership_access",
+   "src": [
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "service",
+    "policy"
+   ],
+   "desc": "由来源主体控制",
+   "desc_en": "controlled by (device/account/asset/vehicle/service -> person/household/organization/device/service/policy)"
+  },
+  "can_access": {
+   "label": "can_access",
+   "inverse": "accessible_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "project"
+   ],
+   "desc": "被允许访问目标对象",
+   "desc_en": "can access (person/household/organization/group/service -> place/device/account/asset/vehicle/document/service/project)"
+  },
+  "accessible_by": {
+   "label": "accessible_by",
+   "inverse": "can_access",
+   "family": "ownership_access",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "project"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "允许来源主体访问",
+   "desc_en": "accessible by (place/device/account/asset/vehicle/document/service/project -> person/household/organization/group/service)"
+  },
+  "custodian_of": {
+   "label": "custodian_of",
+   "inverse": "in_custody_of",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "pet",
+    "device",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "desc": "保管目标对象",
+   "desc_en": "custodian of (person/household/organization/service -> pet/device/asset/vehicle/document)"
+  },
+  "in_custody_of": {
+   "label": "in_custody_of",
+   "inverse": "custodian_of",
+   "family": "ownership_access",
+   "src": [
+    "pet",
+    "device",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "service"
+   ],
+   "desc": "由来源主体保管",
+   "desc_en": "in custody of (pet/device/asset/vehicle/document -> person/household/organization/service)"
+  },
+  "beneficiary_of": {
+   "label": "beneficiary_of",
+   "inverse": "has_beneficiary",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "pet"
+   ],
+   "tgt": [
+    "account",
+    "asset",
+    "document",
+    "policy"
+   ],
+   "desc": "是目标对象受益人",
+   "desc_en": "beneficiary of (person/household/organization/pet -> account/asset/document/policy)"
+  },
+  "has_beneficiary": {
+   "label": "has_beneficiary",
+   "inverse": "beneficiary_of",
+   "family": "ownership_access",
+   "src": [
+    "account",
+    "asset",
+    "document",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "pet"
+   ],
+   "desc": "受益人为来源对象",
+   "desc_en": "has beneficiary (account/asset/document/policy -> person/household/organization/pet)"
+  },
+  "pays_for": {
+   "label": "pays_for",
+   "inverse": "paid_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "account"
+   ],
+   "tgt": [
+    "service",
+    "subscription",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "为目标对象付费",
+   "desc_en": "pays for (person/household/organization/account -> service/subscription/appointment/reservation/order/trip)"
+  },
+  "paid_by": {
+   "label": "paid_by",
+   "inverse": "pays_for",
+   "family": "ownership_access",
+   "src": [
+    "service",
+    "subscription",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "account"
+   ],
+   "desc": "由来源主体付费",
+   "desc_en": "paid by (service/subscription/appointment/reservation/order/trip -> person/household/organization/account)"
+  },
+  "registered_to": {
+   "label": "registered_to",
+   "inverse": "registration_of",
+   "family": "ownership_access",
+   "src": [
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "登记在目标主体名下",
+   "desc_en": "registered to (device/account/asset/vehicle/document -> person/household/organization)"
+  },
+  "registration_of": {
+   "label": "registration_of",
+   "inverse": "registered_to",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "desc": "来源对象是目标主体名下登记物",
+   "desc_en": "registration of (person/household/organization -> device/account/asset/vehicle/document)"
+  },
+  "stored_at": {
+   "label": "stored_at",
+   "inverse": "stores",
+   "family": "ownership_access",
+   "src": [
+    "device",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "tgt": [
+    "place",
+    "account",
+    "device"
+   ],
+   "desc": "存放于目标位置或账户",
+   "desc_en": "stored at (device/asset/vehicle/document -> place/account/device)"
+  },
+  "stores": {
+   "label": "stores",
+   "inverse": "stored_at",
+   "family": "ownership_access",
+   "src": [
+    "place",
+    "account",
+    "device"
+   ],
+   "tgt": [
+    "device",
+    "asset",
+    "vehicle",
+    "document"
+   ],
+   "desc": "存放来源对象",
+   "desc_en": "stores (place/account/device -> device/asset/vehicle/document)"
+  },
+  "has_account": {
+   "label": "has_account",
+   "inverse": "account_for",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "account"
+   ],
+   "desc": "拥有或使用目标账户",
+   "desc_en": "has account (person/household/organization -> account)"
+  },
+  "account_for": {
+   "label": "account_for",
+   "inverse": "has_account",
+   "family": "ownership_access",
+   "src": [
+    "account"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "账户服务于来源主体",
+   "desc_en": "account for (account -> person/household/organization)"
+  },
+  "has_device": {
+   "label": "has_device",
+   "inverse": "device_of",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "device"
+   ],
+   "desc": "拥有或管理目标设备",
+   "desc_en": "has device (person/household/organization -> device)"
+  },
+  "device_of": {
+   "label": "device_of",
+   "inverse": "has_device",
+   "family": "ownership_access",
+   "src": [
+    "device"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "设备属于来源主体",
+   "desc_en": "device of (device -> person/household/organization)"
+  },
+  "drives": {
+   "label": "drives",
+   "inverse": "driven_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "service"
+   ],
+   "tgt": [
+    "vehicle"
+   ],
+   "desc": "驾驶目标车辆",
+   "desc_en": "drives (person/service -> vehicle)"
+  },
+  "driven_by": {
+   "label": "driven_by",
+   "inverse": "drives",
+   "family": "ownership_access",
+   "src": [
+    "vehicle"
+   ],
+   "tgt": [
+    "person",
+    "service"
+   ],
+   "desc": "由来源主体驾驶",
+   "desc_en": "driven by (vehicle -> person/service)"
+  },
+  "guarantees": {
+   "label": "guarantees",
+   "inverse": "guaranteed_by",
+   "family": "ownership_access",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "account",
+    "document",
+    "policy",
+    "service"
+   ],
+   "desc": "为目标对象提供担保",
+   "desc_en": "guarantees (person/household/organization -> account/document/policy/service)"
+  },
+  "guaranteed_by": {
+   "label": "guaranteed_by",
+   "inverse": "guarantees",
+   "family": "ownership_access",
+   "src": [
+    "account",
+    "document",
+    "policy",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "由来源主体担保",
+   "desc_en": "guaranteed by (account/document/policy/service -> person/household/organization)"
+  },
+  "provided_by": {
+   "label": "provided_by",
+   "inverse": "provides",
+   "family": "service_commerce",
+   "src": [
+    "service",
+    "subscription"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "由目标主体提供",
+   "desc_en": "provided by (service/subscription -> person/organization/service)"
+  },
+  "provides": {
+   "label": "provides",
+   "inverse": "provided_by",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "service",
+    "subscription"
+   ],
+   "desc": "提供来源服务",
+   "desc_en": "provides (person/organization/service -> service/subscription)"
+  },
+  "subscribes_to": {
+   "label": "subscribes_to",
+   "inverse": "has_subscriber",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "subscription"
+   ],
+   "desc": "订阅目标服务",
+   "desc_en": "subscribes to (person/household/organization -> subscription)"
+  },
+  "has_subscriber": {
+   "label": "has_subscriber",
+   "inverse": "subscribes_to",
+   "family": "service_commerce",
+   "src": [
+    "subscription"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "拥有来源订阅者",
+   "desc_en": "has subscriber (subscription -> person/household/organization)"
+  },
+  "service_for": {
+   "label": "service_for",
+   "inverse": "has_service",
+   "family": "service_commerce",
+   "src": [
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "asset",
+    "vehicle",
+    "project"
+   ],
+   "desc": "服务于目标对象",
+   "desc_en": "service for (service -> person/household/organization/device/asset/vehicle/project)"
+  },
+  "has_service": {
+   "label": "has_service",
+   "inverse": "service_for",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "asset",
+    "vehicle",
+    "project"
+   ],
+   "tgt": [
+    "service"
+   ],
+   "desc": "使用来源服务",
+   "desc_en": "has service (person/household/organization/device/asset/vehicle/project -> service)"
+  },
+  "booked_with": {
+   "label": "booked_with",
+   "inverse": "has_booking",
+   "family": "service_commerce",
+   "src": [
+    "appointment",
+    "reservation"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "place",
+    "service"
+   ],
+   "desc": "向目标主体预约",
+   "desc_en": "booked with (appointment/reservation -> person/organization/place/service)"
+  },
+  "has_booking": {
+   "label": "has_booking",
+   "inverse": "booked_with",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization",
+    "place",
+    "service"
+   ],
+   "tgt": [
+    "appointment",
+    "reservation"
+   ],
+   "desc": "拥有来源预约",
+   "desc_en": "has booking (person/organization/place/service -> appointment/reservation)"
+  },
+  "reservation_for": {
+   "label": "reservation_for",
+   "inverse": "has_reservation",
+   "family": "service_commerce",
+   "src": [
+    "reservation"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "group",
+    "event",
+    "trip"
+   ],
+   "desc": "预订服务于目标对象",
+   "desc_en": "reservation for (reservation -> person/household/group/event/trip)"
+  },
+  "has_reservation": {
+   "label": "has_reservation",
+   "inverse": "reservation_for",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "group",
+    "event",
+    "trip"
+   ],
+   "tgt": [
+    "reservation"
+   ],
+   "desc": "拥有来源预订",
+   "desc_en": "has reservation (person/household/group/event/trip -> reservation)"
+  },
+  "ordered_from": {
+   "label": "ordered_from",
+   "inverse": "has_order",
+   "family": "service_commerce",
+   "src": [
+    "order"
+   ],
+   "tgt": [
+    "organization",
+    "place",
+    "service"
+   ],
+   "desc": "从目标商户或服务下单",
+   "desc_en": "ordered from (order -> organization/place/service)"
+  },
+  "has_order": {
+   "label": "has_order",
+   "inverse": "ordered_from",
+   "family": "service_commerce",
+   "src": [
+    "organization",
+    "place",
+    "service"
+   ],
+   "tgt": [
+    "order"
+   ],
+   "desc": "拥有来源订单",
+   "desc_en": "has order (organization/place/service -> order)"
+  },
+  "delivered_to": {
+   "label": "delivered_to",
+   "inverse": "delivery_for",
+   "family": "service_commerce",
+   "src": [
+    "order"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "place"
+   ],
+   "desc": "交付给目标对象",
+   "desc_en": "delivered to (order -> person/household/organization/place)"
+  },
+  "delivery_for": {
+   "label": "delivery_for",
+   "inverse": "delivered_to",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "place"
+   ],
+   "tgt": [
+    "order"
+   ],
+   "desc": "来源订单的交付对象",
+   "desc_en": "delivery for (person/household/organization/place -> order)"
+  },
+  "maintained_by": {
+   "label": "maintained_by",
+   "inverse": "maintains",
+   "family": "service_commerce",
+   "src": [
+    "place",
+    "device",
+    "asset",
+    "vehicle"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "由目标主体维护",
+   "desc_en": "maintained by (place/device/asset/vehicle -> person/organization/service)"
+  },
+  "maintains": {
+   "label": "maintains",
+   "inverse": "maintained_by",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "asset",
+    "vehicle"
+   ],
+   "desc": "维护来源对象",
+   "desc_en": "maintains (person/organization/service -> place/device/asset/vehicle)"
+  },
+  "supported_by": {
+   "label": "supported_by",
+   "inverse": "supports",
+   "family": "service_commerce",
+   "src": [
+    "account",
+    "device",
+    "service",
+    "subscription",
+    "project"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "由目标主体提供支持",
+   "desc_en": "supported by (account/device/service/subscription/project -> person/organization/service)"
+  },
+  "supports": {
+   "label": "supports",
+   "inverse": "supported_by",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "account",
+    "device",
+    "service",
+    "subscription",
+    "project"
+   ],
+   "desc": "支持来源对象",
+   "desc_en": "supports (person/organization/service -> account/device/service/subscription/project)"
+  },
+  "issued_by": {
+   "label": "issued_by",
+   "inverse": "issues",
+   "family": "service_commerce",
+   "src": [
+    "document",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "organization"
+   ],
+   "desc": "由目标主体签发",
+   "desc_en": "issued by (document/policy -> person/organization)"
+  },
+  "issues": {
+   "label": "issues",
+   "inverse": "issued_by",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization"
+   ],
+   "tgt": [
+    "document",
+    "policy"
+   ],
+   "desc": "签发来源文件或政策",
+   "desc_en": "issues (person/organization -> document/policy)"
+  },
+  "billed_to": {
+   "label": "billed_to",
+   "inverse": "has_bill",
+   "family": "service_commerce",
+   "src": [
+    "service",
+    "subscription",
+    "appointment",
+    "reservation",
+    "order"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "account"
+   ],
+   "desc": "账单归于目标主体",
+   "desc_en": "billed to (service/subscription/appointment/reservation/order -> person/household/organization/account)"
+  },
+  "has_bill": {
+   "label": "has_bill",
+   "inverse": "billed_to",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "account"
+   ],
+   "tgt": [
+    "service",
+    "subscription",
+    "appointment",
+    "reservation",
+    "order"
+   ],
+   "desc": "承担来源对象账单",
+   "desc_en": "has bill (person/household/organization/account -> service/subscription/appointment/reservation/order)"
+  },
+  "covered_by": {
+   "label": "covered_by",
+   "inverse": "covers",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "pet",
+    "device",
+    "asset",
+    "vehicle",
+    "service",
+    "trip"
+   ],
+   "tgt": [
+    "policy",
+    "document"
+   ],
+   "desc": "由目标保单或文件覆盖",
+   "desc_en": "covered by (person/household/pet/device/asset/vehicle/service/trip -> policy/document)"
+  },
+  "covers": {
+   "label": "covers",
+   "inverse": "covered_by",
+   "family": "service_commerce",
+   "src": [
+    "policy",
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet",
+    "device",
+    "asset",
+    "vehicle",
+    "service",
+    "trip"
+   ],
+   "desc": "覆盖来源对象",
+   "desc_en": "covers (policy/document -> person/household/pet/device/asset/vehicle/service/trip)"
+  },
+  "contracted_with": {
+   "label": "contracted_with",
+   "inverse": "has_contract",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service",
+    "document"
+   ],
+   "desc": "与目标主体或合同建立契约",
+   "desc_en": "contracted with (person/household/organization -> person/organization/service/document)"
+  },
+  "has_contract": {
+   "label": "has_contract",
+   "inverse": "contracted_with",
+   "family": "service_commerce",
+   "src": [
+    "person",
+    "organization",
+    "service",
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization"
+   ],
+   "desc": "拥有来源主体的契约关系",
+   "desc_en": "has contract (person/organization/service/document -> person/household/organization)"
+  },
+  "attends": {
+   "label": "attends",
+   "inverse": "attended_by",
+   "family": "temporal_workflow",
+   "src": [
+    "person",
+    "pet",
+    "organization",
+    "group"
+   ],
+   "tgt": [
+    "event",
+    "appointment"
+   ],
+   "desc": "参加目标事件或预约",
+   "desc_en": "attends (person/pet/organization/group -> event/appointment)"
+  },
+  "attended_by": {
+   "label": "attended_by",
+   "inverse": "attends",
+   "family": "temporal_workflow",
+   "src": [
+    "event",
+    "appointment"
+   ],
+   "tgt": [
+    "person",
+    "pet",
+    "organization",
+    "group"
+   ],
+   "desc": "有来源参与者参加",
+   "desc_en": "attended by (event/appointment -> person/pet/organization/group)"
+  },
+  "organizes": {
+   "label": "organizes",
+   "inverse": "organized_by",
+   "family": "temporal_workflow",
+   "src": [
+    "person",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "event",
+    "appointment",
+    "trip"
+   ],
+   "desc": "组织目标对象",
+   "desc_en": "organizes (person/organization/group/service -> event/appointment/trip)"
+  },
+  "organized_by": {
+   "label": "organized_by",
+   "inverse": "organizes",
+   "family": "temporal_workflow",
+   "src": [
+    "event",
+    "appointment",
+    "trip"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "由来源主体组织",
+   "desc_en": "organized by (event/appointment/trip -> person/organization/group/service)"
+  },
+  "scheduled_at": {
+   "label": "scheduled_at",
+   "inverse": "hosts_schedule",
+   "family": "temporal_workflow",
+   "src": [
+    "event",
+    "appointment",
+    "reservation"
+   ],
+   "tgt": [
+    "place",
+    "service"
+   ],
+   "desc": "安排在目标地点或服务",
+   "desc_en": "scheduled at (event/appointment/reservation -> place/service)"
+  },
+  "hosts_schedule": {
+   "label": "hosts_schedule",
+   "inverse": "scheduled_at",
+   "family": "temporal_workflow",
+   "src": [
+    "place",
+    "service"
+   ],
+   "tgt": [
+    "event",
+    "appointment",
+    "reservation"
+   ],
+   "desc": "承载来源安排",
+   "desc_en": "hosts schedule (place/service -> event/appointment/reservation)"
+  },
+  "part_of_trip": {
+   "label": "part_of_trip",
+   "inverse": "has_trip_segment",
+   "family": "temporal_workflow",
+   "src": [
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "document"
+   ],
+   "tgt": [
+    "trip"
+   ],
+   "desc": "属于目标行程",
+   "desc_en": "part of trip (event/appointment/reservation/order/document -> trip)"
+  },
+  "has_trip_segment": {
+   "label": "has_trip_segment",
+   "inverse": "part_of_trip",
+   "family": "temporal_workflow",
+   "src": [
+    "trip"
+   ],
+   "tgt": [
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "document"
+   ],
+   "desc": "包含来源行程段或凭证",
+   "desc_en": "has trip segment (trip -> event/appointment/reservation/order/document)"
+  },
+  "depends_on": {
+   "label": "depends_on",
+   "inverse": "required_by",
+   "family": "temporal_workflow",
+   "src": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "依赖目标对象",
+   "desc_en": "depends on (project/event/appointment/reservation/order/trip -> person/organization/place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "required_by": {
+   "label": "required_by",
+   "inverse": "depends_on",
+   "family": "temporal_workflow",
+   "src": [
+    "person",
+    "organization",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "被来源对象依赖",
+   "desc_en": "required by (person/organization/place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> project/event/appointment/reservation/order/trip)"
+  },
+  "precedes": {
+   "label": "precedes",
+   "inverse": "follows",
+   "family": "temporal_workflow",
+   "src": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "发生在目标对象之前",
+   "desc_en": "precedes (project/event/appointment/reservation/order/trip -> project/event/appointment/reservation/order/trip)"
+  },
+  "follows": {
+   "label": "follows",
+   "inverse": "precedes",
+   "family": "temporal_workflow",
+   "src": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "发生在目标对象之后",
+   "desc_en": "follows (project/event/appointment/reservation/order/trip -> project/event/appointment/reservation/order/trip)"
+  },
+  "conflicts_with": {
+   "label": "conflicts_with",
+   "inverse": "conflicts_with",
+   "family": "temporal_workflow",
+   "src": [
+    "event",
+    "appointment",
+    "reservation",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "event",
+    "appointment",
+    "reservation",
+    "trip",
+    "policy"
+   ],
+   "desc": "时间、资源或规则发生冲突",
+   "desc_en": "conflicts with (event/appointment/reservation/trip/policy -> event/appointment/reservation/trip/policy)"
+  },
+  "replaces": {
+   "label": "replaces",
+   "inverse": "replaced_by",
+   "family": "temporal_workflow",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "取代目标对象",
+   "desc_en": "replaces (place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "replaced_by": {
+   "label": "replaced_by",
+   "inverse": "replaces",
+   "family": "temporal_workflow",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "被来源对象取代",
+   "desc_en": "replaced by (place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "results_in": {
+   "label": "results_in",
+   "inverse": "result_of",
+   "family": "temporal_workflow",
+   "src": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "document",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "policy"
+   ],
+   "desc": "产生目标结果",
+   "desc_en": "results in (project/event/appointment/reservation/order/trip -> document/project/event/appointment/reservation/order/policy)"
+  },
+  "result_of": {
+   "label": "result_of",
+   "inverse": "results_in",
+   "family": "temporal_workflow",
+   "src": [
+    "document",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "policy"
+   ],
+   "tgt": [
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "是来源对象的结果",
+   "desc_en": "result of (document/project/event/appointment/reservation/order/policy -> project/event/appointment/reservation/order/trip)"
+  },
+  "renews": {
+   "label": "renews",
+   "inverse": "renewed_by",
+   "family": "temporal_workflow",
+   "src": [
+    "appointment",
+    "reservation",
+    "order",
+    "document",
+    "subscription",
+    "policy"
+   ],
+   "tgt": [
+    "appointment",
+    "reservation",
+    "order",
+    "document",
+    "subscription",
+    "policy"
+   ],
+   "desc": "续接或续期目标对象",
+   "desc_en": "renews (appointment/reservation/order/document/subscription/policy -> appointment/reservation/order/document/subscription/policy)"
+  },
+  "renewed_by": {
+   "label": "renewed_by",
+   "inverse": "renews",
+   "family": "temporal_workflow",
+   "src": [
+    "appointment",
+    "reservation",
+    "order",
+    "document",
+    "subscription",
+    "policy"
+   ],
+   "tgt": [
+    "appointment",
+    "reservation",
+    "order",
+    "document",
+    "subscription",
+    "policy"
+   ],
+   "desc": "由来源对象续期",
+   "desc_en": "renewed by (appointment/reservation/order/document/subscription/policy -> appointment/reservation/order/document/subscription/policy)"
+  },
+  "cancels": {
+   "label": "cancels",
+   "inverse": "cancelled_by",
+   "family": "temporal_workflow",
+   "src": [
+    "person",
+    "organization",
+    "service",
+    "event",
+    "policy"
+   ],
+   "tgt": [
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "subscription",
+    "policy"
+   ],
+   "desc": "取消目标对象",
+   "desc_en": "cancels (person/organization/service/event/policy -> appointment/reservation/order/trip/subscription/policy)"
+  },
+  "cancelled_by": {
+   "label": "cancelled_by",
+   "inverse": "cancels",
+   "family": "temporal_workflow",
+   "src": [
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "subscription",
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service",
+    "event",
+    "policy"
+   ],
+   "desc": "被来源主体取消",
+   "desc_en": "cancelled by (appointment/reservation/order/trip/subscription/policy -> person/organization/service/event/policy)"
+  },
+  "governed_by": {
+   "label": "governed_by",
+   "inverse": "governs",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "policy"
+   ],
+   "desc": "受目标政策治理",
+   "desc_en": "governed by (person/household/organization/group/place/device/account/asset/vehicle/service/subscription/project/event/appointment/reservation/order/trip -> policy)"
+  },
+  "governs": {
+   "label": "governs",
+   "inverse": "governed_by",
+   "family": "governance",
+   "src": [
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "治理来源对象",
+   "desc_en": "governs (policy -> person/household/organization/group/place/device/account/asset/vehicle/service/subscription/project/event/appointment/reservation/order/trip)"
+  },
+  "permitted_by": {
+   "label": "permitted_by",
+   "inverse": "permits",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "policy"
+   ],
+   "desc": "行为或主体获得目标政策许可",
+   "desc_en": "permitted by (person/household/organization/group/service -> policy)"
+  },
+  "permits": {
+   "label": "permits",
+   "inverse": "permitted_by",
+   "family": "governance",
+   "src": [
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "许可来源主体或行为",
+   "desc_en": "permits (policy -> person/household/organization/group/service)"
+  },
+  "prohibited_by": {
+   "label": "prohibited_by",
+   "inverse": "prohibits",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "policy"
+   ],
+   "desc": "行为或主体被目标政策禁止",
+   "desc_en": "prohibited by (person/household/organization/group/service -> policy)"
+  },
+  "prohibits": {
+   "label": "prohibits",
+   "inverse": "prohibited_by",
+   "family": "governance",
+   "src": [
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "禁止来源主体或行为",
+   "desc_en": "prohibits (policy -> person/household/organization/group/service)"
+  },
+  "authorized_for": {
+   "label": "authorized_for",
+   "inverse": "authorized_by",
+   "family": "governance",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "获授权处理目标对象",
+   "desc_en": "authorized for (person/organization/service -> person/household/organization/device/account/asset/vehicle/document/service/project/event/appointment/reservation/order/trip)"
+  },
+  "authorized_by": {
+   "label": "authorized_by",
+   "inverse": "authorized_for",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "目标对象授权来源主体",
+   "desc_en": "authorized by (person/household/organization/device/account/asset/vehicle/document/service/project/event/appointment/reservation/order/trip -> person/organization/service)"
+  },
+  "consent_for": {
+   "label": "consent_for",
+   "inverse": "has_consent",
+   "family": "governance",
+   "src": [
+    "policy",
+    "document"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "service",
+    "project"
+   ],
+   "desc": "记录针对目标主体或目的的同意",
+   "desc_en": "consent for (policy/document -> person/household/organization/service/project)"
+  },
+  "has_consent": {
+   "label": "has_consent",
+   "inverse": "consent_for",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "service",
+    "project"
+   ],
+   "tgt": [
+    "policy",
+    "document"
+   ],
+   "desc": "拥有来源同意记录",
+   "desc_en": "has consent (person/household/organization/service/project -> policy/document)"
+  },
+  "applies_to": {
+   "label": "applies_to",
+   "inverse": "subject_to",
+   "family": "governance",
+   "src": [
+    "policy"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "pet",
+    "organization",
+    "group",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "desc": "政策适用于目标对象",
+   "desc_en": "applies to (policy -> person/household/pet/organization/group/place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip)"
+  },
+  "subject_to": {
+   "label": "subject_to",
+   "inverse": "applies_to",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "pet",
+    "organization",
+    "group",
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip"
+   ],
+   "tgt": [
+    "policy"
+   ],
+   "desc": "受来源政策约束",
+   "desc_en": "subject to (person/household/pet/organization/group/place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip -> policy)"
+  },
+  "preferred_over": {
+   "label": "preferred_over",
+   "inverse": "less_preferred_than",
+   "family": "governance",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "在给定条件下优先于目标对象",
+   "desc_en": "preferred over (place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "less_preferred_than": {
+   "label": "less_preferred_than",
+   "inverse": "preferred_over",
+   "family": "governance",
+   "src": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "tgt": [
+    "place",
+    "device",
+    "account",
+    "asset",
+    "vehicle",
+    "document",
+    "service",
+    "subscription",
+    "project",
+    "event",
+    "appointment",
+    "reservation",
+    "order",
+    "trip",
+    "policy"
+   ],
+   "desc": "优先级低于来源对象",
+   "desc_en": "less preferred than (place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy -> place/device/account/asset/vehicle/document/service/subscription/project/event/appointment/reservation/order/trip/policy)"
+  },
+  "escalates_to": {
+   "label": "escalates_to",
+   "inverse": "receives_escalation_from",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "desc": "异常升级给目标主体",
+   "desc_en": "escalates to (person/household/organization/group/service -> person/organization/service)"
+  },
+  "receives_escalation_from": {
+   "label": "receives_escalation_from",
+   "inverse": "escalates_to",
+   "family": "governance",
+   "src": [
+    "person",
+    "organization",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "接收来源主体的异常升级",
+   "desc_en": "receives escalation from (person/organization/service -> person/household/organization/group/service)"
+  },
+  "notifies": {
+   "label": "notifies",
+   "inverse": "notified_by",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group"
+   ],
+   "desc": "需要通知目标主体",
+   "desc_en": "notifies (person/household/organization/group/service -> person/household/organization/group)"
+  },
+  "notified_by": {
+   "label": "notified_by",
+   "inverse": "notifies",
+   "family": "governance",
+   "src": [
+    "person",
+    "household",
+    "organization",
+    "group"
+   ],
+   "tgt": [
+    "person",
+    "household",
+    "organization",
+    "group",
+    "service"
+   ],
+   "desc": "由来源主体通知",
+   "desc_en": "notified by (person/household/organization/group -> person/household/organization/group/service)"
+  }
+ },
+ "modules": {
+  "account.billing": {
+   "label": "账户 · 计费",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 计费的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Billing"
+  },
+  "account.closure": {
+   "label": "账户 · 关闭",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 关闭的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Closure"
+  },
+  "account.data_export": {
+   "label": "账户 · 数据导出",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 数据导出的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Data Export"
+  },
+  "account.delegates": {
+   "label": "账户 · 代理人",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 代理人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Delegates"
+  },
+  "account.identifier": {
+   "label": "账户 · 脱敏标识",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 脱敏标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Identifier"
+  },
+  "account.limits": {
+   "label": "账户 · 限制",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 限制的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Limits"
+  },
+  "account.linked_services": {
+   "label": "账户 · 关联服务",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 关联服务的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Linked Services"
+  },
+  "account.notifications": {
+   "label": "账户 · 通知",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 通知的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Notifications"
+  },
+  "account.owner": {
+   "label": "账户 · 所有者",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 所有者的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Owner"
+  },
+  "account.plan": {
+   "label": "账户 · 方案",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 方案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Plan"
+  },
+  "account.provider": {
+   "label": "账户 · 提供方",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 提供方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Provider"
+  },
+  "account.recovery_policy": {
+   "label": "账户 · 恢复策略",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 恢复策略的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Recovery Policy"
+  },
+  "account.renewal": {
+   "label": "账户 · 续期",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 续期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Renewal"
+  },
+  "account.security_policy": {
+   "label": "账户 · 安全策略",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 安全策略的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Security Policy"
+  },
+  "account.status": {
+   "label": "账户 · 状态",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Status"
+  },
+  "account.type": {
+   "label": "账户 · 类型",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账户 · 类型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Account · Type"
+  },
+  "appointment.cancellation": {
+   "label": "预约 · 取消规则",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 取消规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Cancellation"
+  },
+  "appointment.consent": {
+   "label": "预约 · 同意",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 同意的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Consent"
+  },
+  "appointment.documents": {
+   "label": "预约 · 文件",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 文件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Documents"
+  },
+  "appointment.eligibility": {
+   "label": "预约 · 资格",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 资格的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Eligibility"
+  },
+  "appointment.followup": {
+   "label": "预约 · 跟进",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 跟进的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Followup"
+  },
+  "appointment.history": {
+   "label": "预约 · 历史",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · History"
+  },
+  "appointment.location": {
+   "label": "预约 · 位置",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 位置的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Location"
+  },
+  "appointment.participants": {
+   "label": "预约 · 参与者",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 参与者的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Participants"
+  },
+  "appointment.preparation": {
+   "label": "预约 · 准备事项",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 准备事项的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Preparation"
+  },
+  "appointment.provider": {
+   "label": "预约 · 提供方",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 提供方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Provider"
+  },
+  "appointment.purpose": {
+   "label": "预约 · 目的",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 目的的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Purpose"
+  },
+  "appointment.schedule": {
+   "label": "预约 · 时间",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Schedule"
+  },
+  "appointment.status": {
+   "label": "预约 · 状态",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Status"
+  },
+  "appointment.transport": {
+   "label": "预约 · 交通",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "预约 · 交通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Appointment · Transport"
+  },
+  "asset.access": {
+   "label": "资产 · 访问权限",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 访问权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Access"
+  },
+  "asset.custody": {
+   "label": "资产 · 保管",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 保管的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Custody"
+  },
+  "asset.documents": {
+   "label": "资产 · 文件",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 文件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Documents"
+  },
+  "asset.identifiers": {
+   "label": "资产 · 标识",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Identifiers"
+  },
+  "asset.insurance": {
+   "label": "资产 · 保险",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 保险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Insurance"
+  },
+  "asset.kind": {
+   "label": "资产 · 类型",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 类型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Kind"
+  },
+  "asset.lifecycle": {
+   "label": "资产 · 生命周期",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 生命周期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Lifecycle"
+  },
+  "asset.maintenance": {
+   "label": "资产 · 维护",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 维护的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Maintenance"
+  },
+  "asset.ownership": {
+   "label": "资产 · 所有权",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 所有权的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Ownership"
+  },
+  "asset.sharing": {
+   "label": "资产 · 共享",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 共享的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Sharing"
+  },
+  "asset.state": {
+   "label": "资产 · 当前状态",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 当前状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · State"
+  },
+  "asset.storage": {
+   "label": "资产 · 存放位置",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 存放位置的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Storage"
+  },
+  "asset.value": {
+   "label": "资产 · 价值",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 价值的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Value"
+  },
+  "asset.warranty": {
+   "label": "资产 · 保修",
+   "domain": "document",
+   "sens": "sensitive",
+   "desc": "资产 · 保修的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Asset · Warranty"
+  },
+  "communication.accessibility": {
+   "label": "沟通无障碍需求",
+   "domain": "communication",
+   "sens": "internal",
+   "desc": "沟通无障碍需求的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Communication · Accessibility"
+  },
+  "communication.languages": {
+   "label": "语言能力",
+   "domain": "communication",
+   "sens": "internal",
+   "desc": "语言能力的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Communication · Languages"
+  },
+  "communication.response_expectation": {
+   "label": "回复时限与节奏",
+   "domain": "communication",
+   "sens": "internal",
+   "desc": "回复时限与节奏的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Communication · Response Expectation"
+  },
+  "communication.style": {
+   "label": "表达与语气",
+   "domain": "communication",
+   "sens": "internal",
+   "desc": "表达与语气的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Communication · Style"
+  },
+  "contact.address": {
+   "label": "联系地址",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "联系地址的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Address"
+  },
+  "contact.email": {
+   "label": "电子邮箱",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "电子邮箱的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Email"
+  },
+  "contact.emergency_routing": {
+   "label": "紧急联系路由",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "紧急联系路由的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Emergency Routing"
+  },
+  "contact.messaging": {
+   "label": "即时通讯渠道",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "即时通讯渠道的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Messaging"
+  },
+  "contact.phone": {
+   "label": "电话号码",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "电话号码的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Phone"
+  },
+  "contact.preferred_channel": {
+   "label": "首选联系渠道",
+   "domain": "communication",
+   "sens": "sensitive",
+   "desc": "首选联系渠道的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Contact · Preferred Channel"
+  },
+  "data.provenance": {
+   "label": "数据来源摘要",
+   "domain": "data",
+   "sens": "internal",
+   "desc": "数据来源摘要的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Data · Provenance"
+  },
+  "device.automations": {
+   "label": "设备与自动化 · 自动化",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 自动化的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Automations"
+  },
+  "device.capabilities": {
+   "label": "设备与自动化 · 能力",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 能力的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Capabilities"
+  },
+  "device.connection": {
+   "label": "设备与自动化 · 连接",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 连接的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Connection"
+  },
+  "device.dependencies": {
+   "label": "设备与自动化 · 依赖",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 依赖的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Dependencies"
+  },
+  "device.energy": {
+   "label": "设备与自动化 · 能源",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 能源的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Energy"
+  },
+  "device.firmware": {
+   "label": "设备与自动化 · 固件",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 固件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Firmware"
+  },
+  "device.kind": {
+   "label": "设备与自动化 · 类型",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 类型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Kind"
+  },
+  "device.location": {
+   "label": "设备与自动化 · 位置",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 位置的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Location"
+  },
+  "device.maintenance": {
+   "label": "设备与自动化 · 维护",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 维护的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Maintenance"
+  },
+  "device.manual": {
+   "label": "设备与自动化 · 操作说明",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 操作说明的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Manual"
+  },
+  "device.ownership": {
+   "label": "设备与自动化 · 所有权",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 所有权的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Ownership"
+  },
+  "device.permissions": {
+   "label": "设备与自动化 · 权限",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Permissions"
+  },
+  "device.privacy": {
+   "label": "设备与自动化 · 隐私",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 隐私的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Privacy"
+  },
+  "device.safety": {
+   "label": "设备与自动化 · 安全",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 安全的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Safety"
+  },
+  "device.preferences": {
+   "label": "设备与自动化 · 使用偏好",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "用户希望设备如何设置，例如空调的目标温度；不是设备当前读数或已执行命令。",
+   "label_en": "Device · Preferences"
+  },
+  "device.state": {
+   "label": "设备与自动化 · 当前状态",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 当前状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · State"
+  },
+  "device.telemetry": {
+   "label": "设备与自动化 · 遥测",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 遥测的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Telemetry"
+  },
+  "device.users": {
+   "label": "设备与自动化 · 使用者",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 使用者的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Users"
+  },
+  "device.warranty": {
+   "label": "设备与自动化 · 保修",
+   "domain": "device",
+   "sens": "sensitive",
+   "desc": "设备与自动化 · 保修的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Device · Warranty"
+  },
+  "document.dates": {
+   "label": "文件与凭证 · 日期",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 日期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Dates"
+  },
+  "document.dependencies": {
+   "label": "文件与凭证 · 依赖",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 依赖的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Dependencies"
+  },
+  "document.disclosure": {
+   "label": "文件与凭证 · 披露",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 披露的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Disclosure"
+  },
+  "document.expiry": {
+   "label": "文件与凭证 · 有效期",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 有效期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Expiry"
+  },
+  "document.holder": {
+   "label": "文件与凭证 · 持有人",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 持有人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Holder"
+  },
+  "document.identifier": {
+   "label": "文件与凭证 · 脱敏标识",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 脱敏标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Identifier"
+  },
+  "document.issuer": {
+   "label": "文件与凭证 · 签发方",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 签发方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Issuer"
+  },
+  "document.renewal": {
+   "label": "文件与凭证 · 续期",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 续期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Renewal"
+  },
+  "document.status": {
+   "label": "文件与凭证 · 状态",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Status"
+  },
+  "document.storage_ref": {
+   "label": "文件与凭证 · 安全存放引用",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 安全存放引用的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Storage Ref"
+  },
+  "document.type": {
+   "label": "文件与凭证 · 类型",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 类型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Type"
+  },
+  "document.verification": {
+   "label": "文件与凭证 · 核验",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 核验的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Verification"
+  },
+  "document.versions": {
+   "label": "文件与凭证 · 版本",
+   "domain": "document",
+   "sens": "restricted",
+   "desc": "文件与凭证 · 版本的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Document · Versions"
+  },
+  "education.activities": {
+   "label": "课程与活动",
+   "domain": "education",
+   "sens": "sensitive",
+   "desc": "课程与活动的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Education · Activities"
+  },
+  "education.enrollment": {
+   "label": "在读信息",
+   "domain": "education",
+   "sens": "sensitive",
+   "desc": "在读信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Education · Enrollment"
+  },
+  "education.guardians": {
+   "label": "学校监护人",
+   "domain": "education",
+   "sens": "sensitive",
+   "desc": "学校监护人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Education · Guardians"
+  },
+  "education.pickup": {
+   "label": "接送授权",
+   "domain": "education",
+   "sens": "sensitive",
+   "desc": "接送授权的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Education · Pickup"
+  },
+  "education.schedule": {
+   "label": "教育日程",
+   "domain": "education",
+   "sens": "sensitive",
+   "desc": "教育日程的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Education · Schedule"
+  },
+  "event.agenda": {
+   "label": "事件 · 议程",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 议程的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Agenda"
+  },
+  "event.attendees": {
+   "label": "事件 · 参与者",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 参与者的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Attendees"
+  },
+  "event.communications": {
+   "label": "事件 · 沟通",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 沟通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Communications"
+  },
+  "event.cost": {
+   "label": "事件 · 成本",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 成本的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Cost"
+  },
+  "event.dependencies": {
+   "label": "事件 · 依赖",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 依赖的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Dependencies"
+  },
+  "event.followup": {
+   "label": "事件 · 跟进",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 跟进的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Followup"
+  },
+  "event.location": {
+   "label": "事件 · 位置",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 位置的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Location"
+  },
+  "event.logistics": {
+   "label": "事件 · 后勤",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 后勤的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Logistics"
+  },
+  "event.outcome": {
+   "label": "事件 · 结果",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 结果的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Outcome"
+  },
+  "event.purpose": {
+   "label": "事件 · 目的",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 目的的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Purpose"
+  },
+  "event.recurrence": {
+   "label": "事件 · 重复",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 重复的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Recurrence"
+  },
+  "event.rsvp": {
+   "label": "事件 · 出席确认",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 出席确认的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Rsvp"
+  },
+  "event.schedule": {
+   "label": "事件 · 时间",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Schedule"
+  },
+  "event.status": {
+   "label": "事件 · 状态",
+   "domain": "event",
+   "sens": "internal",
+   "desc": "事件 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Event · Status"
+  },
+  "finance.billing": {
+   "label": "账单资料",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "账单资料的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Billing"
+  },
+  "finance.budgets": {
+   "label": "预算边界",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "预算边界的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Budgets"
+  },
+  "finance.insurance": {
+   "label": "保险概况",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "保险概况的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Insurance"
+  },
+  "finance.payment_preferences": {
+   "label": "支付偏好",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "支付偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Payment Preferences"
+  },
+  "finance.reimbursements": {
+   "label": "报销事项",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "报销事项的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Reimbursements"
+  },
+  "finance.tax": {
+   "label": "税务资料",
+   "domain": "finance",
+   "sens": "restricted",
+   "desc": "税务资料的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Finance · Tax"
+  },
+  "group.channels": {
+   "label": "群体 · 渠道",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 渠道的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Channels"
+  },
+  "group.decision_rules": {
+   "label": "群体 · 决策规则",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 决策规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Decision Rules"
+  },
+  "group.history": {
+   "label": "群体 · 历史",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · History"
+  },
+  "group.members": {
+   "label": "群体 · 成员",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 成员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Members"
+  },
+  "group.norms": {
+   "label": "群体 · 规范",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 规范的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Norms"
+  },
+  "group.privacy": {
+   "label": "群体 · 隐私",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 隐私的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Privacy"
+  },
+  "group.purpose": {
+   "label": "群体 · 目的",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 目的的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Purpose"
+  },
+  "group.roles": {
+   "label": "群体 · 角色",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 角色的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Roles"
+  },
+  "group.schedule": {
+   "label": "群体 · 时间",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "群体 · 时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Group · Schedule"
+  },
+  "health.accessibility": {
+   "label": "身体无障碍需求",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "身体无障碍需求的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Accessibility"
+  },
+  "health.allergies": {
+   "label": "过敏与禁忌",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "过敏与禁忌的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Allergies"
+  },
+  "health.blood_type": {
+   "label": "血型",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "血型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Blood Type"
+  },
+  "health.care_plan": {
+   "label": "照护方案",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "照护方案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Care Plan"
+  },
+  "health.conditions": {
+   "label": "健康状况",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "健康状况的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Conditions"
+  },
+  "health.emergency": {
+   "label": "医疗紧急信息",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "医疗紧急信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Emergency"
+  },
+  "health.insurance": {
+   "label": "医疗保险",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "医疗保险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Insurance"
+  },
+  "health.medications": {
+   "label": "当前用药",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "当前用药的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Medications"
+  },
+  "health.mental_wellbeing": {
+   "label": "心理健康信息",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "心理健康信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Mental Wellbeing"
+  },
+  "health.pediatric": {
+   "label": "未成年人健康规则",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "未成年人健康规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Pediatric"
+  },
+  "health.providers": {
+   "label": "医疗服务方",
+   "domain": "health",
+   "sens": "restricted",
+   "desc": "医疗服务方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Health · Providers"
+  },
+  "household.access": {
+   "label": "家庭 · 访问权限",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 访问权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Access"
+  },
+  "household.address": {
+   "label": "家庭 · 地址",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 地址的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Address"
+  },
+  "household.budgets": {
+   "label": "家庭 · 预算",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 预算的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Budgets"
+  },
+  "household.calendar": {
+   "label": "家庭 · 共享日历",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 共享日历的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Calendar"
+  },
+  "household.devices": {
+   "label": "家庭 · 设备",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 设备的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Devices"
+  },
+  "household.emergency": {
+   "label": "家庭 · 紧急信息",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 紧急信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Emergency"
+  },
+  "household.guests": {
+   "label": "家庭 · 访客",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 访客的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Guests"
+  },
+  "household.maintenance": {
+   "label": "家庭 · 维护",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 维护的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Maintenance"
+  },
+  "household.members": {
+   "label": "家庭 · 成员",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 成员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Members"
+  },
+  "household.pets": {
+   "label": "家庭 · 宠物",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 宠物的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Pets"
+  },
+  "household.policies": {
+   "label": "家庭 · 规则",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Policies"
+  },
+  "household.providers": {
+   "label": "家庭 · 服务方",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 服务方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Providers"
+  },
+  "household.roles": {
+   "label": "家庭 · 角色",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 角色的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Roles"
+  },
+  "household.routines": {
+   "label": "家庭 · 日常安排",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 日常安排的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Routines"
+  },
+  "household.staff": {
+   "label": "家庭 · 家庭工作人员",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 家庭工作人员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Staff"
+  },
+  "household.supplies": {
+   "label": "家庭 · 物资",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 物资的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Supplies"
+  },
+  "household.vehicles": {
+   "label": "家庭 · 车辆",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "家庭 · 车辆的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Household · Vehicles"
+  },
+  "identity.aliases": {
+   "label": "别名与称呼",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "别名与称呼的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Aliases"
+  },
+  "identity.basic": {
+   "label": "基础身份",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "基础身份的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Basic"
+  },
+  "identity.birth": {
+   "label": "出生信息",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "出生信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Birth"
+  },
+  "identity.demographics": {
+   "label": "人口统计信息",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "人口统计信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Demographics"
+  },
+  "identity.government_ids": {
+   "label": "政府证件标识",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "政府证件标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Government Ids"
+  },
+  "identity.legal": {
+   "label": "法定姓名与身份",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "法定姓名与身份的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Legal"
+  },
+  "identity.lifecycle": {
+   "label": "生命周期状态",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "生命周期状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Lifecycle"
+  },
+  "identity.nationality": {
+   "label": "国籍",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "国籍的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Nationality"
+  },
+  "identity.pronouns": {
+   "label": "称谓与代词",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "称谓与代词的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Pronouns"
+  },
+  "identity.residency": {
+   "label": "居留与常住地",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "居留与常住地的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Residency"
+  },
+  "identity.roles": {
+   "label": "当前角色",
+   "domain": "identity",
+   "sens": "internal",
+   "desc": "当前角色的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Identity · Roles"
+  },
+  "location.access": {
+   "label": "地点与空间 · 访问权限",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 访问权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Access"
+  },
+  "location.accessibility": {
+   "label": "地点与空间 · 无障碍",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 无障碍的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Accessibility"
+  },
+  "location.address": {
+   "label": "地点与空间 · 地址",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 地址的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Address"
+  },
+  "location.amenities": {
+   "label": "地点与空间 · 设施",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 设施的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Amenities"
+  },
+  "location.coordinates": {
+   "label": "地点与空间 · 坐标",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 坐标的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Coordinates"
+  },
+  "location.delivery": {
+   "label": "地点与空间 · 配送",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 配送的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Delivery"
+  },
+  "location.entrances": {
+   "label": "地点与空间 · 入口",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 入口的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Entrances"
+  },
+  "location.environment": {
+   "label": "地点与空间 · 环境状态",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 环境状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Environment"
+  },
+  "location.geofence": {
+   "label": "地点与空间 · 地理围栏",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 地理围栏的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Geofence"
+  },
+  "location.hierarchy": {
+   "label": "地点与空间 · 层级",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 层级的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Hierarchy"
+  },
+  "location.hours": {
+   "label": "地点与空间 · 开放时间",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 开放时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Hours"
+  },
+  "location.parking": {
+   "label": "地点与空间 · 停车",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 停车的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Parking"
+  },
+  "location.rooms": {
+   "label": "地点与空间 · 空间分区",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 空间分区的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Rooms"
+  },
+  "location.safety": {
+   "label": "地点与空间 · 安全",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 安全的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Safety"
+  },
+  "location.timezone": {
+   "label": "地点与空间 · 时区",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 时区的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Timezone"
+  },
+  "location.transit": {
+   "label": "地点与空间 · 公共交通",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 公共交通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Transit"
+  },
+  "location.visitor_policy": {
+   "label": "地点与空间 · 访客规则",
+   "domain": "location",
+   "sens": "sensitive",
+   "desc": "地点与空间 · 访客规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Location · Visitor Policy"
+  },
+  "notes.general": {
+   "label": "一般备注",
+   "domain": "notes",
+   "sens": "internal",
+   "desc": "一般备注的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Notes · General"
+  },
+  "order.communications": {
+   "label": "订单 · 沟通",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 沟通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Communications"
+  },
+  "order.delivery": {
+   "label": "订单 · 配送",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 配送的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Delivery"
+  },
+  "order.history": {
+   "label": "订单 · 历史",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · History"
+  },
+  "order.items": {
+   "label": "订单 · 明细",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 明细的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Items"
+  },
+  "order.merchant": {
+   "label": "订单 · 商家",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 商家的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Merchant"
+  },
+  "order.payment_status": {
+   "label": "订单 · 支付状态",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 支付状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Payment Status"
+  },
+  "order.pricing": {
+   "label": "订单 · 价格",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 价格的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Pricing"
+  },
+  "order.recipient": {
+   "label": "订单 · 接收人",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 接收人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Recipient"
+  },
+  "order.returns": {
+   "label": "订单 · 退换",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 退换的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Returns"
+  },
+  "order.status": {
+   "label": "订单 · 状态",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Status"
+  },
+  "order.substitutions": {
+   "label": "订单 · 替换规则",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 替换规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Substitutions"
+  },
+  "order.warranty": {
+   "label": "订单 · 保修",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订单 · 保修的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Order · Warranty"
+  },
+  "organization.billing": {
+   "label": "组织 · 计费",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 计费的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Billing"
+  },
+  "organization.capabilities": {
+   "label": "组织 · 能力",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 能力的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Capabilities"
+  },
+  "organization.compliance": {
+   "label": "组织 · 合规",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 合规的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Compliance"
+  },
+  "organization.contracts": {
+   "label": "组织 · 合同",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 合同的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Contracts"
+  },
+  "organization.departments": {
+   "label": "组织 · 部门",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 部门的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Departments"
+  },
+  "organization.escalation": {
+   "label": "组织 · 升级路径",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 升级路径的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Escalation"
+  },
+  "organization.hierarchy": {
+   "label": "组织 · 层级",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 层级的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Hierarchy"
+  },
+  "organization.legal": {
+   "label": "组织 · 法定资料",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 法定资料的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Legal"
+  },
+  "organization.locations": {
+   "label": "组织 · 地点",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 地点的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Locations"
+  },
+  "organization.people": {
+   "label": "组织 · 人员",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 人员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · People"
+  },
+  "organization.policies": {
+   "label": "组织 · 规则",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Policies"
+  },
+  "organization.reputation": {
+   "label": "组织 · 历史评价",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 历史评价的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Reputation"
+  },
+  "organization.type": {
+   "label": "组织 · 类型",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "组织 · 类型的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Organization · Type"
+  },
+  "pet.allergies": {
+   "label": "宠物 · 过敏",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 过敏的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Allergies"
+  },
+  "pet.boarding": {
+   "label": "宠物 · 寄养",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 寄养的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Boarding"
+  },
+  "pet.care_routine": {
+   "label": "宠物 · 照护日程",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 照护日程的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Care Routine"
+  },
+  "pet.diet": {
+   "label": "宠物 · 饮食",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 饮食的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Diet"
+  },
+  "pet.emergency": {
+   "label": "宠物 · 紧急信息",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 紧急信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Emergency"
+  },
+  "pet.guardians": {
+   "label": "宠物 · 照护人",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 照护人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Guardians"
+  },
+  "pet.health": {
+   "label": "宠物 · health",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · health的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Health"
+  },
+  "pet.identity": {
+   "label": "宠物 · 身份",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 身份的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Identity"
+  },
+  "pet.insurance": {
+   "label": "宠物 · 保险",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 保险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Insurance"
+  },
+  "pet.medications": {
+   "label": "宠物 · 用药",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 用药的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Medications"
+  },
+  "pet.microchip": {
+   "label": "宠物 · 芯片标识",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 芯片标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Microchip"
+  },
+  "pet.species": {
+   "label": "宠物 · 物种与品种",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 物种与品种的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Species"
+  },
+  "pet.travel": {
+   "label": "宠物 · 旅行规则",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 旅行规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Travel"
+  },
+  "pet.veterinarian": {
+   "label": "宠物 · 兽医",
+   "domain": "home",
+   "sens": "sensitive",
+   "desc": "宠物 · 兽医的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Pet · Veterinarian"
+  },
+  "policy.actions": {
+   "label": "policy · 动作",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 动作的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Actions"
+  },
+  "policy.approval": {
+   "label": "policy · 审批",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 审批的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Approval"
+  },
+  "policy.audit": {
+   "label": "policy · 审计",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 审计的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Audit"
+  },
+  "policy.authority": {
+   "label": "policy · 权限",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Authority"
+  },
+  "policy.conditions": {
+   "label": "policy · 条件",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 条件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Conditions"
+  },
+  "policy.disclosure": {
+   "label": "policy · 披露",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 披露的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Disclosure"
+  },
+  "policy.effect": {
+   "label": "policy · 效果",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 效果的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Effect"
+  },
+  "policy.escalation": {
+   "label": "policy · 升级路径",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 升级路径的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Escalation"
+  },
+  "policy.exceptions": {
+   "label": "policy · 例外",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 例外的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Exceptions"
+  },
+  "policy.priority": {
+   "label": "policy · 优先级",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 优先级的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Priority"
+  },
+  "policy.provenance": {
+   "label": "policy · 来源",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 来源的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Provenance"
+  },
+  "policy.retention": {
+   "label": "policy · 保留",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 保留的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Retention"
+  },
+  "policy.revocation": {
+   "label": "policy · 撤销",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 撤销的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Revocation"
+  },
+  "policy.scope": {
+   "label": "policy · 作用域",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 作用域的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Scope"
+  },
+  "policy.status": {
+   "label": "policy · 状态",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Status"
+  },
+  "policy.subjects": {
+   "label": "policy · 主体",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 主体的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Subjects"
+  },
+  "policy.validity": {
+   "label": "policy · 有效期",
+   "domain": "policy",
+   "sens": "sensitive",
+   "desc": "policy · 有效期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Policy · Validity"
+  },
+  "preferences.contact": {
+   "label": "联系偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "联系偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Contact"
+  },
+  "preferences.entertainment": {
+   "label": "娱乐偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "娱乐偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Entertainment"
+  },
+  "preferences.food": {
+   "label": "饮食偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "饮食偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Food"
+  },
+  "preferences.gifts": {
+   "label": "礼物偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "礼物偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Gifts"
+  },
+  "preferences.hospitality": {
+   "label": "招待偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "招待偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Hospitality"
+  },
+  "preferences.meeting": {
+   "label": "会面偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "会面偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Meeting"
+  },
+  "preferences.privacy": {
+   "label": "隐私偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "隐私偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Privacy"
+  },
+  "preferences.dressing": {
+   "label": "穿搭决策偏好",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "本人明确表达的长期穿搭决策方式及参考来源；外部 API 的逐日结果不写入此处。",
+   "label_en": "Preferences · Dressing"
+  },
+  "preferences.shopping": {
+   "label": "购物偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "购物偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Shopping"
+  },
+  "preferences.spending": {
+   "label": "消费偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "消费偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Spending"
+  },
+  "preferences.transport": {
+   "label": "交通偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "交通偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Transport"
+  },
+  "preferences.travel": {
+   "label": "旅行偏好",
+   "domain": "relationship",
+   "sens": "internal",
+   "desc": "旅行偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Preferences · Travel"
+  },
+  "privacy.consent": {
+   "label": "同意范围",
+   "domain": "privacy",
+   "sens": "sensitive",
+   "desc": "同意范围的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Privacy · Consent"
+  },
+  "privacy.disclosure": {
+   "label": "披露策略",
+   "domain": "privacy",
+   "sens": "sensitive",
+   "desc": "披露策略的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Privacy · Disclosure"
+  },
+  "project.artifacts": {
+   "label": "项目与决策 · 产物",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 产物的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Artifacts"
+  },
+  "project.authority": {
+   "label": "项目与决策 · 权限",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Authority"
+  },
+  "project.budget": {
+   "label": "项目与决策 · 预算",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 预算的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Budget"
+  },
+  "project.communications": {
+   "label": "项目与决策 · 沟通",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 沟通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Communications"
+  },
+  "project.constraints": {
+   "label": "项目与决策 · 约束",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 约束的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Constraints"
+  },
+  "project.decisions": {
+   "label": "项目与决策 · 决策",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 决策的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Decisions"
+  },
+  "project.dependencies": {
+   "label": "项目与决策 · 依赖",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 依赖的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Dependencies"
+  },
+  "project.history": {
+   "label": "项目与决策 · 历史",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · History"
+  },
+  "project.milestones": {
+   "label": "项目与决策 · 里程碑",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 里程碑的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Milestones"
+  },
+  "project.next_actions": {
+   "label": "项目与决策 · 下一步",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 下一步的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Next Actions"
+  },
+  "project.objective": {
+   "label": "项目与决策 · 目标",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 目标的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Objective"
+  },
+  "project.people": {
+   "label": "项目与决策 · 人员",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 人员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · People"
+  },
+  "project.risks": {
+   "label": "项目与决策 · 风险",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 风险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Risks"
+  },
+  "project.schedule": {
+   "label": "项目与决策 · 时间",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Schedule"
+  },
+  "project.stakeholders": {
+   "label": "项目与决策 · 利益相关方",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 利益相关方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Stakeholders"
+  },
+  "project.status": {
+   "label": "项目与决策 · 状态",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Status"
+  },
+  "project.success_criteria": {
+   "label": "项目与决策 · 成功标准",
+   "domain": "project",
+   "sens": "internal",
+   "desc": "项目与决策 · 成功标准的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Project · Success Criteria"
+  },
+  "relationship.boundaries": {
+   "label": "关系边界",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "关系边界的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Relationship · Boundaries"
+  },
+  "relationship.important_dates": {
+   "label": "关系重要日期",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "关系重要日期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Relationship · Important Dates"
+  },
+  "relationship.obligations": {
+   "label": "关系义务",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "关系义务的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Relationship · Obligations"
+  },
+  "relationship.roles": {
+   "label": "关系角色",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "关系角色的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Relationship · Roles"
+  },
+  "relationship.trust": {
+   "label": "信任层级",
+   "domain": "relationship",
+   "sens": "sensitive",
+   "desc": "信任层级的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Relationship · Trust"
+  },
+  "reservation.accessibility": {
+   "label": "预订 · 无障碍",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 无障碍的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Accessibility"
+  },
+  "reservation.alternatives": {
+   "label": "预订 · 替代方案",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 替代方案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Alternatives"
+  },
+  "reservation.cancellation": {
+   "label": "预订 · 取消规则",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 取消规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Cancellation"
+  },
+  "reservation.confirmation": {
+   "label": "预订 · 确认信息",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 确认信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Confirmation"
+  },
+  "reservation.contact": {
+   "label": "预订 · contact",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · contact的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Contact"
+  },
+  "reservation.history": {
+   "label": "预订 · 历史",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · History"
+  },
+  "reservation.party": {
+   "label": "预订 · 人数与人员",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 人数与人员的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Party"
+  },
+  "reservation.payment_requirements": {
+   "label": "预订 · 支付要求",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 支付要求的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Payment Requirements"
+  },
+  "reservation.preferences": {
+   "label": "预订 · 偏好",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Preferences"
+  },
+  "reservation.schedule": {
+   "label": "预订 · 时间",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Schedule"
+  },
+  "reservation.special_requests": {
+   "label": "预订 · 特殊要求",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 特殊要求的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Special Requests"
+  },
+  "reservation.status": {
+   "label": "预订 · 状态",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Status"
+  },
+  "reservation.venue": {
+   "label": "预订 · 场所",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "预订 · 场所的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Reservation · Venue"
+  },
+  "safety.emergency_plan": {
+   "label": "应急预案",
+   "domain": "safety",
+   "sens": "restricted",
+   "desc": "应急预案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Safety · Emergency Plan"
+  },
+  "schedule.availability": {
+   "label": "可用时间",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "可用时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Availability"
+  },
+  "schedule.constraints": {
+   "label": "时间约束",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "时间约束的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Constraints"
+  },
+  "schedule.recurring": {
+   "label": "周期安排",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "周期安排的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Recurring"
+  },
+  "schedule.routines": {
+   "label": "日常节奏",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "日常节奏的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Routines"
+  },
+  "schedule.timezone": {
+   "label": "时区",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "时区的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Timezone"
+  },
+  "schedule.travel_buffer": {
+   "label": "出行缓冲时间",
+   "domain": "schedule",
+   "sens": "sensitive",
+   "desc": "出行缓冲时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Schedule · Travel Buffer"
+  },
+  "service.booking_rules": {
+   "label": "服务与供应商 · 预约规则",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 预约规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Booking Rules"
+  },
+  "service.cancellation": {
+   "label": "服务与供应商 · 取消规则",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 取消规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Cancellation"
+  },
+  "service.capabilities": {
+   "label": "服务与供应商 · 能力",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 能力的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Capabilities"
+  },
+  "service.channels": {
+   "label": "服务与供应商 · 渠道",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 渠道的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Channels"
+  },
+  "service.contact": {
+   "label": "服务与供应商 · contact",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · contact的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Contact"
+  },
+  "service.coverage": {
+   "label": "服务与供应商 · 覆盖范围",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 覆盖范围的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Coverage"
+  },
+  "service.eligibility": {
+   "label": "服务与供应商 · 资格",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 资格的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Eligibility"
+  },
+  "service.escalation": {
+   "label": "服务与供应商 · 升级路径",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 升级路径的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Escalation"
+  },
+  "service.history": {
+   "label": "服务与供应商 · 历史",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · History"
+  },
+  "service.hours": {
+   "label": "服务与供应商 · 开放时间",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 开放时间的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Hours"
+  },
+  "service.locations": {
+   "label": "服务与供应商 · 地点",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 地点的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Locations"
+  },
+  "service.payment_support": {
+   "label": "服务与供应商 · 支付能力边界",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 支付能力边界的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Payment Support"
+  },
+  "service.preferences": {
+   "label": "服务与供应商 · 偏好",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Preferences"
+  },
+  "service.pricing": {
+   "label": "服务与供应商 · 价格",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 价格的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Pricing"
+  },
+  "service.provider": {
+   "label": "服务与供应商 · 提供方",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 提供方的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Provider"
+  },
+  "service.sla": {
+   "label": "服务与供应商 · 服务承诺",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 服务承诺的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Sla"
+  },
+  "service.status": {
+   "label": "服务与供应商 · 状态",
+   "domain": "service",
+   "sens": "internal",
+   "desc": "服务与供应商 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Service · Status"
+  },
+  "subscription.account": {
+   "label": "订阅 · 关联账户",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 关联账户的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Account"
+  },
+  "subscription.benefits": {
+   "label": "订阅 · 权益",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 权益的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Benefits"
+  },
+  "subscription.billing": {
+   "label": "订阅 · 计费",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 计费的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Billing"
+  },
+  "subscription.cancellation": {
+   "label": "订阅 · 取消规则",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 取消规则的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Cancellation"
+  },
+  "subscription.history": {
+   "label": "订阅 · 历史",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · History"
+  },
+  "subscription.limits": {
+   "label": "订阅 · 限制",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 限制的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Limits"
+  },
+  "subscription.plan": {
+   "label": "订阅 · 方案",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 方案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Plan"
+  },
+  "subscription.renewal": {
+   "label": "订阅 · 续期",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 续期的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Renewal"
+  },
+  "subscription.sharing": {
+   "label": "订阅 · 共享",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 共享的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Sharing"
+  },
+  "subscription.status": {
+   "label": "订阅 · 状态",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Status"
+  },
+  "subscription.support": {
+   "label": "订阅 · 支持",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 支持的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Support"
+  },
+  "subscription.usage": {
+   "label": "订阅 · 用量",
+   "domain": "commerce",
+   "sens": "sensitive",
+   "desc": "订阅 · 用量的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Subscription · Usage"
+  },
+  "transport.licenses": {
+   "label": "驾驶资质",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "驾驶资质的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Transport · Licenses"
+  },
+  "transport.preferences": {
+   "label": "交通选择偏好",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "交通选择偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Transport · Preferences"
+  },
+  "travel.documents": {
+   "label": "旅行证件",
+   "domain": "travel",
+   "sens": "sensitive",
+   "desc": "旅行证件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Travel · Documents"
+  },
+  "travel.loyalty": {
+   "label": "常旅客权益",
+   "domain": "travel",
+   "sens": "sensitive",
+   "desc": "常旅客权益的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Travel · Loyalty"
+  },
+  "travel.requirements": {
+   "label": "出行要求",
+   "domain": "travel",
+   "sens": "sensitive",
+   "desc": "出行要求的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Travel · Requirements"
+  },
+  "trip.accessibility": {
+   "label": "trip · 无障碍",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 无障碍的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Accessibility"
+  },
+  "trip.budget": {
+   "label": "trip · 预算",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 预算的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Budget"
+  },
+  "trip.calendar": {
+   "label": "trip · 共享日历",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 共享日历的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Calendar"
+  },
+  "trip.checkin": {
+   "label": "trip · 值机/入住",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 值机/入住的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Checkin"
+  },
+  "trip.communications": {
+   "label": "trip · 沟通",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 沟通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Communications"
+  },
+  "trip.disruptions": {
+   "label": "trip · 中断预案",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 中断预案的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Disruptions"
+  },
+  "trip.documents": {
+   "label": "trip · 文件",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 文件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Documents"
+  },
+  "trip.emergency": {
+   "label": "trip · 紧急信息",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 紧急信息的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Emergency"
+  },
+  "trip.history": {
+   "label": "trip · 历史",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 历史的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · History"
+  },
+  "trip.insurance": {
+   "label": "trip · 保险",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 保险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Insurance"
+  },
+  "trip.itinerary": {
+   "label": "trip · 行程表",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 行程表的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Itinerary"
+  },
+  "trip.local_contacts": {
+   "label": "trip · 当地联系人",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 当地联系人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Local Contacts"
+  },
+  "trip.lodging": {
+   "label": "trip · 住宿",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 住宿的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Lodging"
+  },
+  "trip.packing": {
+   "label": "trip · 行李",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 行李的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Packing"
+  },
+  "trip.preferences": {
+   "label": "trip · 偏好",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Preferences"
+  },
+  "trip.reservations": {
+   "label": "trip · 预订集合",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 预订集合的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Reservations"
+  },
+  "trip.status": {
+   "label": "trip · 状态",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Status"
+  },
+  "trip.transport": {
+   "label": "trip · 交通",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 交通的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Transport"
+  },
+  "trip.travelers": {
+   "label": "trip · 同行人",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 同行人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Travelers"
+  },
+  "trip.visas": {
+   "label": "trip · 签证",
+   "domain": "trip",
+   "sens": "internal",
+   "desc": "trip · 签证的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Trip · Visas"
+  },
+  "vehicle.access": {
+   "label": "车辆 · 访问权限",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 访问权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Access"
+  },
+  "vehicle.charging": {
+   "label": "车辆 · 充电",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 充电的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Charging"
+  },
+  "vehicle.documents": {
+   "label": "车辆 · 文件",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 文件的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Documents"
+  },
+  "vehicle.drivers": {
+   "label": "车辆 · 驾驶人",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 驾驶人的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Drivers"
+  },
+  "vehicle.fuel": {
+   "label": "车辆 · 燃油",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 燃油的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Fuel"
+  },
+  "vehicle.identifiers": {
+   "label": "车辆 · 标识",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 标识的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Identifiers"
+  },
+  "vehicle.insurance": {
+   "label": "车辆 · 保险",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 保险的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Insurance"
+  },
+  "vehicle.location": {
+   "label": "车辆 · 位置",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 位置的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Location"
+  },
+  "vehicle.maintenance": {
+   "label": "车辆 · 维护",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 维护的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Maintenance"
+  },
+  "vehicle.parking": {
+   "label": "车辆 · 停车",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 停车的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Parking"
+  },
+  "vehicle.passengers": {
+   "label": "车辆 · 乘客",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 乘客的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Passengers"
+  },
+  "vehicle.preferences": {
+   "label": "车辆 · 偏好",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Preferences"
+  },
+  "vehicle.registration": {
+   "label": "车辆 · 登记",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 登记的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Registration"
+  },
+  "vehicle.safety": {
+   "label": "车辆 · 安全",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 安全的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Safety"
+  },
+  "vehicle.state": {
+   "label": "车辆 · 当前状态",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 当前状态的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · State"
+  },
+  "vehicle.tolls": {
+   "label": "车辆 · 通行费",
+   "domain": "transport",
+   "sens": "sensitive",
+   "desc": "车辆 · 通行费的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Vehicle · Tolls"
+  },
+  "work.authority": {
+   "label": "工作权限",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "工作权限的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Authority"
+  },
+  "work.collaborators": {
+   "label": "协作关系",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "协作关系的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Collaborators"
+  },
+  "work.organization": {
+   "label": "任职组织",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "任职组织的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Organization"
+  },
+  "work.preferences": {
+   "label": "工作偏好",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "工作偏好的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Preferences"
+  },
+  "work.responsibilities": {
+   "label": "工作职责",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "工作职责的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Responsibilities"
+  },
+  "work.role": {
+   "label": "工作职位",
+   "domain": "work",
+   "sens": "internal",
+   "desc": "工作职位的当前、可验证结构化资料；历史变化保留在 claim 与 ledger，不在此处覆盖证据。",
+   "label_en": "Work · Role"
+  }
+ },
+ "modules_by_kind": {
+  "health_metric": [],
+  "person": [
+   "identity.legal",
+   "identity.demographics",
+   "identity.pronouns",
+   "identity.birth",
+   "identity.nationality",
+   "identity.residency",
+   "identity.roles",
+   "identity.government_ids",
+   "contact.phone",
+   "contact.email",
+   "contact.address",
+   "contact.messaging",
+   "contact.preferred_channel",
+   "contact.emergency_routing",
+   "communication.languages",
+   "communication.style",
+   "communication.accessibility",
+   "communication.response_expectation",
+   "relationship.roles",
+   "relationship.boundaries",
+   "relationship.trust",
+   "relationship.important_dates",
+   "relationship.obligations",
+   "preferences.food",
+   "preferences.travel",
+   "preferences.hospitality",
+   "preferences.contact",
+   "preferences.shopping",
+   "preferences.dressing",
+   "preferences.entertainment",
+   "preferences.gifts",
+   "preferences.meeting",
+   "preferences.transport",
+   "preferences.privacy",
+   "preferences.spending",
+   "health.allergies",
+   "health.conditions",
+   "health.medications",
+   "health.providers",
+   "health.insurance",
+   "health.blood_type",
+   "health.care_plan",
+   "health.accessibility",
+   "health.emergency",
+   "health.pediatric",
+   "health.mental_wellbeing",
+   "schedule.timezone",
+   "schedule.availability",
+   "schedule.constraints",
+   "schedule.routines",
+   "schedule.recurring",
+   "schedule.travel_buffer",
+   "work.role",
+   "work.authority",
+   "work.responsibilities",
+   "work.organization",
+   "work.collaborators",
+   "work.preferences",
+   "education.enrollment",
+   "education.guardians",
+   "education.pickup",
+   "education.activities",
+   "education.schedule",
+   "finance.billing",
+   "finance.budgets",
+   "finance.payment_preferences",
+   "finance.insurance",
+   "finance.tax",
+   "finance.reimbursements",
+   "travel.documents",
+   "travel.loyalty",
+   "travel.requirements",
+   "transport.preferences",
+   "transport.licenses",
+   "safety.emergency_plan"
+  ],
+  "household": [
+   "household.members",
+   "household.roles",
+   "household.address",
+   "household.routines",
+   "household.calendar",
+   "household.vehicles",
+   "household.devices",
+   "household.providers",
+   "household.budgets",
+   "household.emergency",
+   "household.guests",
+   "household.access",
+   "household.maintenance",
+   "household.supplies",
+   "household.policies",
+   "household.pets",
+   "household.staff",
+   "contact.address",
+   "schedule.timezone",
+   "schedule.recurring",
+   "finance.billing",
+   "safety.emergency_plan"
+  ],
+  "pet": [
+   "pet.identity",
+   "pet.species",
+   "pet.guardians",
+   "pet.health",
+   "pet.medications",
+   "pet.allergies",
+   "pet.veterinarian",
+   "pet.diet",
+   "pet.care_routine",
+   "pet.emergency",
+   "pet.microchip",
+   "pet.insurance",
+   "pet.travel",
+   "pet.boarding",
+   "schedule.routines",
+   "contact.emergency_routing",
+   "health.providers",
+   "health.insurance"
+  ],
+  "organization": [
+   "organization.legal",
+   "organization.type",
+   "organization.departments",
+   "organization.people",
+   "organization.hierarchy",
+   "organization.policies",
+   "organization.locations",
+   "organization.capabilities",
+   "organization.contracts",
+   "organization.billing",
+   "organization.escalation",
+   "organization.compliance",
+   "organization.reputation",
+   "contact.phone",
+   "contact.email",
+   "contact.address",
+   "contact.messaging",
+   "communication.languages",
+   "service.hours",
+   "service.channels",
+   "finance.billing"
+  ],
+  "group": [
+   "group.members",
+   "group.roles",
+   "group.purpose",
+   "group.norms",
+   "group.schedule",
+   "group.channels",
+   "group.decision_rules",
+   "group.privacy",
+   "group.history",
+   "communication.languages",
+   "schedule.timezone",
+   "schedule.recurring"
+  ],
+  "place": [
+   "location.coordinates",
+   "location.address",
+   "location.hierarchy",
+   "location.timezone",
+   "location.entrances",
+   "location.access",
+   "location.parking",
+   "location.transit",
+   "location.accessibility",
+   "location.hours",
+   "location.safety",
+   "location.rooms",
+   "location.amenities",
+   "location.delivery",
+   "location.visitor_policy",
+   "location.geofence",
+   "location.environment",
+   "contact.phone",
+   "service.hours",
+   "safety.emergency_plan"
+  ],
+  "device": [
+   "device.kind",
+   "device.capabilities",
+   "device.connection",
+   "device.state",
+   "device.preferences",
+   "device.location",
+   "device.ownership",
+   "device.users",
+   "device.permissions",
+   "device.automations",
+   "device.firmware",
+   "device.maintenance",
+   "device.telemetry",
+   "device.safety",
+   "device.privacy",
+   "device.dependencies",
+   "device.manual",
+   "device.warranty",
+   "device.energy",
+   "schedule.recurring",
+   "location.coordinates",
+   "safety.emergency_plan"
+  ],
+  "account": [
+   "account.provider",
+   "account.type",
+   "account.identifier",
+   "account.owner",
+   "account.delegates",
+   "account.plan",
+   "account.status",
+   "account.billing",
+   "account.renewal",
+   "account.limits",
+   "account.recovery_policy",
+   "account.security_policy",
+   "account.notifications",
+   "account.linked_services",
+   "account.data_export",
+   "account.closure",
+   "contact.email",
+   "contact.phone",
+   "privacy.consent",
+   "finance.billing"
+  ],
+  "asset": [
+   "asset.kind",
+   "asset.identifiers",
+   "asset.state",
+   "asset.value",
+   "asset.ownership",
+   "asset.custody",
+   "asset.storage",
+   "asset.warranty",
+   "asset.insurance",
+   "asset.lifecycle",
+   "asset.maintenance",
+   "asset.documents",
+   "asset.access",
+   "asset.sharing",
+   "finance.billing",
+   "schedule.recurring",
+   "location.coordinates"
+  ],
+  "vehicle": [
+   "vehicle.identifiers",
+   "vehicle.state",
+   "vehicle.drivers",
+   "vehicle.passengers",
+   "vehicle.location",
+   "vehicle.parking",
+   "vehicle.fuel",
+   "vehicle.charging",
+   "vehicle.insurance",
+   "vehicle.registration",
+   "vehicle.maintenance",
+   "vehicle.tolls",
+   "vehicle.access",
+   "vehicle.safety",
+   "vehicle.preferences",
+   "vehicle.documents",
+   "transport.preferences",
+   "schedule.recurring",
+   "location.coordinates",
+   "safety.emergency_plan"
+  ],
+  "document": [
+   "document.type",
+   "document.identifier",
+   "document.holder",
+   "document.issuer",
+   "document.dates",
+   "document.expiry",
+   "document.storage_ref",
+   "document.verification",
+   "document.disclosure",
+   "document.renewal",
+   "document.dependencies",
+   "document.status",
+   "document.versions",
+   "privacy.disclosure",
+   "privacy.consent",
+   "schedule.constraints"
+  ],
+  "service": [
+   "service.provider",
+   "service.capabilities",
+   "service.hours",
+   "service.contact",
+   "service.locations",
+   "service.pricing",
+   "service.coverage",
+   "service.eligibility",
+   "service.booking_rules",
+   "service.cancellation",
+   "service.sla",
+   "service.history",
+   "service.preferences",
+   "service.escalation",
+   "service.payment_support",
+   "service.channels",
+   "service.status",
+   "contact.phone",
+   "contact.email",
+   "communication.languages",
+   "finance.billing"
+  ],
+  "subscription": [
+   "subscription.plan",
+   "subscription.billing",
+   "subscription.renewal",
+   "subscription.cancellation",
+   "subscription.usage",
+   "subscription.limits",
+   "subscription.benefits",
+   "subscription.status",
+   "subscription.account",
+   "subscription.sharing",
+   "subscription.support",
+   "subscription.history",
+   "finance.billing",
+   "schedule.recurring",
+   "service.channels"
+  ],
+  "project": [
+   "project.objective",
+   "project.status",
+   "project.milestones",
+   "project.people",
+   "project.stakeholders",
+   "project.authority",
+   "project.dependencies",
+   "project.budget",
+   "project.risks",
+   "project.decisions",
+   "project.artifacts",
+   "project.communications",
+   "project.schedule",
+   "project.success_criteria",
+   "project.next_actions",
+   "project.history",
+   "project.constraints",
+   "schedule.timezone",
+   "finance.budgets",
+   "privacy.disclosure"
+  ],
+  "event": [
+   "event.schedule",
+   "event.attendees",
+   "event.location",
+   "event.purpose",
+   "event.agenda",
+   "event.logistics",
+   "event.rsvp",
+   "event.recurrence",
+   "event.cost",
+   "event.outcome",
+   "event.followup",
+   "event.communications",
+   "event.dependencies",
+   "event.status",
+   "schedule.timezone",
+   "finance.budgets",
+   "privacy.disclosure"
+  ],
+  "appointment": [
+   "appointment.provider",
+   "appointment.schedule",
+   "appointment.purpose",
+   "appointment.participants",
+   "appointment.location",
+   "appointment.preparation",
+   "appointment.documents",
+   "appointment.eligibility",
+   "appointment.cancellation",
+   "appointment.status",
+   "appointment.followup",
+   "appointment.transport",
+   "appointment.consent",
+   "appointment.history",
+   "contact.phone",
+   "schedule.timezone",
+   "privacy.disclosure"
+  ],
+  "reservation": [
+   "reservation.venue",
+   "reservation.schedule",
+   "reservation.party",
+   "reservation.preferences",
+   "reservation.contact",
+   "reservation.confirmation",
+   "reservation.cancellation",
+   "reservation.status",
+   "reservation.payment_requirements",
+   "reservation.accessibility",
+   "reservation.special_requests",
+   "reservation.alternatives",
+   "reservation.history",
+   "contact.phone",
+   "schedule.timezone",
+   "privacy.disclosure"
+  ],
+  "order": [
+   "order.merchant",
+   "order.items",
+   "order.pricing",
+   "order.payment_status",
+   "order.delivery",
+   "order.status",
+   "order.substitutions",
+   "order.returns",
+   "order.warranty",
+   "order.recipient",
+   "order.communications",
+   "order.history",
+   "contact.phone",
+   "finance.billing",
+   "location.delivery",
+   "privacy.disclosure"
+  ],
+  "trip": [
+   "trip.itinerary",
+   "trip.travelers",
+   "trip.transport",
+   "trip.lodging",
+   "trip.documents",
+   "trip.preferences",
+   "trip.budget",
+   "trip.calendar",
+   "trip.packing",
+   "trip.local_contacts",
+   "trip.emergency",
+   "trip.disruptions",
+   "trip.accessibility",
+   "trip.communications",
+   "trip.insurance",
+   "trip.reservations",
+   "trip.checkin",
+   "trip.visas",
+   "trip.status",
+   "trip.history",
+   "schedule.timezone",
+   "finance.budgets",
+   "privacy.disclosure",
+   "safety.emergency_plan"
+  ],
+  "policy": [
+   "policy.scope",
+   "policy.subjects",
+   "policy.actions",
+   "policy.effect",
+   "policy.conditions",
+   "policy.priority",
+   "policy.authority",
+   "policy.provenance",
+   "policy.validity",
+   "policy.exceptions",
+   "policy.approval",
+   "policy.revocation",
+   "policy.escalation",
+   "policy.audit",
+   "policy.disclosure",
+   "policy.retention",
+   "policy.status",
+   "privacy.consent",
+   "privacy.disclosure"
+  ]
+ },
+ "source": "HooRii Mind world ontology",
+ "version": "2026-09-18.1",
+ "entity_kinds_en": {
+  "person": "Person",
+  "household": "Household",
+  "pet": "Pet",
+  "organization": "Organization",
+  "group": "Group",
+  "place": "Place",
+  "device": "Device",
+  "account": "Account",
+  "asset": "Asset",
+  "vehicle": "Vehicle",
+  "document": "Document",
+  "service": "Service",
+  "subscription": "Subscription",
+  "project": "Project",
+  "event": "Event",
+  "appointment": "Appointment",
+  "reservation": "Reservation",
+  "order": "Order",
+  "trip": "Trip",
+  "policy": "Policy",
+  "health_metric": "Health Metric"
+ }
+}

@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# model files come from Hugging Face and are not stored in this repository
+weights/
+*.safetensors
+*.pt
+*.bin

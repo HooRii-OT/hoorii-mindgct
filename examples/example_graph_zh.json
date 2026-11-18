@@ -1,0 +1,134 @@
+{
+ "world_id": "example_zh",
+ "lang": "zh",
+ "meta": {
+  "owner": "e0",
+  "now": "2026-05-08 09:15",
+  "timezone": "Asia/Shanghai"
+ },
+ "entities": [
+  {
+   "id": "e0",
+   "kind": "person",
+   "name": "周宁"
+  },
+  {
+   "id": "e1",
+   "kind": "person",
+   "name": "周宁的妈妈"
+  },
+  {
+   "id": "e2",
+   "kind": "person",
+   "name": "陈一帆"
+  },
+  {
+   "id": "e3",
+   "kind": "vehicle",
+   "name": "家里的白色轿车"
+  }
+ ],
+ "edges": [
+  {
+   "src": "e1",
+   "rel": "parent_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "subject": "e1",
+   "module": "health.conditions",
+   "value": "妈妈有高血压，医生叮嘱少吃盐。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-02"
+  },
+  {
+   "id": "f2",
+   "subject": "e1",
+   "module": "health.allergies",
+   "value": "妈妈对青霉素过敏。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f3",
+   "subject": "e1",
+   "module": "relationship.important_dates",
+   "value": "妈妈的生日是农历四月初八。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f4",
+   "subject": "e2",
+   "module": "preferences.food",
+   "value": "陈一帆不吃辣，喜欢粤菜。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f5",
+   "subject": "e2",
+   "module": "work.role",
+   "value": "陈一帆是周宁项目组的技术负责人。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "id": "f6",
+   "subject": "e3",
+   "module": "notes.general",
+   "value": "白色轿车下周二到期年检，还没预约。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-05-06"
+  },
+  {
+   "id": "f7",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "周宁每周六上午去游泳。",
+   "state": "confirmed",
+   "vis": [
+    "o"
+   ]
+  }
+ ]
+}
