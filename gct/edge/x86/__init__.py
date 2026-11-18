@@ -17,9 +17,12 @@ the CPU with fp32 encoders.
     from gct import GCT
     from gct.edge import x86
     gct = GCT.from_pretrained(".", device="cpu")
-    x86.install(gct)                    # once, before compiling graphs
+    x86.install(gct)                    # once, before compiling or loading graphs
     graph = gct.compile_graph(world)    # compiled on the CPU
     out = gct.retrieve(graph, "Can you book a restaurant for Lin's birthday dinner?", now="2026-03-14 18:30")
+
+A serving process can load graphs compiled and saved elsewhere (gct.save_graph) without the two encoders:
+GCT.from_pretrained(".", device="cpu", encoders=False), then x86.install and gct.load_graph(path).
 
 The INT8 layers make the scores differ slightly from the GPU release; the model card reports the measured recall.
 The first install compiles a small C++ extension with the PyTorch toolchain (a C++ compiler with OpenMP is required).
@@ -40,7 +43,7 @@ class _Host:
         self.model, self.info, self.loaded = model, {}, None
 
     def graph(self, case):
-        raise RuntimeError("graphs are compiled with GCT.compile_graph")
+        raise RuntimeError("graphs are compiled with GCT.compile_graph or loaded with GCT.load_graph")
 
 
 def _wrap_provider(prov):
@@ -75,7 +78,8 @@ def install(gct, kind="w8a8", close_read=32, threads=None, request_prefix=True):
         torch.set_num_threads(int(threads))
     model = gct.model
     info = {"kind": kind, "close_read": int(close_read)}
-    info["encoders"] = encoders.install(types.SimpleNamespace(enc=gct.encoder, kenc=gct.key_encoder), fp32=True, sort=True)
+    if gct.encoder is not None:                                  # absent on instances loaded with encoders=False
+        info["encoders"] = encoders.install(types.SimpleNamespace(enc=gct.encoder, kenc=gct.key_encoder), fp32=True, sort=True)
     model.float()
     fused = request.install(model, kind, request_prefix)
     info.update(closeread.install_rca(model.rca, kind, last_row=True))
@@ -95,16 +99,15 @@ def install(gct, kind="w8a8", close_read=32, threads=None, request_prefix=True):
     m1 = linear1.install(model)
     unit_states.install()
     layers = list(model.layers)
-    compile_graph = gct.compile_graph
-
-    def compile_graph_x86(world, caller="o", _orig=compile_graph):
-        g = _orig(world, caller)
+    def prepare(g):
         rcap = g.tensors.get("RCAP")
         if rcap is not None:
             _wrap_provider(rcap[0])
         tables.prepare(g.tensors, layers)
         return g
-    gct.compile_graph = compile_graph_x86
+    compile_graph, load_graph = gct.compile_graph, gct.load_graph
+    gct.compile_graph = lambda world, caller="o": prepare(compile_graph(world, caller))
+    gct.load_graph = lambda path: prepare(load_graph(path))
     info.update(graph_fused={"P": gstate.get("fused_P"), "H": gstate.get("fused_H")}, single_row_linear=len(m1["modules"]))
     gct._edge_x86 = {"info": info, "request": fused, "tables": tables, "graph": gstate}
     return info

@@ -26,7 +26,7 @@ This page covers two model sizes. The weights of GCT-0.6B (release `GCT-0.6B-B1`
 
 ## Installation
 
-The reference implementation runs at batch 1 on a GPU or a CPU and reproduces the Table 1 recall of GCT-0.6B on LoCoMo and LongMemEval_S within 0.003. This repository also holds the accelerated x86 CPU path as `gct.edge.x86`, a port of the x86 path of our deployment runtime: on our check requests it gives the same scores, bit for bit, on the same CPU. The accelerated GPU and Raspberry Pi runtimes are not part of this release.
+The reference implementation runs at batch 1 on a GPU or a CPU and reproduces the Table 1 recall of GCT-0.6B on LoCoMo and LongMemEval_S within 0.003. This repository also holds the accelerated x86 CPU path as `gct.edge.x86`, a port of the x86 path of our deployment runtime: on our check requests it gives the same scores, bit for bit, on the same CPU and the same number of threads. The accelerated GPU and Raspberry Pi runtimes are not part of this release.
 
 There are three ways to run GCT-0.6B, all with the same weights and the same code in `gct/`:
 
@@ -43,7 +43,7 @@ There are three ways to run GCT-0.6B, all with the same weights and the same cod
 - The packages in `requirements.txt`: PyTorch 2.5 or newer, transformers 5.13.1 or newer within 5.x, safetensors, huggingface_hub, and ninja for the x86 path.
 - For the x86 path only: a C++ compiler with OpenMP, such as g++, and the Python headers (the `python3-dev` package on Debian and Ubuntu). The first `install` compiles a small C++ extension with the PyTorch toolchain, which takes about a minute, and reuses it afterwards.
 - About 4 GB of free disk for the two downloads: the Hugging Face repository of GCT (about 2.5 GB, most of it the unit-key encoder) and the frozen Qwen3-0.6B backbone (about 1.5 GB).
-- Memory on a CPU, in our runs: up to about 4.7 GB for the reference quickstart and about 8.6 GB for the x86 quickstart.
+- Memory on a CPU, as peak resident size in our runs: 4.4 GiB for the reference quickstart, 8.4 GiB for the x86 quickstart and 3.5 GiB for the x86 quickstart serving saved graphs (`--from-saved`). With the x86 path, a process that compiles graphs and serves requests reached 14 GiB (graphs of a few hundred units) to 17 GiB (24,988 units), and a process that only loads saved graphs (`encoders=False`) 4.8 GiB (1,962 units) to 6.8 GiB (24,988 units), growing with the close-read states it caches (8.2 GiB after 400 different requests on the 24,988-unit graph).
 
 The CPU steps below were run in a new virtual environment on Linux x86-64 with Python 3.13.12, PyTorch 2.15.0 (CPU build), transformers 5.23.0, safetensors 0.8.0, huggingface_hub 2.4.0, ninja 1.13.2 and g++ 11.4.0.
 
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 The weights, the configuration, the unit-key encoder and the tokenizer of GCT-0.6B are in the Hugging Face repository [HooRiiTechnology/hoorii-mindgct](https://huggingface.co/HooRiiTechnology/hoorii-mindgct), and this repository does not copy them. `GCT.from_pretrained("HooRiiTechnology/hoorii-mindgct")` downloads that repository into the Hugging Face cache on first use. The frozen Qwen3-0.6B backbone is not copied here. The code downloads it from `Qwen/Qwen3-0.6B` at the revision pinned in `config.json`, or uses a local copy of that revision. The pinned revision is `c1899de289a04d12100db370d81485cdf75e47ca`.
 
-Pass the model path explicitly, as the Hugging Face id or as a local copy of the Hugging Face repository: this repository holds no weights, and the default model path of both quickstarts is its own folder.
+This repository holds no weights. Both quickstarts use the model in their own repository folder when that folder holds `config.json` (a copy of the Hugging Face repository), and otherwise download `HooRiiTechnology/hoorii-mindgct`; pass `--model` with the Hugging Face id or a local copy to choose it explicitly.
 
 ### Run the reference implementation
 
@@ -145,7 +145,7 @@ The x86 path serves must-mention retrieval on the CPU with INT8 weights and acti
 taskset -c 0-15 python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --threads 16
 ```
 
-Pin the process to the cores of one socket and give it one thread per physical core. The quickstart sends the same requests as `examples/quickstart.py`, always runs on the CPU, and also takes `--base-model DIR`, `--requests FILE` and `--top-k N`.
+Pin the process to the cores of one socket and give it one thread per physical core. The quickstart sends the same requests as `examples/quickstart.py`, always runs on the CPU, and also takes `--base-model DIR`, `--requests FILE`, `--top-k N`, `--save-graphs DIR` and `--from-saved DIR` (see below).
 
 In Python, install the path once per process, before compiling graphs:
 
@@ -163,7 +163,24 @@ for unit in out["results"]:
     print(unit["score"], unit["text"])
 ```
 
-`x86.install(gct, kind="w8a8", close_read=32, threads=None)`: `kind` is `"w8a8"` (INT8 weights and activations, the measured configuration) or `"fp32"` (the same fused kernels without INT8), `close_read` the number of close-read candidates per request (32 is the measured configuration), and `threads` the number of PyTorch threads (by default the current setting is kept). GCT must be loaded with `device="cpu"`. Each graph is compiled with its own caches, so a graph's scores do not depend on the graphs compiled before it. The INT8 layers make the scores differ slightly from the GPU release.
+`x86.install(gct, kind="w8a8", close_read=32, threads=None)`: `kind` is `"w8a8"` (INT8 weights and activations, the measured configuration) or `"fp32"` (the same fused kernels without INT8), `close_read` the number of close-read candidates per request (32 is the measured configuration), and `threads` the number of PyTorch threads (by default the current setting is kept). GCT must be loaded with `device="cpu"`. Each graph is compiled with its own caches, so a graph's scores do not depend on the graphs compiled before it. The scores depend on the number of threads: units with close scores can swap ranks between thread counts, so compare runs at the same thread count. The INT8 layers make the scores differ slightly from the GPU release.
+
+A process that only serves requests does not need the two encoders that compilation uses. Compile once, save the graph, and load it in the serving process:
+
+```python
+gct.save_graph(graph, "graphs/example")      # graph.json + tensors.safetensors, no pickle
+
+server = GCT.from_pretrained("HooRiiTechnology/hoorii-mindgct", device="cpu", encoders=False)
+x86.install(server, threads=16)
+graph = server.load_graph("graphs/example")  # same scores as the graph compiled above
+```
+
+```bash
+python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --save-graphs graphs   # compile and save the example graphs
+python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --from-saved graphs    # serve them without the encoders
+```
+
+A saved graph can only be loaded with the same release and weights, and its files contain the graph's content (what the caller may see): store and transfer them as you store the graph itself.
 
 Expected output of `cpu-x86/quickstart_x86.py` with the versions above and `--threads 16`, without the progress bars of weight loading and with timings left out:
 
@@ -233,8 +250,9 @@ for unit in out["results"]:                 # must-mention facts only (positive 
 
 The interface, in `gct/runtime.py`:
 
-- `GCT.from_pretrained(path_or_repo, revision=None, base_model=None, device=None, close_read=None)`. `path_or_repo` is the Hugging Face id or a local copy of that repository, and `revision` a revision of it. `base_model` is a local copy of Qwen3-0.6B at the pinned revision, with every file identical to it; by default that revision is downloaded. `device` is `"cuda"` or `"cpu"`, by default CUDA when it is available. `close_read` sets the number of close-read candidates, 32 by default from `config.json`.
+- `GCT.from_pretrained(path_or_repo, revision=None, base_model=None, device=None, close_read=None, encoders=True)`. `path_or_repo` is the Hugging Face id or a local copy of that repository, and `revision` a revision of it. `base_model` is a local copy of Qwen3-0.6B at the pinned revision, with every file identical to it; by default that revision is downloaded. `device` is `"cuda"` or `"cpu"`, by default CUDA when it is available. `close_read` sets the number of close-read candidates, 32 by default from `config.json`. With `encoders=False` the unit and key encoders, which only compilation uses, are not loaded: such an instance loads saved graphs and cannot compile them.
 - `gct.compile_graph(world, caller="o")` compiles the view of `caller`. A graph is one JSON object with `entities`, `facts`, `edges` and a `meta` block (`owner`, `now`, `timezone`), and every item lists in `vis` the callers that may see it. Entity kinds, fact modules and relations come from the vocabulary in `gct/vocab.json`. In `examples/example_graph.json` one fact has an empty `vis` list and stays out of the view.
+- `gct.save_graph(graph, path)` writes a compiled graph to the new directory `path` as `graph.json` and `tensors.safetensors`, without pickle, and `gct.load_graph(path)` loads it for the same release and weights; the loaded graph gives the same scores as the compiled one.
 - `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The result is `{"results": [{"id", "type", "text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`.
 
 ### Offline use
@@ -255,7 +273,7 @@ In Python: `GCT.from_pretrained("weights/hoorii-mindgct", base_model="weights/qw
 
 - **The backbone download fails.** The error reads `RuntimeError: could not download Qwen/Qwen3-0.6B at revision c1899de289a04d12100db370d81485cdf75e47ca: ...`, followed by the hint `Download it yourself (any way you like) and pass the local directory with base_model=DIR (quickstart: --base-model DIR); every file must be identical to that revision.` Download that revision as in [Offline use](#offline-use), through a proxy or a mirror if you need one, and pass the folder with `--base-model` or `base_model=`.
 - **The GCT download fails.** The error reads `RuntimeError: could not download HooRiiTechnology/hoorii-mindgct: ...`. Download the repository with `hf download` and pass the local folder with `--model`, or as the first argument of `GCT.from_pretrained`.
-- **`FileNotFoundError` for `config.json`.** A quickstart was started without `--model`, and its default model path is the folder of this repository, which holds no weights. Pass `--model HooRiiTechnology/hoorii-mindgct` or a local copy.
+- **`FileNotFoundError` for `config.json`.** The folder passed with `--model` or to `GCT.from_pretrained` is not a copy of the Hugging Face repository. Pass `HooRiiTechnology/hoorii-mindgct` or a complete local copy.
 - **`FileNotFoundError: base_model='...' is not a directory`.** `base_model` must be an existing local folder.
 - **`ModuleNotFoundError: No module named 'gct'`.** Run from the repository root, or add the repository to `PYTHONPATH`.
 - **`RuntimeError: Ninja is required to load C++ extensions`** (x86 path). Install the packages of `requirements.txt`, which include ninja.
@@ -452,7 +470,7 @@ GCT runs as a retrieval service next to the assistant. Each user's graph is comp
 | x86 CPU server | 2 × Xeon Platinum 8358P, 32 cores, shared machine at a quiet time | Same weights, INT8 linear layers, 32 close-read candidates | 201 ms | 6.3 GiB | Within 0.016 |
 | Raspberry Pi 5 | 8 GB model, CPU quota of 60% | Same weights, INT8 linear layers, 8 close-read candidates | 486 ms | 2.8 GiB | Within 0.044 |
 
-GCT is validated on A100-80GB, A800-40GB, RTX 5090 and RTX 4090. On the A800, GCT-4B takes 52.6 ms, GCT-0.6B-Pro 67.9 ms and GCT-4B-Pro 72.8 ms. On an A100 capped at 40 GB, one GCT-0.6B process of our test deployment held 9 preloaded graphs and 64 registered users within 10.5 GiB of GPU memory. The Pro latencies, the x86 and Raspberry Pi numbers and the many-user setup were measured with our deployment runtime. A port of its x86 path, with the same scores bit for bit on our check requests, is in this repository as `gct.edge.x86`, and the rest of that runtime is not part of this release.
+GCT is validated on A100-80GB, A800-40GB, RTX 5090 and RTX 4090. On the A800, GCT-4B takes 52.6 ms, GCT-0.6B-Pro 67.9 ms and GCT-4B-Pro 72.8 ms. On an A100 capped at 40 GB, one GCT-0.6B process of our test deployment held 9 preloaded graphs and 64 registered users within 10.5 GiB of GPU memory. The Pro latencies, the x86 and Raspberry Pi numbers and the many-user setup were measured with our deployment runtime; of its parts, only the x86 CPU path is included in this release, as `gct.edge.x86` in this repository. For the same compiled graph on the same CPU and thread count it computes the same scores as the deployment runtime that produced the x86 numbers. It compiles every graph with its own caches, and measured that way its recall@5 matches the GPU release on our main development set, LongMemEval_S and PerLTQA and is 0.019 lower on LoCoMo.
 
 ### x86 CPU server
 
@@ -496,7 +514,7 @@ Personal graphs are sensitive. HooRii Mind applies the privacy levels and cleara
 
 | Path | Contents |
 |---|---|
-| `gct/` | Reference implementation in plain PyTorch: model, graph compiler, retrieval |
+| `gct/` | Reference implementation in plain PyTorch: model, graph compiler, retrieval, saving and loading compiled graphs |
 | `gct/edge/` | The accelerated x86 CPU path (`gct/edge/x86/`) and the CPU graph-layer parts it uses |
 | `examples/` | Two small example graphs, example requests and `quickstart.py` |
 | `cpu-x86/` | A short guide to the x86 path and `quickstart_x86.py` |

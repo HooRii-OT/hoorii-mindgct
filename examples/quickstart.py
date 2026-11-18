@@ -26,13 +26,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+REPO_ID = "HooRiiTechnology/hoorii-mindgct"
+DEFAULT_MODEL = str(ROOT) if (ROOT / "config.json").is_file() else REPO_ID   # a code-only clone downloads the weights
 
 from gct import GCT  # noqa: E402
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default=str(ROOT), help="this repository (local path or Hugging Face id)")
+    ap.add_argument("--model", default=DEFAULT_MODEL,
+                    help=f"the model repository, local path or Hugging Face id (default: this directory if it holds config.json, else {REPO_ID})")
     ap.add_argument("--base-model", default=None, help="local copy of the frozen Qwen3-0.6B; default: download the pinned revision")
     ap.add_argument("--device", default=None, help="cuda or cpu (default: cuda when available)")
     ap.add_argument("--requests", default=str(ROOT / "examples" / "example_requests.json"))
