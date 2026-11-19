@@ -5,6 +5,7 @@ venv/
 
 # model files come from Hugging Face and are not stored in this repository
 weights/
+graphs/
 *.safetensors
 *.pt
 *.bin

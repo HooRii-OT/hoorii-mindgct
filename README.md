@@ -86,7 +86,7 @@ python examples/quickstart.py --model HooRiiTechnology/hoorii-mindgct
 python examples/quickstart.py --model HooRiiTechnology/hoorii-mindgct --device cpu
 ```
 
-The first run downloads both repositories. The quickstart compiles the two example graphs in `examples/` (one in English, one in Chinese), sends the seven requests of `examples/example_requests.json` and prints the three best units of each request with their must-mention scores. A positive score means "must mention", and the scores are logits, not calibrated probabilities. Other options: `--top-k N`, `--positive-only` (list only units with a positive score), `--base-model DIR` (a local copy of the backbone) and `--requests FILE`.
+The first run downloads both repositories, about 4 GB in all. Depending on the network this takes from a few minutes to tens of minutes, and meanwhile only a "Fetching … files" progress bar is shown. The quickstart compiles the two example graphs in `examples/` (one in English, one in Chinese), sends the seven requests of `examples/example_requests.json` and prints the three best units of each request with their must-mention scores. A positive score means "must mention", and the scores are logits, not calibrated probabilities. Other options: `--top-k N`, `--positive-only` (list only units with a positive score), `--base-model DIR` (a local copy of the backbone) and `--requests FILE`.
 
 Expected output on a CPU with the versions above and 16 threads (`OMP_NUM_THREADS=16`), without the progress bars of weight loading and with timings left out:
 
@@ -180,7 +180,7 @@ python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --save-
 python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --from-saved graphs    # serve them without the encoders
 ```
 
-A saved graph can only be loaded with the same release and weights, and its files contain the graph's content (what the caller may see): store and transfer them as you store the graph itself.
+`--save-graphs DIR` and `gct.save_graph(graph, path)` write into a new directory and stop with `FileExistsError` when it already exists: choose another name, or remove the old directory, before running them again. A saved graph can only be loaded with the same release and weights, and its files contain the graph's content (what the caller may see): store and transfer them as you store the graph itself.
 
 Expected output of `cpu-x86/quickstart_x86.py` with the versions above and `--threads 16`, without the progress bars of weight loading and with timings left out:
 
@@ -252,7 +252,7 @@ The interface, in `gct/runtime.py`:
 
 - `GCT.from_pretrained(path_or_repo, revision=None, base_model=None, device=None, close_read=None, encoders=True)`. `path_or_repo` is the Hugging Face id or a local copy of that repository, and `revision` a revision of it. `base_model` is a local copy of Qwen3-0.6B at the pinned revision, with every file identical to it; by default that revision is downloaded. `device` is `"cuda"` or `"cpu"`, by default CUDA when it is available. `close_read` sets the number of close-read candidates, 32 by default from `config.json`. With `encoders=False` the unit and key encoders, which only compilation uses, are not loaded: such an instance loads saved graphs and cannot compile them.
 - `gct.compile_graph(world, caller="o")` compiles the view of `caller`. A graph is one JSON object with `entities`, `facts`, `edges` and a `meta` block (`owner`, `now`, `timezone`), and every item lists in `vis` the callers that may see it. Entity kinds, fact modules and relations come from the vocabulary in `gct/vocab.json`. In `examples/example_graph.json` one fact has an empty `vis` list and stays out of the view.
-- `gct.save_graph(graph, path)` writes a compiled graph to the new directory `path` as `graph.json` and `tensors.safetensors`, without pickle, and `gct.load_graph(path)` loads it for the same release and weights; the loaded graph gives the same scores as the compiled one.
+- `gct.save_graph(graph, path)` writes a compiled graph to `path`, a directory that must not exist yet, as `graph.json` and `tensors.safetensors`, without pickle, and `gct.load_graph(path)` loads it for the same release and weights; the loaded graph gives the same scores as the compiled one.
 - `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The result is `{"results": [{"id", "type", "text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`.
 
 ### Offline use
@@ -280,6 +280,7 @@ In Python: `GCT.from_pretrained("weights/hoorii-mindgct", base_model="weights/qw
 - **The x86 extension fails to compile.** Install a C++ compiler with OpenMP and the Python headers. PyTorch keeps the built extension in a `gct_edge_x86_kernels` folder under `~/.cache/torch_extensions`, or under `TORCH_EXTENSIONS_DIR` when that is set; remove the folder to rebuild it.
 - **`ValueError: the x86 path runs on the CPU: load GCT with device='cpu'`.** Load GCT with `device="cpu"` before `x86.install`.
 - **A warning about an incorrect regex pattern in the tokenizer (`fix_mistral_regex`).** Some transformers versions print it when they load the Qwen3 tokenizer. Our own runtime loads the same tokenizer files and prints the same warning, and nothing needs to change.
+- **`Warning: You are sending unauthenticated requests to the HF Hub`.** This can be ignored: both repositories are public and need no token.
 - **Scores differ slightly from the expected output.** See the note under the expected output.
 
 ## Results
@@ -470,7 +471,7 @@ GCT runs as a retrieval service next to the assistant. Each user's graph is comp
 | x86 CPU server | 2 × Xeon Platinum 8358P, 32 cores, shared machine at a quiet time | Same weights, INT8 linear layers, 32 close-read candidates | 201 ms | 6.3 GiB | Within 0.016 |
 | Raspberry Pi 5 | 8 GB model, CPU quota of 60% | Same weights, INT8 linear layers, 8 close-read candidates | 486 ms | 2.8 GiB | Within 0.044 |
 
-GCT is validated on A100-80GB, A800-40GB, RTX 5090 and RTX 4090. On the A800, GCT-4B takes 52.6 ms, GCT-0.6B-Pro 67.9 ms and GCT-4B-Pro 72.8 ms. On an A100 capped at 40 GB, one GCT-0.6B process of our test deployment held 9 preloaded graphs and 64 registered users within 10.5 GiB of GPU memory. The Pro latencies, the x86 and Raspberry Pi numbers and the many-user setup were measured with our deployment runtime; of its parts, only the x86 CPU path is included in this release, as `gct.edge.x86` in this repository. For the same compiled graph on the same CPU and thread count it computes the same scores as the deployment runtime that produced the x86 numbers. Timed alternately with that runtime on the server of Table 5, it takes about as long per request: the median ratio over 27 rounds with 8 to 32 cores and graphs of 1,962 to 24,988 units is 1.04. It compiles every graph with its own caches, and measured that way its recall@5 matches the GPU release on our main development set, LongMemEval_S and PerLTQA and is 0.019 lower on LoCoMo.
+GCT is validated on A100-80GB, A800-40GB, RTX 5090 and RTX 4090. On the A800, GCT-4B takes 52.6 ms, GCT-0.6B-Pro 67.9 ms and GCT-4B-Pro 72.8 ms. On an A100 capped at 40 GB, one GCT-0.6B process of our test deployment held 9 preloaded graphs and 64 registered users within 10.5 GiB of GPU memory. The Pro latencies, the x86 and Raspberry Pi numbers and the many-user setup were measured with our deployment runtime; of its parts, only the x86 CPU path is included in this release, as `gct.edge.x86` in this repository.
 
 ### x86 CPU server
 
@@ -482,7 +483,9 @@ The released weights serve must-mention retrieval on a CPU server, with INT8 lin
 | 7,976 units | 289 ms | 432 ms |
 | 24,988 units | 431 ms | 478 ms |
 
-With 32 cores, the 7,976-unit and 24,988-unit graphs take 266 ms and 328 ms. These are p50 latencies of whole requests on the server of Table 5, and the process stays within 8.7 GiB of memory on the largest graph. Graphs compile on the same CPU: the 1,962-unit graph takes 140 s with 32 cores, and changing one fact takes 3 s. With compilation and retrieval both on the CPU, recall@5 matches the GPU release on our main development set, LongMemEval_S and PerLTQA; the difference in Table 5 comes from LoCoMo. The code of this path is `gct.edge.x86` in this repository (see [Run the accelerated x86 CPU path](#run-the-accelerated-x86-cpu-path)).
+With 32 cores, the 7,976-unit and 24,988-unit graphs take 266 ms and 328 ms. These are p50 latencies of whole requests on the server of Table 5, and the process stays within 8.7 GiB of memory on the largest graph. Graphs compile on the same CPU: the 1,962-unit graph takes 140 s with 32 cores, and changing one fact takes 3 s. With compilation and retrieval both on the CPU, recall@5 matches the GPU release on our main development set, LongMemEval_S and PerLTQA; the difference in Table 5 comes from LoCoMo.
+
+The x86 row of Table 5 and the x86 figures above were measured with our deployment runtime, the latency and memory figures in a serving process that loads compiled graphs. The x86 CPU path in this release, `gct.edge.x86`, computes the same scores as that runtime for the same compiled graph on the same CPU and thread count. Timed alternately with it on the server of Table 5, it takes about as long per request: the median ratio over 27 rounds with 8 to 32 cores and graphs of 1,962 to 24,988 units is 1.04. It compiles every graph with its own caches, and measured that way its recall@5 matches the GPU release on our main development set, LongMemEval_S and PerLTQA and is 0.019 lower on LoCoMo. Its own memory figures, for a process that only loads saved graphs and for one that also compiles them, are in `cpu-x86/README.md`.
 
 ### Raspberry Pi 5
 

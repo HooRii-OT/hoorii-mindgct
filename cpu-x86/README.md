@@ -32,6 +32,10 @@ out = gct.retrieve(graph, "Can you book a restaurant for Lin's birthday dinner?"
 taskset -c 0-15 python cpu-x86/quickstart_x86.py --threads 16
 ```
 
+A first run downloads what is not yet in the Hugging Face cache: the frozen Qwen3-0.6B backbone (about 1.5 GB) and,
+from a code-only copy, the Hugging Face repository of GCT (about 2.5 GB). Meanwhile only a "Fetching … files" progress
+bar is shown.
+
 ## Compile once, serve from saved graphs
 
 A process that only serves requests does not need the two encoders that compilation uses:
@@ -49,6 +53,9 @@ python cpu-x86/quickstart_x86.py --save-graphs graphs      # compile and save th
 python cpu-x86/quickstart_x86.py --from-saved graphs       # serve them without the encoders
 ```
 
+`--save-graphs DIR` and `gct.save_graph(graph, path)` write into a new directory and stop with `FileExistsError`
+when it already exists: choose another name, or remove the old directory, before running them again.
+
 A saved graph can only be loaded with the same release and weights. Its files contain the graph's content (what the
 caller may see): store and transfer them as you store the graph itself.
 
@@ -57,8 +64,10 @@ caller may see): store and transfer them as you store the graph itself.
 Pin the process to the cores of one socket and give it one thread per physical core. Each graph is compiled with its
 own caches, so a graph's scores do not depend on the graphs compiled before it. The scores depend on the number of
 threads: units with nearly equal scores can swap ranks between thread counts, so compare runs at the same thread count.
-The INT8 layers make the scores differ slightly from the GPU release; the model card reports the measured recall and
-latency.
+The INT8 layers make the scores differ slightly from the GPU release. Measured with its own caches per graph, the
+recall@5 of this path matches the GPU release on our main development set, LongMemEval_S and PerLTQA and is 0.019
+lower on LoCoMo. The model card's x86 figures (Table 5 and its x86 section) were measured with the deployment
+runtime, the latency and memory figures in a serving process that loads compiled graphs.
 
 Latency. On the server of the model card's Table 5 (2 × Xeon Platinum 8358P, one socket of a shared machine), we
 timed this path, serving saved graphs, and the deployment runtime behind the card's x86 numbers alternately, three
