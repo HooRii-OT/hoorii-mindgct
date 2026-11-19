@@ -40,6 +40,35 @@ from . import model as _model
 from .keyenc import KeyEncoder
 
 ACTIVE_FLOOR = -29.9          # units below this logit were never activated by the graph layers and are never returned
+# display_text of a result: the unit text without the state word of the fact for these states ("all": every state).
+# The model reads the full text (field "text"); hearsay / pending / superseded / asserted change how a fact should be used.
+DEFAULT_HIDE_STATES = ("confirmed",)
+_BRACKETS = {"(": ")", "（": "）", "[": "]", "【": "】"}
+_SEPARATORS = (", ", "，", "; ", "；")
+
+
+def display_text(text, state, hide=DEFAULT_HIDE_STATES):
+    """text for people and downstream use: the rendered unit text with the state word of the fact taken out when `state`
+    is hidden; the rest of its bracket (source, date) stays. Entities (state None) and shown states keep the text."""
+    if state is None or (hide != "all" and state not in hide):
+        return text
+    for words in (_compile.STATE_EN, _compile.STATE_ZH):
+        word = words.get(state)
+        if not word:
+            continue
+        for opening, closing in _BRACKETS.items():
+            tag = opening + word
+            i = text.rfind(tag)
+            while i >= 0:
+                j = i + len(tag)
+                if text.startswith(closing, j):           # the bracket holds only the state: drop it with the space before
+                    a = i - 1 if i > 0 and text[i - 1] == " " else i
+                    return text[:a] + text[j + len(closing):]
+                for sep in _SEPARATORS:                   # state, then source / date: keep the bracket and the rest
+                    if text.startswith(sep, j):
+                        return text[:i + len(opening)] + text[j + len(sep):]
+                i = text.rfind(tag, 0, i)
+    return text
 
 
 def _resolve(path_or_repo, revision=None, what="model"):
@@ -145,6 +174,7 @@ class GCT:
         # module keys of the schema layer: the same texts for every graph, encoded once, alone (saved with every compiled graph)
         self.module_E = _embed.EmbCache(None, self.encoder).get("modules", _data.module_texts()).to(device) if encoders else None
         self.request_token_limit = cfg["inference"]["request_token_limit"]
+        self.hide_states = DEFAULT_HIDE_STATES                        # display_text policy; "all" hides every state
 
     @classmethod
     def from_pretrained(cls, path_or_repo=".", revision=None, base_model=None, device=None, close_read=None, encoders=True):
@@ -296,14 +326,17 @@ class GCT:
             lg[ro] = -1e4
         return q, lg, out
 
-    def retrieve(self, graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True):
+    def retrieve(self, graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True, hide_states=None):
         """must-mention units of one request, best first.
 
         text: the current turn. context: earlier turns [{"role": "user"|"assistant", "content": str}], oldest first.
         now: reference time of the request (recommended "YYYY-MM-DD HH:MM" in the graph's local time); default meta.now.
         previous_unit_ids: units already handed to the assistant earlier in this conversation and still in force.
         A positive score means "must mention". positive_only (default): return only those, at most top_k, best first;
-        positive_only=False: the top_k units by score whatever their sign. Scores are logits, not calibrated probabilities."""
+        positive_only=False: the top_k units by score whatever their sign. Scores are logits, not calibrated probabilities.
+        Each result has "text" (the unit text the model reads), "state" (of a fact; None for an entity) and "display_text"
+        (the text without the state word for the states in hide_states; default self.hide_states = ("confirmed",),
+        "all" hides every state)."""
         q, lg, out = self.score(graph, text, context, now, previous_unit_ids)
         view = graph.view
         valid = lg > ACTIVE_FLOOR
@@ -312,6 +345,12 @@ class GCT:
         k = min(int(top_k), int(valid.sum()))
         idx = lg.masked_fill(~valid, float("-inf")).topk(k).indices.tolist() if k > 0 else []
         n_tok = len(self.model.tok(q, add_special_tokens=True)["input_ids"])
-        results = [{"id": view.unit_ids[i], "type": "fact" if view.unit_type[i] else "entity", "text": view.unit_text[i],
-                    "score": round(lg[i].item(), 4)} for i in idx]
+        hide = self.hide_states if hide_states is None else hide_states
+        results = []
+        for i in idx:
+            uid = view.unit_ids[i]
+            state = (view.payload.get(uid) or {}).get("state") if view.unit_type[i] else None
+            results.append({"id": uid, "type": "fact" if view.unit_type[i] else "entity", "text": view.unit_text[i],
+                            "state": state, "display_text": display_text(view.unit_text[i], state, hide),
+                            "score": round(lg[i].item(), 4)})
         return {"results": results, "input_tokens": n_tok, "request_truncated": n_tok > self.request_token_limit}

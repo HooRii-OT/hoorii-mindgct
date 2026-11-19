@@ -62,7 +62,7 @@ def main():
             print("  (no unit)")
         for x in out["results"]:
             mark = "must mention" if x["score"] > 0 else "            "
-            print(f"  {x['score']:+8.3f}  {mark}  {x['id']:>4}  {x['text']}")
+            print(f"  {x['score']:+8.3f}  {mark}  {x['id']:>4}  {x['display_text']}")
 
 
 if __name__ == "__main__":

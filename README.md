@@ -88,7 +88,7 @@ python examples/quickstart.py --model HooRiiTechnology/hoorii-mindgct --device c
 
 The first run downloads both repositories, about 4 GB in all. Depending on the network this takes from a few minutes to tens of minutes, and meanwhile only a "Fetching … files" progress bar is shown. The quickstart compiles the two example graphs in `examples/` (one in English, one in Chinese), sends the seven requests of `examples/example_requests.json` and prints the three best units of each request with their must-mention scores. A positive score means "must mention", and the scores are logits, not calibrated probabilities. Other options: `--top-k N`, `--positive-only` (list only units with a positive score), `--base-model DIR` (a local copy of the backbone) and `--requests FILE`.
 
-Expected output on a CPU with the versions above and 16 threads (`OMP_NUM_THREADS=16`), without the progress bars of weight loading and with timings left out:
+Expected output on a CPU with the versions above and 16 threads (`OMP_NUM_THREADS=16`), without the progress bars of weight loading and with timings left out. The quickstarts print each unit's `display_text`, which leaves out the default "confirmed" state and keeps the others, such as "pending confirmation":
 
 ```text
 loaded GCT-0.6B on cpu in … s
@@ -97,42 +97,42 @@ compiled example_graph.json: 18 units visible to the caller
 
 request: Can you book a restaurant for Lin's birthday dinner?
     +1.710  must mention   f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
-    -4.419                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
-    -5.015                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food. (confirmed)
+    -4.419                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
+    -5.015                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food.
 
 request: What should I feed him tonight?
   earlier (user): Biscuit has been a bit off today.
   earlier (assistant): Sorry to hear that. Is he eating normally?
-    +4.424  must mention    f6  Biscuit | Pet · Diet: Biscuit must not eat chicken; the vet put him on a fish-based diet. (confirmed)
-    -5.939                  f7  Biscuit | Pet · Veterinarian: Biscuit's vet is Dr. Ellis at Riverside Animal Clinic. (confirmed)
-    -8.837                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food. (confirmed)
+    +4.424  must mention    f6  Biscuit | Pet · Diet: Biscuit must not eat chicken; the vet put him on a fish-based diet.
+    -5.939                  f7  Biscuit | Pet · Veterinarian: Biscuit's vet is Dr. Ellis at Riverside Animal Clinic.
+    -8.837                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food.
 
 request: Send Lin a quick message that I'll be late on Friday.
-    -7.987                 f12  Lin Park | Contact · Preferred Channel: Lin prefers to be reached on Signal, not by phone. (confirmed)
-    -8.971                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
+    -7.987                 f12  Lin Park | Contact · Preferred Channel: Lin prefers to be reached on Signal, not by phone.
+    -8.971                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
    -10.666                 f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
 
 request: Nice weather today, isn't it?
    -10.842                 f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
-   -12.008                  f1  Lin Park | Health · Allergies: Lin is allergic to peanuts and carries an EpiPen. (confirmed)
-   -13.166                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
+   -12.008                  f1  Lin Park | Health · Allergies: Lin is allergic to peanuts and carries an EpiPen.
+   -13.166                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
 
 compiled example_graph_zh.json: 11 units visible to the caller
 
 request: 帮我订周六中午和陈一帆吃饭的餐厅。
-    -4.226                  f4  陈一帆｜饮食偏好：陈一帆不吃辣，喜欢粤菜。（已确认）
-    -9.887                  f5  陈一帆｜工作职位：陈一帆是周宁项目组的技术负责人。（已确认）
+    -4.226                  f4  陈一帆｜饮食偏好：陈一帆不吃辣，喜欢粤菜。
+    -9.887                  f5  陈一帆｜工作职位：陈一帆是周宁项目组的技术负责人。
    -13.522                  e2  陈一帆（人物）
 
 request: 提醒我把家里那辆白车的年检约上。
     +3.038  must mention    f6  家里的白色轿车｜一般备注：白色轿车下周二到期年检，还没预约。（待确认）
     -4.455                  e3  家里的白色轿车（车辆）
-   -12.480                  f7  周宁｜日常节奏：周宁每周六上午去游泳。（已确认）
+   -12.480                  f7  周宁｜日常节奏：周宁每周六上午去游泳。
 
 request: 今天心情不错。
-   -14.090                  f7  周宁｜日常节奏：周宁每周六上午去游泳。（已确认）
-   -14.343                  f3  周宁的妈妈｜关系重要日期：妈妈的生日是农历四月初八。（已确认）
-   -14.677                  f2  周宁的妈妈｜过敏与禁忌：妈妈对青霉素过敏。（已确认）
+   -14.090                  f7  周宁｜日常节奏：周宁每周六上午去游泳。
+   -14.343                  f3  周宁的妈妈｜关系重要日期：妈妈的生日是农历四月初八。
+   -14.677                  f2  周宁的妈妈｜过敏与禁忌：妈妈对青霉素过敏。
 ```
 
 Scores can differ slightly with other versions of PyTorch or transformers, with another number of CPU threads and on other hardware, and units with nearly equal scores can swap ranks.
@@ -160,7 +160,7 @@ world = json.load(open("examples/example_graph.json"))
 graph = gct.compile_graph(world)      # compiled on the CPU
 out = gct.retrieve(graph, "Can you book a restaurant for Lin's birthday dinner?", now="2026-03-14 18:30")
 for unit in out["results"]:
-    print(unit["score"], unit["text"])
+    print(unit["score"], unit["display_text"])
 ```
 
 `x86.install(gct, kind="w8a8", close_read=32, threads=None)`: `kind` is `"w8a8"` (INT8 weights and activations, the measured configuration) or `"fp32"` (the same fused kernels without INT8), `close_read` the number of close-read candidates per request (32 is the measured configuration), and `threads` the number of PyTorch threads (by default the current setting is kept). GCT must be loaded with `device="cpu"`. Each graph is compiled with its own caches, so a graph's scores do not depend on the graphs compiled before it. The scores depend on the number of threads: units with close scores can swap ranks between thread counts, so compare runs at the same thread count. The INT8 layers make the scores differ slightly from the GPU release.
@@ -191,42 +191,42 @@ compiled example_graph.json on the CPU: 18 units in … s
 
 request (… ms): Can you book a restaurant for Lin's birthday dinner?
     +1.408  must mention   f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
-    -4.721                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food. (confirmed)
-    -5.151                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
+    -4.721                  f2  Lin Park | Preferences · Food: Lin is vegetarian and loves Sichuan food.
+    -5.151                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
 
 request (… ms): What should I feed him tonight?
   earlier (user): Biscuit has been a bit off today.
   earlier (assistant): Sorry to hear that. Is he eating normally?
-    +4.957  must mention    f6  Biscuit | Pet · Diet: Biscuit must not eat chicken; the vet put him on a fish-based diet. (confirmed)
-    -4.504                  f7  Biscuit | Pet · Veterinarian: Biscuit's vet is Dr. Ellis at Riverside Animal Clinic. (confirmed)
+    +4.957  must mention    f6  Biscuit | Pet · Diet: Biscuit must not eat chicken; the vet put him on a fish-based diet.
+    -4.504                  f7  Biscuit | Pet · Veterinarian: Biscuit's vet is Dr. Ellis at Riverside Animal Clinic.
     -7.741                  e4  Biscuit (Pet)
 
 request (… ms): Send Lin a quick message that I'll be late on Friday.
-    -8.835                 f12  Lin Park | Contact · Preferred Channel: Lin prefers to be reached on Signal, not by phone. (confirmed)
-    -9.853                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
+    -8.835                 f12  Lin Park | Contact · Preferred Channel: Lin prefers to be reached on Signal, not by phone.
+    -9.853                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
    -10.399                 f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
 
 request (… ms): Nice weather today, isn't it?
    -11.316                 f11  Lin's birthday dinner | Notes · General: Lin's birthday dinner is planned for Saturday March 21 at 19:00; the restaurant is not booked yet. (pending confirmation)
-   -12.699                  f1  Lin Park | Health · Allergies: Lin is allergic to peanuts and carries an EpiPen. (confirmed)
-   -13.458                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21. (confirmed)
+   -12.699                  f1  Lin Park | Health · Allergies: Lin is allergic to peanuts and carries an EpiPen.
+   -13.458                  f3  Lin Park | Relationship · Important Dates: Lin's birthday is on March 21.
 
 compiled example_graph_zh.json on the CPU: 11 units in … s
 
 request (… ms): 帮我订周六中午和陈一帆吃饭的餐厅。
-    -4.584                  f4  陈一帆｜饮食偏好：陈一帆不吃辣，喜欢粤菜。（已确认）
-   -11.488                  f5  陈一帆｜工作职位：陈一帆是周宁项目组的技术负责人。（已确认）
+    -4.584                  f4  陈一帆｜饮食偏好：陈一帆不吃辣，喜欢粤菜。
+   -11.488                  f5  陈一帆｜工作职位：陈一帆是周宁项目组的技术负责人。
    -14.093                  e2  陈一帆（人物）
 
 request (… ms): 提醒我把家里那辆白车的年检约上。
     +2.701  must mention    f6  家里的白色轿车｜一般备注：白色轿车下周二到期年检，还没预约。（待确认）
     -5.283                  e3  家里的白色轿车（车辆）
-   -12.278                  f7  周宁｜日常节奏：周宁每周六上午去游泳。（已确认）
+   -12.278                  f7  周宁｜日常节奏：周宁每周六上午去游泳。
 
 request (… ms): 今天心情不错。
-   -13.077                  f7  周宁｜日常节奏：周宁每周六上午去游泳。（已确认）
-   -13.982                  f3  周宁的妈妈｜关系重要日期：妈妈的生日是农历四月初八。（已确认）
-   -14.335                  f2  周宁的妈妈｜过敏与禁忌：妈妈对青霉素过敏。（已确认）
+   -13.077                  f7  周宁｜日常节奏：周宁每周六上午去游泳。
+   -13.982                  f3  周宁的妈妈｜关系重要日期：妈妈的生日是农历四月初八。
+   -14.335                  f2  周宁的妈妈｜过敏与禁忌：妈妈对青霉素过敏。
 ```
 
 ### Use it from Python
@@ -243,7 +243,7 @@ graph = gct.compile_graph(world)
 out = gct.retrieve(graph, "Can you book a restaurant for Lin's birthday dinner?",
                    context=[], now="2026-03-14 18:30", top_k=5)
 for unit in out["results"]:                 # must-mention facts only (positive score), best first
-    print(unit["score"], unit["text"])
+    print(unit["score"], unit["display_text"])
 ```
 
 `compile_graph` builds the caller's view of the graph: items whose `vis` list does not include the caller are left out before anything is encoded. A compiled graph is derived from the unit texts by frozen encoders, and together with the public weights it carries the content of the graph, so store and transfer it with the same protection as the graph itself.
@@ -253,7 +253,7 @@ The interface, in `gct/runtime.py`:
 - `GCT.from_pretrained(path_or_repo, revision=None, base_model=None, device=None, close_read=None, encoders=True)`. `path_or_repo` is the Hugging Face id or a local copy of that repository, and `revision` a revision of it. `base_model` is a local copy of Qwen3-0.6B at the pinned revision, with every file identical to it; by default that revision is downloaded. `device` is `"cuda"` or `"cpu"`, by default CUDA when it is available. `close_read` sets the number of close-read candidates, 32 by default from `config.json`. With `encoders=False` the unit and key encoders, which only compilation uses, are not loaded: such an instance loads saved graphs and cannot compile them.
 - `gct.compile_graph(world, caller="o")` compiles the view of `caller`. A graph is one JSON object with `entities`, `facts`, `edges` and a `meta` block (`owner`, `now`, `timezone`), and every item lists in `vis` the callers that may see it. Entity kinds, fact modules and relations come from the vocabulary in `gct/vocab.json`. In `examples/example_graph.json` one fact has an empty `vis` list and stays out of the view.
 - `gct.save_graph(graph, path)` writes a compiled graph to `path`, a directory that must not exist yet, as `graph.json` and `tensors.safetensors`, without pickle, and `gct.load_graph(path)` loads it for the same release and weights; the loaded graph gives the same scores as the compiled one.
-- `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The result is `{"results": [{"id", "type", "text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`.
+- `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True, hide_states=None)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The result is `{"results": [{"id", "type", "text", "state", "display_text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`. `text` is the unit text as the model reads it. `state` is the state of a fact (`confirmed`, `hearsay`, `pending`, `superseded` or `asserted`; `None` for an entity), and `display_text` is `text` without the state word for the states in `hide_states`: by default only `confirmed` (`gct.hide_states`), and `hide_states="all"` hides every state. A source or date in the same brackets stays.
 
 ### Offline use
 
