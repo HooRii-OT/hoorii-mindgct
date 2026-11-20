@@ -1,0 +1,2515 @@
+{
+ "world_id": "chat_en",
+ "lang": "en",
+ "meta": {
+  "owner": "e0",
+  "now": "2026-03-05 20:15",
+  "timezone": "America/Chicago",
+  "build": {
+   "input_form": "memory_profile",
+   "builder_model": "qwen3.6-35b-a3b"
+  }
+ },
+ "entities": [
+  {
+   "id": "e0",
+   "kind": "person",
+   "name": "Leo Brennan"
+  },
+  {
+   "id": "e1",
+   "kind": "person",
+   "name": "Sam Rivera",
+   "aliases": [
+    "Sam"
+   ],
+   "desc": "Leo's partner, senior designer at Northpaw Studio"
+  },
+  {
+   "id": "e2",
+   "kind": "place",
+   "name": "Marigold Room",
+   "desc": "Restaurant with tasting menu"
+  },
+  {
+   "id": "e3",
+   "kind": "place",
+   "name": "2240 N Kestrel Ave, Apt 2, Avondale",
+   "desc": "Dog-friendly two-bedroom apartment"
+  },
+  {
+   "id": "e4",
+   "kind": "organization",
+   "name": "Northpaw Studio",
+   "desc": "Design studio where Sam works"
+  },
+  {
+   "id": "e5",
+   "kind": "project",
+   "name": "Croissant Logo Project",
+   "desc": "Bakery branding featuring a croissant with legs"
+  },
+  {
+   "id": "e6",
+   "kind": "asset",
+   "name": "Vintage Film Camera",
+   "desc": "Gift from Leo to Sam"
+  },
+  {
+   "id": "e7",
+   "kind": "asset",
+   "name": "Drafting Lamp",
+   "desc": "Gift from Leo to Sam for Christmas"
+  },
+  {
+   "id": "e8",
+   "kind": "person",
+   "name": "Joan",
+   "desc": "Leo's mother"
+  },
+  {
+   "id": "e9",
+   "kind": "person",
+   "name": "Mike",
+   "desc": "Leo's father, retired water utility employee"
+  },
+  {
+   "id": "e10",
+   "kind": "place",
+   "name": "VFW Hall, Milwaukee",
+   "desc": "Location of Mike's retirement party"
+  },
+  {
+   "id": "e11",
+   "kind": "person",
+   "name": "Alex Moreau",
+   "desc": "Leo's brother, Hana's partner"
+  },
+  {
+   "id": "e12",
+   "kind": "person",
+   "name": "Hana",
+   "desc": "Alex's partner, expecting a baby girl"
+  },
+  {
+   "id": "e13",
+   "kind": "person",
+   "name": "Unborn Baby Girl",
+   "desc": "Alex and Hana's expected child, due April 20"
+  },
+  {
+   "id": "e14",
+   "kind": "pet",
+   "name": "Pickle",
+   "aliases": [
+    "Pickles"
+   ],
+   "desc": "Proposed name for a future dog"
+  },
+  {
+   "id": "e15",
+   "kind": "person",
+   "name": "Maddie",
+   "aliases": [
+    "Maddie Cho"
+   ],
+   "desc": "Friend, game night host, Leo's editor"
+  },
+  {
+   "id": "e16",
+   "kind": "person",
+   "name": "Rosa Duarte",
+   "desc": "Leo's department head"
+  },
+  {
+   "id": "e17",
+   "kind": "person",
+   "name": "Principal Hughes",
+   "desc": "School principal"
+  },
+  {
+   "id": "e18",
+   "kind": "organization",
+   "name": "Ashby High",
+   "desc": "High school where Leo teaches"
+  },
+  {
+   "id": "e19",
+   "kind": "organization",
+   "name": "Lakemont University",
+   "desc": "University offering MEd in Science Education"
+  },
+  {
+   "id": "e20",
+   "kind": "project",
+   "name": "MEd in Science Education",
+   "desc": "Part-time, evening graduate program at Lakemont"
+  },
+  {
+   "id": "e21",
+   "kind": "person",
+   "name": "Renee Walsh",
+   "desc": "Physical therapist at Kinetic Way PT"
+  },
+  {
+   "id": "e22",
+   "kind": "organization",
+   "name": "Kinetic Way PT",
+   "desc": "Physical therapy clinic"
+  },
+  {
+   "id": "e23",
+   "kind": "event",
+   "name": "Prairie Lights Half Marathon",
+   "desc": "Half marathon on April 19, Lakefront to Riverwalk"
+  },
+  {
+   "id": "e24",
+   "kind": "asset",
+   "name": "Gus",
+   "desc": "Sourdough starter"
+  },
+  {
+   "id": "e25",
+   "kind": "asset",
+   "name": "Cast-Iron Pan",
+   "desc": "Twelve-inch pan gifted by Maddie"
+  },
+  {
+   "id": "e26",
+   "kind": "document",
+   "name": "The Salt Orchard",
+   "desc": "Signed copy of a book by Imogen Vale"
+  },
+  {
+   "id": "e27",
+   "kind": "person",
+   "name": "Imogen Vale",
+   "desc": "Author who signed Leo's book"
+  },
+  {
+   "id": "e28",
+   "kind": "asset",
+   "name": "Lamplight Hours",
+   "desc": "Podcast about night shift workers"
+  },
+  {
+   "id": "e29",
+   "kind": "asset",
+   "name": "Ceramic Mug",
+   "desc": "Green pottery mug with wonky handle made by Maddie"
+  },
+  {
+   "id": "e30",
+   "kind": "asset",
+   "name": "Dining Table",
+   "desc": "Used dining table bought from a neighbor"
+  },
+  {
+   "id": "e31",
+   "kind": "person",
+   "name": "Paul Cho",
+   "desc": "Maddie's father, drove with her to Denver"
+  },
+  {
+   "id": "e32",
+   "kind": "pet",
+   "name": "Juniper",
+   "aliases": [
+    "Juni"
+   ],
+   "desc": "Retired racing greyhound, Maddie's dog"
+  },
+  {
+   "id": "e33",
+   "kind": "place",
+   "name": "1418 Larkspur Ct, Apt 1, Denver, CO 80211",
+   "desc": "Maddie's ground-floor apartment in Highland"
+  },
+  {
+   "id": "e34",
+   "kind": "person",
+   "name": "Mr. Ortega",
+   "desc": "Maddie's landlord"
+  },
+  {
+   "id": "e35",
+   "kind": "person",
+   "name": "Gloria",
+   "desc": "Retired music teacher, Maddie's upstairs neighbor"
+  },
+  {
+   "id": "e36",
+   "kind": "person",
+   "name": "Kim",
+   "desc": "Maddie's coworker"
+  },
+  {
+   "id": "e37",
+   "kind": "vehicle",
+   "name": "Used gray hatchback",
+   "desc": "Maddie's car with snow tires"
+  },
+  {
+   "id": "e38",
+   "kind": "organization",
+   "name": "Aspen Lane Children's Therapy",
+   "desc": "Pediatric outpatient practice in Denver"
+  },
+  {
+   "id": "e39",
+   "kind": "person",
+   "name": "Dr. Priscilla Grant",
+   "desc": "Maddie's boss at Aspen Lane"
+  },
+  {
+   "id": "e40",
+   "kind": "person",
+   "name": "Tasha Reid",
+   "desc": "Maddie's coworker"
+  },
+  {
+   "id": "e41",
+   "kind": "organization",
+   "name": "Lakeview Pediatric Rehab",
+   "desc": "Maddie's former workplace in Chicago"
+  },
+  {
+   "id": "e42",
+   "kind": "organization",
+   "name": "Little Kettle Coffee",
+   "desc": "Coffee shop near Maddie's apartment"
+  },
+  {
+   "id": "e45",
+   "kind": "person",
+   "name": "Ethan",
+   "desc": "Maddie's boyfriend, pediatric nurse"
+  },
+  {
+   "id": "e46",
+   "kind": "person",
+   "name": "Linda Cho",
+   "desc": "Maddie's mother"
+  },
+  {
+   "id": "e47",
+   "kind": "person",
+   "name": "Sun-ja",
+   "desc": "Maddie's grandmother, age 84"
+  },
+  {
+   "id": "e48",
+   "kind": "person",
+   "name": "Mi-young",
+   "desc": "Maddie's aunt"
+  },
+  {
+   "id": "e49",
+   "kind": "person",
+   "name": "Grace",
+   "desc": "Leo's friend, getting married"
+  },
+  {
+   "id": "e50",
+   "kind": "person",
+   "name": "Daniel",
+   "desc": "Grace's fiancé, welding teacher"
+  },
+  {
+   "id": "e51",
+   "kind": "person",
+   "name": "Lucia",
+   "desc": "Daniel's sister"
+  },
+  {
+   "id": "e52",
+   "kind": "organization",
+   "name": "Highland Vet Clinic",
+   "desc": "Veterinary clinic for Maddie's dog"
+  },
+  {
+   "id": "e53",
+   "kind": "person",
+   "name": "Dr. Ruth Fenn",
+   "desc": "Veterinarian for Juniper"
+  },
+  {
+   "id": "e54",
+   "kind": "organization",
+   "name": "Second Lap Greyhound Rescue",
+   "desc": "Rescue where Maddie adopted Juniper"
+  },
+  {
+   "id": "e55",
+   "kind": "asset",
+   "name": "Epinephrine pen",
+   "desc": "Medical device Maddie carries for allergies"
+  },
+  {
+   "id": "e56",
+   "kind": "event",
+   "name": "Bridal Shower",
+   "desc": "Desert brunch shower hosted by Maddie in Albuquerque"
+  },
+  {
+   "id": "e57",
+   "kind": "place",
+   "name": "Casa Lumbre",
+   "desc": "Venue for Grace and Daniel's wedding"
+  },
+  {
+   "id": "e58",
+   "kind": "event",
+   "name": "Wedding of Grace and Daniel",
+   "desc": "Wedding in Santa Fe, May 16"
+  },
+  {
+   "id": "e59",
+   "kind": "place",
+   "name": "Elk Hollow",
+   "desc": "Cabin near Denver, no Wi-Fi, wood stove"
+  },
+  {
+   "id": "e60",
+   "kind": "organization",
+   "name": "Lakemont",
+   "desc": "Institution offering MEd program"
+  }
+ ],
+ "edges": [
+  {
+   "src": "e0",
+   "rel": "partner_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "lives_at",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "lives_at",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "works_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "leads",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "owns",
+   "dst": "e6",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "owns",
+   "dst": "e7",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "parent_of",
+   "dst": "e8",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "parent_of",
+   "dst": "e9",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e9",
+   "rel": "located_at",
+   "dst": "e10",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "sibling_of",
+   "dst": "e11",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "partner_of",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "child_of",
+   "dst": "e13",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "pet_owner_of",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e16",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "works_at",
+   "dst": "e18",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "enrolled_in",
+   "dst": "e19",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "enrolled_in",
+   "dst": "e20",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "treated_by",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "works_at",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e23",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e24",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e25",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e26",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e26",
+   "rel": "owns",
+   "dst": "e27",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "subscribes_to",
+   "dst": "e28",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e29",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e30",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e20",
+   "rel": "part_of",
+   "dst": "e19",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "parent_of",
+   "dst": "e31",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "pet_owner_of",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "lives_at",
+   "dst": "e33",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "custom.mentions",
+   "dst": "e34",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "neighbor_of",
+   "dst": "e35",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "colleague_of",
+   "dst": "e36",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "owns",
+   "dst": "e37",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "works_at",
+   "dst": "e38",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e38",
+   "rel": "leads",
+   "dst": "e39",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e38",
+   "rel": "colleague_of",
+   "dst": "e40",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "works_at",
+   "dst": "e41",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "located_at",
+   "dst": "e42",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "partner_of",
+   "dst": "e45",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "parent_of",
+   "dst": "e46",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "grandparent_of",
+   "dst": "e47",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "relative_of",
+   "dst": "e48",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e49",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e49",
+   "rel": "partner_of",
+   "dst": "e50",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e50",
+   "rel": "sibling_of",
+   "dst": "e51",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "treated_by",
+   "dst": "e52",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e52",
+   "rel": "custom.mentions",
+   "dst": "e53",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "uses",
+   "dst": "e55",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e49",
+   "rel": "organizes",
+   "dst": "e56",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e57",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e58",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "colleague_of",
+   "dst": "e40",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "sibling_of",
+   "dst": "e49",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "partner_of",
+   "dst": "e50",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e11",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "located_at",
+   "dst": "e59",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "works_at",
+   "dst": "e60",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "located_at",
+   "dst": "e57",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e15",
+   "rel": "partner_of",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e54",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "subject": "e0",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Leo Brennan lives in Chicago with his partner Sam Rivera.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#1"
+   ]
+  },
+  {
+   "id": "f2",
+   "subject": "e0",
+   "module": "identity.demographics",
+   "value": "[2026-03-03] Leo Brennan turned 33 on October 30, 2025.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-11-01",
+   "valid_to": "2025-11-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#1"
+   ]
+  },
+  {
+   "id": "f3",
+   "subject": "e0",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Leo and Sam celebrated their 5-year anniversary in September 2025.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-09-01",
+   "valid_to": "2025-09-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#2"
+   ]
+  },
+  {
+   "id": "f4",
+   "subject": "e0",
+   "module": "work.role",
+   "value": "[2026-03-03] Leo Brennan is a chemistry teacher, science club adviser, runner, and sourdough baker.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#3"
+   ]
+  },
+  {
+   "id": "f5",
+   "subject": "e0",
+   "module": "identity.residency",
+   "value": "[2026-03-03] Leo and Sam moved to 2240 N Kestrel Ave, Apt 2 in Avondale on February 21, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-21",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#4"
+   ]
+  },
+  {
+   "id": "f6",
+   "subject": "e3",
+   "module": "location.amenities",
+   "value": "[2026-03-03] The apartment is on the second floor with a back porch getting morning sun.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#5"
+   ]
+  },
+  {
+   "id": "f7",
+   "subject": "e0",
+   "module": "work.responsibilities",
+   "value": "[2026-03-03] Leo's commute is a 25-minute bike ride, replacing a 40-minute drive.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#6"
+   ]
+  },
+  {
+   "id": "f8",
+   "subject": "e1",
+   "module": "work.role",
+   "value": "[2026-03-03] Sam Rivera is a senior designer at Northpaw Studio, promoted in November 2025.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-11-01",
+   "valid_to": "2025-11-30",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#8"
+   ]
+  },
+  {
+   "id": "f9",
+   "subject": "e8",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Joan organized Mike's retirement party on Saturday December 13 in Milwaukee.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e9"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-12-13",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#11"
+   ]
+  },
+  {
+   "id": "f10",
+   "subject": "e9",
+   "module": "identity.demographics",
+   "value": "[2026-03-03] Mike retired after 34 years at the water utility.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-12-01",
+   "valid_to": "2025-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#11"
+   ]
+  },
+  {
+   "id": "f11",
+   "subject": "e11",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Alex and Hana announced their pregnancy at Mike's retirement party.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e12"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-12-01",
+   "valid_to": "2025-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#13"
+   ]
+  },
+  {
+   "id": "f12",
+   "subject": "e13",
+   "module": "identity.demographics",
+   "value": "[2026-03-03] Alex and Hana are expecting a baby girl due April 20.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#13"
+   ]
+  },
+  {
+   "id": "f13",
+   "subject": "e11",
+   "module": "schedule.recurring",
+   "value": "[2026-03-03] Alex Moreau hosts game nights and the regular New Year's Eve party.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#15"
+   ]
+  },
+  {
+   "id": "f14",
+   "subject": "e0",
+   "module": "work.organization",
+   "value": "[2026-03-03] Leo teaches at Ashby High, teaching one AP Chemistry section and three regular sections.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "employer",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#17"
+   ]
+  },
+  {
+   "id": "f15",
+   "subject": "e0",
+   "module": "work.responsibilities",
+   "value": "[2026-03-03] Leo's AP Chemistry class has 28 students.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#18"
+   ]
+  },
+  {
+   "id": "f16",
+   "subject": "e0",
+   "module": "education.enrollment",
+   "value": "[2026-03-03] Leo applied to the MEd in Science Education at Lakemont University, part-time evenings.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e19",
+    "e20"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "valid_to": "2026-02-28",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#22"
+   ]
+  },
+  {
+   "id": "f17",
+   "subject": "e0",
+   "module": "education.enrollment",
+   "value": "[2026-03-03] Leo completed his interview at Lakemont on February 25, expecting a decision by March 13.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e19"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#24"
+   ]
+  },
+  {
+   "id": "f18",
+   "subject": "e0",
+   "module": "health.conditions",
+   "value": "[2026-03-03] Leo is registered for the Prairie Lights Half Marathon on April 19.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e23"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-05-01",
+   "valid_to": "2026-05-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#25"
+   ]
+  },
+  {
+   "id": "f19",
+   "subject": "e0",
+   "module": "health.conditions",
+   "value": "[2026-03-03] Leo had IT band syndrome diagnosed by Renee Walsh at Kinetic Way PT.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e21",
+    "e22"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-12-01",
+   "valid_to": "2025-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#26"
+   ]
+  },
+  {
+   "id": "f20",
+   "subject": "e0",
+   "module": "health.allergies",
+   "value": "[2026-03-03] Leo completed his first 10-miler on February 28 with no knee pain.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#29"
+   ]
+  },
+  {
+   "id": "f21",
+   "subject": "e24",
+   "module": "notes.general",
+   "value": "[2026-03-03] Leo's sourdough starter Gus lives on top of the fridge.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#30"
+   ]
+  },
+  {
+   "id": "f22",
+   "subject": "e25",
+   "module": "asset.ownership",
+   "value": "[2026-03-03] Maddie gave Leo a twelve-inch cast-iron pan for Christmas.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "valid_to": "2026-02-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#32"
+   ]
+  },
+  {
+   "id": "f23",
+   "subject": "e26",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie borrowed Leo's signed copy of The Salt Orchard and has not returned it yet.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e27"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#33"
+   ]
+  },
+  {
+   "id": "f24",
+   "subject": "e29",
+   "module": "asset.ownership",
+   "value": "[2026-03-03] Maddie made Leo a green pottery mug with a wonky handle.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#34"
+   ]
+  },
+  {
+   "id": "f25",
+   "subject": "e0",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Maddie recommended the podcast Lamplight Hours to Leo.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e28"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#35"
+   ]
+  },
+  {
+   "id": "f26",
+   "subject": "e15",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Maddie Cho is a close friend of Leo and Sam.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#37"
+   ]
+  },
+  {
+   "id": "f27",
+   "subject": "e15",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Maddie Cho moved from Chicago to Denver with her father Paul.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e31"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#37"
+   ]
+  },
+  {
+   "id": "f28",
+   "subject": "e32",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie Cho has a dog named Juniper, a retired racing greyhound.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "valid_to": "2026-02-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#37",
+    "memory_profile#61"
+   ]
+  },
+  {
+   "id": "f29",
+   "subject": "e15",
+   "module": "identity.residency",
+   "value": "[2026-03-03] Maddie Cho lives at 1418 Larkspur Ct, Apt 1, Denver, CO 80211.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#38"
+   ]
+  },
+  {
+   "id": "f30",
+   "subject": "e15",
+   "module": "communication.style",
+   "value": "[2026-03-03] Maddie Cho's phone number is (720) 555-0164.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#39"
+   ]
+  },
+  {
+   "id": "f31",
+   "subject": "e33",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie Cho's apartment is a one-bedroom, ground-floor unit in Highland.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#40"
+   ]
+  },
+  {
+   "id": "f32",
+   "subject": "e33",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie Cho's landlord is Mr. Ortega.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e34"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#41"
+   ]
+  },
+  {
+   "id": "f33",
+   "subject": "e35",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie Cho's upstairs neighbor Gloria is a retired music teacher.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#42"
+   ]
+  },
+  {
+   "id": "f34",
+   "subject": "e15",
+   "module": "finance.budgets",
+   "value": "[2026-03-03] Maddie Cho sold her couch to coworker Kim for $200.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e36"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "valid_to": "2026-02-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#43"
+   ]
+  },
+  {
+   "id": "f35",
+   "subject": "e37",
+   "module": "vehicle.state",
+   "value": "[2026-03-03] Maddie Cho bought a used gray hatchback with snow tires.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-01",
+   "slot": "car model",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#44"
+   ]
+  },
+  {
+   "id": "f36",
+   "subject": "e15",
+   "module": "work.organization",
+   "value": "[2026-03-03] Maddie Cho is a pediatric physical therapist at Aspen Lane Children's Therapy.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e38"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-10",
+   "slot": "employer",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#46"
+   ]
+  },
+  {
+   "id": "f37",
+   "subject": "e15",
+   "module": "work.role",
+   "value": "[2026-03-03] Maddie Cho's boss is Dr. Priscilla Grant.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e39"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#47"
+   ]
+  },
+  {
+   "id": "f38",
+   "subject": "e15",
+   "module": "schedule.routines",
+   "value": "[2026-03-03] Maddie Cho works Monday to Thursday, 7 to 5:30, with Fridays off.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#48"
+   ]
+  },
+  {
+   "id": "f39",
+   "subject": "e15",
+   "module": "work.organization",
+   "value": "[2026-03-03] Maddie Cho worked at Lakeview Pediatric Rehab in Chicago for four years.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e41"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-01-01",
+   "valid_to": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#49"
+   ]
+  },
+  {
+   "id": "f40",
+   "subject": "e15",
+   "module": "preferences.food",
+   "value": "[2026-03-03] Maddie Cho loves oat latte at Little Kettle Coffee.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e42"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#50"
+   ]
+  },
+  {
+   "id": "f41",
+   "subject": "e15",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Maddie Cho takes pottery classes Thursday evenings and climbs Tuesday nights.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#51"
+   ]
+  },
+  {
+   "id": "f42",
+   "subject": "e15",
+   "module": "relationship.roles",
+   "value": "[2026-03-03] Maddie Cho and Ethan became official on March 1.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e45"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-02-28",
+   "slot": "relationship status",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#52"
+   ]
+  },
+  {
+   "id": "f43",
+   "subject": "e15",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Maddie Cho's birthday is March 12.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#53"
+   ]
+  },
+  {
+   "id": "f44",
+   "subject": "e15",
+   "module": "preferences.food",
+   "value": "[2026-03-03] Maddie Cho's favorite ramen is Hoshizora, spicy miso with an extra egg.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#54"
+   ]
+  },
+  {
+   "id": "f45",
+   "subject": "e15",
+   "module": "health.allergies",
+   "value": "[2026-03-03] Maddie Cho is allergic to cashews and pistachios.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e55"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#55"
+   ]
+  },
+  {
+   "id": "f46",
+   "subject": "e15",
+   "module": "preferences.food",
+   "value": "[2026-03-03] Maddie Cho is vegetarian.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#56"
+   ]
+  },
+  {
+   "id": "f47",
+   "subject": "e15",
+   "module": "relationship.roles",
+   "value": "[2026-03-03] Maddie Cho's parents are Linda and Paul.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e31",
+    "e46"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#57"
+   ]
+  },
+  {
+   "id": "f48",
+   "subject": "e47",
+   "module": "identity.demographics",
+   "value": "[2026-03-03] Maddie Cho's grandmother Sun-ja is 84 and lives in LA.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#59"
+   ]
+  },
+  {
+   "id": "f49",
+   "subject": "e15",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Maddie Cho adopted Juniper on November 15.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e54"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2025-12-01",
+   "valid_to": "2025-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#61"
+   ]
+  },
+  {
+   "id": "f50",
+   "subject": "e32",
+   "module": "pet.diet",
+   "value": "[2026-03-03] Juniper eats salmon and sweet potato kibble.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#62"
+   ]
+  },
+  {
+   "id": "f51",
+   "subject": "e52",
+   "module": "notes.general",
+   "value": "[2026-03-03] Juniper's vet is Dr. Ruth Fenn at Highland Vet Clinic.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e53"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#64"
+   ]
+  },
+  {
+   "id": "f52",
+   "subject": "e49",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Grace lives in Santa Fe.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#66"
+   ]
+  },
+  {
+   "id": "f53",
+   "subject": "e50",
+   "module": "work.organization",
+   "value": "[2026-03-03] Daniel teaches welding at the community college in Santa Fe.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "employer",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#66"
+   ]
+  },
+  {
+   "id": "f54",
+   "subject": "e58",
+   "module": "event.schedule",
+   "value": "[2026-03-03] Grace and Daniel's wedding is May 16 at Casa Lumbre in Santa Fe.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e57"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#67"
+   ]
+  },
+  {
+   "id": "f55",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-03-03] Leo and Sam are invited to Grace and Daniel's wedding.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#68"
+   ]
+  },
+  {
+   "id": "f56",
+   "subject": "e58",
+   "module": "event.followup",
+   "value": "[2026-03-03] RSVPs for Grace and Daniel's wedding are due March 15.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#69"
+   ]
+  },
+  {
+   "id": "f57",
+   "subject": "e15",
+   "module": "relationship.roles",
+   "value": "[2026-03-03] Maddie Cho is maid of honor at Grace and Daniel's wedding.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e51"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#70"
+   ]
+  },
+  {
+   "id": "f58",
+   "subject": "e15",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie Cho is hosting Grace's bridal shower on April 18 in Albuquerque.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e56"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#71"
+   ]
+  },
+  {
+   "id": "f59",
+   "subject": "e49",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Grace is Leo's sister and is getting married to Daniel.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e50"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#72",
+    "memory_profile#73"
+   ]
+  },
+  {
+   "id": "f60",
+   "subject": "e49",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Grace's wedding RSVP deadline is March 15.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#84"
+   ]
+  },
+  {
+   "id": "f61",
+   "subject": "e49",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Grace's bridal shower is April 18 in Albuquerque, hosted by Maddie.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#86"
+   ]
+  },
+  {
+   "id": "f62",
+   "subject": "e50",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Daniel is Grace's partner and works as a welder.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e49"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#72",
+    "memory_profile#73"
+   ]
+  },
+  {
+   "id": "f63",
+   "subject": "e50",
+   "module": "health.allergies",
+   "value": "[2026-03-03] Daniel has a serious shellfish allergy.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#73"
+   ]
+  },
+  {
+   "id": "f64",
+   "subject": "e50",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Grace and Daniel's wedding is April 20 at Casa Lumbre in Santa Fe.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e57"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#90"
+   ]
+  },
+  {
+   "id": "f65",
+   "subject": "e15",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Maddie is Leo's friend and is helping write a wedding toast for Grace.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e49"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#72"
+   ]
+  },
+  {
+   "id": "f66",
+   "subject": "e15",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Maddie's birthday is March 12.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#81"
+   ]
+  },
+  {
+   "id": "f67",
+   "subject": "e15",
+   "module": "preferences.gifts",
+   "value": "[2026-03-03] Leo plans to gift Maddie wooden-handled pottery trimming tools for her birthday.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#81"
+   ]
+  },
+  {
+   "id": "f68",
+   "subject": "e15",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie holds Leo's signed book 'The Salt Orchard', return not confirmed.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e26"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#91"
+   ]
+  },
+  {
+   "id": "f69",
+   "subject": "e15",
+   "module": "notes.general",
+   "value": "[2026-03-03] Maddie paid a $150 deposit for the Elk Hollow cabin trip.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e59"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#76"
+   ]
+  },
+  {
+   "id": "f70",
+   "subject": "e1",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Sam is Leo's friend who considered the cabin trip but has unknown availability for new dates.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#78"
+   ]
+  },
+  {
+   "id": "f71",
+   "subject": "e1",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Leo and Sam plan to get a dog after April.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#89"
+   ]
+  },
+  {
+   "id": "f72",
+   "subject": "e11",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Alex Moreau is hosting a game night on March 7 and a baby shower on March 14.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#80",
+    "memory_profile#83"
+   ]
+  },
+  {
+   "id": "f73",
+   "subject": "e12",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Hana is Alex's partner and is pregnant.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#83"
+   ]
+  },
+  {
+   "id": "f74",
+   "subject": "e12",
+   "module": "identity.basic",
+   "value": "[2026-03-03] Hana and Alex are having a baby girl due April 20.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#88"
+   ]
+  },
+  {
+   "id": "f75",
+   "subject": "e59",
+   "module": "location.amenities",
+   "value": "[2026-03-03] Elk Hollow cabin is about two hours from Denver and has no Wi-Fi.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#75"
+   ]
+  },
+  {
+   "id": "f76",
+   "subject": "e59",
+   "module": "location.amenities",
+   "value": "[2026-03-03] Elk Hollow cabin has a wood stove.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#75"
+   ]
+  },
+  {
+   "id": "f77",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-03-03] Leo and Maddie's trip to Elk Hollow is scheduled for March 27 to 29.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#74",
+    "memory_profile#85"
+   ]
+  },
+  {
+   "id": "f78",
+   "subject": "e0",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-03] Leo is expected to receive Maddie's green mug Thursday after March 3.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#79"
+   ]
+  },
+  {
+   "id": "f79",
+   "subject": "e0",
+   "module": "education.enrollment",
+   "value": "[2026-03-03] Leo expects a Lakemont MEd admission decision by March 13.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e60"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-13",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#82"
+   ]
+  },
+  {
+   "id": "f80",
+   "subject": "e0",
+   "module": "preferences.travel",
+   "value": "[2026-03-03] Leo is bringing sourdough, a cast-iron pan, and books to the cabin trip.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#77",
+    "memory_profile#85"
+   ]
+  },
+  {
+   "id": "f81",
+   "subject": "e0",
+   "module": "finance.budgets",
+   "value": "[2026-03-03] Leo owes Maddie $75 for the Elk Hollow cabin trip deposit.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e59"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#76",
+    "memory_profile#85"
+   ]
+  },
+  {
+   "id": "f82",
+   "subject": "e0",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Leo is attending Alex Moreau's game night on Saturday March 7.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#80"
+   ]
+  },
+  {
+   "id": "f83",
+   "subject": "e0",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Leo is attending Alex and Hana's baby shower on Saturday March 14.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11",
+    "e12"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#83"
+   ]
+  },
+  {
+   "id": "f84",
+   "subject": "e0",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Leo plans to run the Prairie Lights Half Marathon on April 19.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-19",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_profile#87"
+   ]
+  }
+ ],
+ "novel_relations": {
+  "custom.mentions": "The person talked about this entity in conversation; no more specific relation is known (person -> entity)."
+ }
+}

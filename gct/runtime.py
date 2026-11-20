@@ -246,6 +246,7 @@ class GCT:
         from safetensors.torch import save_file
         path = Path(path)
         path.mkdir(parents=True, exist_ok=False)
+        os.chmod(path, 0o700)                                        # the files hold the graph's content: the owner only
         tensors, values = {}, {}
         for k, v in graph.tensors.items():
             if k in _RUNTIME_ONLY or k.startswith("_"):
@@ -274,6 +275,8 @@ class GCT:
                 "values": values, "tensors": sorted(tensors)}
         (path / "graph.json").write_text(json.dumps(meta, ensure_ascii=False) + "\n", encoding="utf-8")
         save_file(tensors, str(path / "tensors.safetensors"), metadata={"format": GRAPH_FORMAT})
+        for name in ("graph.json", "tensors.safetensors"):
+            os.chmod(path / name, 0o600)
         return path
 
     def load_graph(self, path):

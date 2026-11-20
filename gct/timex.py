@@ -13,6 +13,8 @@
 # limitations under the License.
 """Rule-based time expressions: request time intent, unit time intervals and time features."""
 import datetime as dt
+import hashlib
+import json
 import math
 import re
 from collections import namedtuple
@@ -607,7 +609,8 @@ def _chapters(world, now):
 
 
 def _world_table(world):
-    key = (world.get("world_id"), len(world["facts"]), len(world["entities"]))
+    key = hashlib.sha1(json.dumps([world.get("world_id"), world.get("meta"), world["entities"], world.get("edges"), world["facts"],
+                                   world.get("timeline")], sort_keys=True, ensure_ascii=False, default=str).encode("utf-8")).hexdigest()
     tab = _IV_CACHE.get(key)
     if tab is None:
         now = _parse_date_str((world.get("meta") or {}).get("now"))

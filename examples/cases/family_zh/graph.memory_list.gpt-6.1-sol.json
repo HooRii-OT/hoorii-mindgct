@@ -1,0 +1,7738 @@
+{
+ "world_id": "family_zh",
+ "lang": "zh",
+ "meta": {
+  "owner": "e0",
+  "now": "2026-04-22 20:30",
+  "timezone": "Asia/Shanghai",
+  "build": {
+   "input_form": "memory_list",
+   "builder_model": "gpt-6.1-sol"
+  }
+ },
+ "entities": [
+  {
+   "id": "e0",
+   "kind": "person",
+   "name": "苏晓雯"
+  },
+  {
+   "id": "e1",
+   "kind": "person",
+   "name": "周德民",
+   "aliases": [
+    "公公"
+   ],
+   "desc": "苏晓雯的公公，与其同住"
+  },
+  {
+   "id": "e2",
+   "kind": "person",
+   "name": "何桂英",
+   "aliases": [
+    "婆婆"
+   ],
+   "desc": "苏晓雯的婆婆，与其同住"
+  },
+  {
+   "id": "e3",
+   "kind": "person",
+   "name": "周明",
+   "aliases": [
+    "丈夫"
+   ],
+   "desc": "苏晓雯的丈夫，结构工程师"
+  },
+  {
+   "id": "e4",
+   "kind": "place",
+   "name": "南京市建邺区江畔花园7栋1802",
+   "aliases": [
+    "家里",
+    "江畔花园7栋1802"
+   ],
+   "desc": "苏晓雯一家的住所"
+  },
+  {
+   "id": "e5",
+   "kind": "organization",
+   "name": "银行河西支行",
+   "desc": "苏晓雯任客户经理的支行"
+  },
+  {
+   "id": "e6",
+   "kind": "organization",
+   "name": "市建筑设计院",
+   "desc": "周明的工作单位"
+  },
+  {
+   "id": "e7",
+   "kind": "vehicle",
+   "name": "苏晓雯家的白色SUV",
+   "aliases": [
+    "家里的车"
+   ],
+   "desc": "周明平时驾驶的家庭用车"
+  },
+  {
+   "id": "e8",
+   "kind": "person",
+   "name": "小陈",
+   "aliases": [
+    "物业管家"
+   ],
+   "desc": "苏晓雯小区的物业管家"
+  },
+  {
+   "id": "e9",
+   "kind": "place",
+   "name": "江畔花园物业服务中心",
+   "aliases": [
+    "物业服务中心",
+    "苏晓雯的物业服务中心"
+   ],
+   "desc": "位于小区北门"
+  },
+  {
+   "id": "e10",
+   "kind": "person",
+   "name": "刘阿姨",
+   "desc": "定期到苏晓雯家上班"
+  },
+  {
+   "id": "e11",
+   "kind": "pet",
+   "name": "年糕",
+   "desc": "苏晓雯家的英短猫"
+  },
+  {
+   "id": "e12",
+   "kind": "organization",
+   "name": "小橘宠物医院",
+   "desc": "年糕预约年度疫苗的医院"
+  },
+  {
+   "id": "e13",
+   "kind": "event",
+   "name": "年糕年度疫苗预约",
+   "desc": "五月六日下午的疫苗预约"
+  },
+  {
+   "id": "e14",
+   "kind": "person",
+   "name": "周子航",
+   "aliases": [
+    "子航"
+   ],
+   "desc": "就读梧桐路小学四（3）班"
+  },
+  {
+   "id": "e15",
+   "kind": "organization",
+   "name": "梧桐路小学",
+   "desc": "周子航就读的小学"
+  },
+  {
+   "id": "e16",
+   "kind": "person",
+   "name": "王丽",
+   "aliases": [
+    "王丽老师"
+   ],
+   "desc": "周子航的班主任兼数学老师"
+  },
+  {
+   "id": "e17",
+   "kind": "person",
+   "name": "周小满",
+   "aliases": [
+    "小满"
+   ],
+   "desc": "就读向日葵幼儿园大二班"
+  },
+  {
+   "id": "e18",
+   "kind": "organization",
+   "name": "向日葵幼儿园",
+   "desc": "周小满就读的幼儿园"
+  },
+  {
+   "id": "e19",
+   "kind": "person",
+   "name": "王欣",
+   "aliases": [
+    "王欣老师"
+   ],
+   "desc": "周小满的班主任"
+  },
+  {
+   "id": "e20",
+   "kind": "service",
+   "name": "周子航的游泳课",
+   "aliases": [
+    "子航游泳课"
+   ],
+   "desc": "每周六上午的游泳课程"
+  },
+  {
+   "id": "e21",
+   "kind": "place",
+   "name": "市体育中心游泳馆",
+   "desc": "周子航游泳课的上课地点"
+  },
+  {
+   "id": "e22",
+   "kind": "person",
+   "name": "李教练",
+   "desc": "周子航的游泳教练"
+  },
+  {
+   "id": "e23",
+   "kind": "service",
+   "name": "启明英语课",
+   "desc": "周子航每周日的英语课程"
+  },
+  {
+   "id": "e24",
+   "kind": "person",
+   "name": "Amy",
+   "desc": "启明英语课四月前的老师"
+  },
+  {
+   "id": "e25",
+   "kind": "person",
+   "name": "Kevin",
+   "desc": "四月起接任启明英语课的老师"
+  },
+  {
+   "id": "e26",
+   "kind": "group",
+   "name": "梧桐路小学篮球校队",
+   "aliases": [
+    "篮球校队"
+   ],
+   "desc": "周子航参加训练的校队"
+  },
+  {
+   "id": "e27",
+   "kind": "event",
+   "name": "周子航的篮球比赛",
+   "desc": "四月九日记录的获胜比赛"
+  },
+  {
+   "id": "e28",
+   "kind": "event",
+   "name": "周子航学校科技节",
+   "aliases": [
+    "学校科技节"
+   ],
+   "desc": "四月十七日举行的学校活动"
+  },
+  {
+   "id": "e29",
+   "kind": "asset",
+   "name": "周子航的水火箭",
+   "aliases": [
+    "水火箭"
+   ],
+   "desc": "学校科技节二等奖作品"
+  },
+  {
+   "id": "e30",
+   "kind": "asset",
+   "name": "苏晓雯家的晕车药",
+   "aliases": [
+    "晕车药"
+   ],
+   "desc": "放在车内储物箱的药"
+  },
+  {
+   "id": "e31",
+   "kind": "asset",
+   "name": "苏晓雯家汽车的储物箱",
+   "aliases": [
+    "车里的储物箱"
+   ],
+   "desc": "存放晕车药的车内储物箱"
+  },
+  {
+   "id": "e32",
+   "kind": "person",
+   "name": "陈玉兰",
+   "aliases": [
+    "妈妈",
+    "妈妈（新号）"
+   ],
+   "desc": "苏晓雯的母亲"
+  },
+  {
+   "id": "e33",
+   "kind": "person",
+   "name": "苏晓峰",
+   "desc": "苏晓雯的哥哥，在上海"
+  },
+  {
+   "id": "e34",
+   "kind": "person",
+   "name": "林蕾",
+   "desc": "苏晓峰的妻子"
+  },
+  {
+   "id": "e35",
+   "kind": "person",
+   "name": "念念",
+   "desc": "苏晓峰的孩子，学习钢琴"
+  },
+  {
+   "id": "e36",
+   "kind": "organization",
+   "name": "小画家美术",
+   "desc": "小满学习美术的机构"
+  },
+  {
+   "id": "e37",
+   "kind": "organization",
+   "name": "星星舞蹈工作室",
+   "desc": "小满学习舞蹈的机构"
+  },
+  {
+   "id": "e38",
+   "kind": "event",
+   "name": "苏晓雯的小满美术班",
+   "desc": "小画家美术周三下午班"
+  },
+  {
+   "id": "e39",
+   "kind": "event",
+   "name": "苏晓雯的小满舞蹈启蒙班",
+   "aliases": [
+    "星星舞蹈工作室启蒙班"
+   ],
+   "desc": "四月起调整到周四下午"
+  },
+  {
+   "id": "e40",
+   "kind": "place",
+   "name": "河西文体中心",
+   "desc": "小满舞蹈课所在地点"
+  },
+  {
+   "id": "e41",
+   "kind": "organization",
+   "name": "苏晓雯的小满幼儿园",
+   "aliases": [
+    "幼儿园"
+   ],
+   "desc": "小满就读的幼儿园"
+  },
+  {
+   "id": "e42",
+   "kind": "asset",
+   "name": "苏晓雯的餐桌药盒",
+   "desc": "存放何桂英的缬沙坦"
+  },
+  {
+   "id": "e43",
+   "kind": "document",
+   "name": "苏晓雯的周德民血糖记录本",
+   "aliases": [
+    "小本子"
+   ],
+   "desc": "记录周德民空腹血糖"
+  },
+  {
+   "id": "e44",
+   "kind": "document",
+   "name": "苏晓雯的周德民医保卡",
+   "desc": "周德民的医保卡"
+  },
+  {
+   "id": "e45",
+   "kind": "document",
+   "name": "苏晓雯的何桂英医保卡",
+   "desc": "何桂英的医保卡"
+  },
+  {
+   "id": "e46",
+   "kind": "asset",
+   "name": "苏晓雯的客厅电视柜左侧抽屉",
+   "desc": "存放两人的医保卡"
+  },
+  {
+   "id": "e47",
+   "kind": "group",
+   "name": "苏晓雯的何桂英小区广场舞队",
+   "desc": "三月比赛获得二等奖"
+  },
+  {
+   "id": "e48",
+   "kind": "organization",
+   "name": "苏晓雯的周德民老年大学",
+   "desc": "周德民计划去上书法课"
+  },
+  {
+   "id": "e49",
+   "kind": "place",
+   "name": "苏晓雯的陈玉兰桂语苑住所",
+   "aliases": [
+    "桂语苑3幢2单元502"
+   ],
+   "desc": "陈玉兰三月搬入的新住所"
+  },
+  {
+   "id": "e50",
+   "kind": "asset",
+   "name": "苏晓雯的陈玉兰文二路老房子",
+   "aliases": [
+    "文二路老房子"
+   ],
+   "desc": "已确定买家，计划四月底过户"
+  },
+  {
+   "id": "e51",
+   "kind": "place",
+   "name": "西溪",
+   "desc": "陈玉兰晚饭后散步的地方"
+  },
+  {
+   "id": "e52",
+   "kind": "organization",
+   "name": "苏晓雯的陈玉兰社区医院",
+   "desc": "陈玉兰预约年度体检的医院"
+  },
+  {
+   "id": "e53",
+   "kind": "event",
+   "name": "苏晓雯的念念学校钢琴表演",
+   "desc": "五月十六日在学校举行"
+  },
+  {
+   "id": "e54",
+   "kind": "organization",
+   "name": "金陵小馆",
+   "desc": "一家人吃年夜饭的餐馆"
+  },
+  {
+   "id": "e55",
+   "kind": "place",
+   "name": "牡丹厅",
+   "desc": "金陵小馆的年夜饭包厅"
+  },
+  {
+   "id": "e56",
+   "kind": "event",
+   "name": "苏晓雯的除夕年夜饭",
+   "desc": "八人参加的家庭年夜饭"
+  },
+  {
+   "id": "e57",
+   "kind": "event",
+   "name": "苏晓雯的二月家庭大扫除",
+   "desc": "二月十四日已完成"
+  },
+  {
+   "id": "e58",
+   "kind": "place",
+   "name": "南京",
+   "desc": "春节家人到访的城市"
+  },
+  {
+   "id": "e59",
+   "kind": "place",
+   "name": "杭州",
+   "aliases": [
+    "杭州市"
+   ],
+   "desc": "陈玉兰新住所所在城市"
+  },
+  {
+   "id": "e60",
+   "kind": "place",
+   "name": "上海",
+   "desc": "苏晓峰所在城市"
+  },
+  {
+   "id": "e61",
+   "kind": "person",
+   "name": "二叔",
+   "desc": "计划夏天来南京的亲属"
+  },
+  {
+   "id": "e62",
+   "kind": "person",
+   "name": "李浩然",
+   "desc": "子航生日派对的同学来宾"
+  },
+  {
+   "id": "e63",
+   "kind": "person",
+   "name": "陈一诺",
+   "desc": "子航生日派对的同学来宾"
+  },
+  {
+   "id": "e64",
+   "kind": "person",
+   "name": "王子墨",
+   "desc": "子航生日派对的同学来宾"
+  },
+  {
+   "id": "e65",
+   "kind": "person",
+   "name": "刘思远",
+   "desc": "子航生日派对的同学来宾"
+  },
+  {
+   "id": "e66",
+   "kind": "place",
+   "name": "扬州",
+   "aliases": [
+    "扬州老家"
+   ],
+   "desc": "家人清明扫墓的老家"
+  },
+  {
+   "id": "e67",
+   "kind": "place",
+   "name": "成都",
+   "desc": "周明出差目的地"
+  },
+  {
+   "id": "e68",
+   "kind": "place",
+   "name": "厦门",
+   "desc": "五一家庭旅行目的地"
+  },
+  {
+   "id": "e69",
+   "kind": "organization",
+   "name": "江南春晓",
+   "desc": "提供淮扬菜的餐厅"
+  },
+  {
+   "id": "e70",
+   "kind": "place",
+   "name": "禄口机场",
+   "desc": "厦门旅行出发机场"
+  },
+  {
+   "id": "e71",
+   "kind": "organization",
+   "name": "鹭岛海景酒店",
+   "desc": "厦门旅行已预订的酒店"
+  },
+  {
+   "id": "e72",
+   "kind": "place",
+   "name": "东渡码头",
+   "desc": "前往鼓浪屿的登船码头"
+  },
+  {
+   "id": "e73",
+   "kind": "place",
+   "name": "鼓浪屿",
+   "desc": "厦门旅行中的乘船目的地"
+  },
+  {
+   "id": "e74",
+   "kind": "organization",
+   "name": "青枫医院",
+   "desc": "周德民复查的医院"
+  },
+  {
+   "id": "e75",
+   "kind": "organization",
+   "name": "青枫医院内分泌科",
+   "aliases": [
+    "内分泌科"
+   ],
+   "desc": "周德民复查的科室"
+  },
+  {
+   "id": "e76",
+   "kind": "group",
+   "name": "四（3）班",
+   "aliases": [
+    "子航四（3）班"
+   ],
+   "desc": "子航就读的班级"
+  },
+  {
+   "id": "e77",
+   "kind": "group",
+   "name": "大二班",
+   "aliases": [
+    "小满大二班"
+   ],
+   "desc": "小满就读的班级"
+  },
+  {
+   "id": "e78",
+   "kind": "place",
+   "name": "绿博园",
+   "desc": "小满班级春游目的地"
+  },
+  {
+   "id": "e79",
+   "kind": "organization",
+   "name": "社区卫生服务中心",
+   "desc": "小满预约接种疫苗的机构"
+  },
+  {
+   "id": "e80",
+   "kind": "place",
+   "name": "南京南站",
+   "desc": "陈玉兰来南京的到达车站"
+  },
+  {
+   "id": "e81",
+   "kind": "organization",
+   "name": "苏晓雯的燃气公司",
+   "aliases": [
+    "燃气公司"
+   ],
+   "desc": "年度燃气安全检查服务方"
+  },
+  {
+   "id": "e82",
+   "kind": "service",
+   "name": "苏晓雯的物业App",
+   "aliases": [
+    "物业App"
+   ],
+   "desc": "物业费线上缴纳渠道"
+  },
+  {
+   "id": "e83",
+   "kind": "asset",
+   "name": "子航的储蓄卡",
+   "desc": "存放子航压岁钱的储蓄卡"
+  },
+  {
+   "id": "e84",
+   "kind": "asset",
+   "name": "苏晓雯的旧洗衣机",
+   "aliases": [
+    "旧洗衣机"
+   ],
+   "desc": "修过两次又不脱水"
+  },
+  {
+   "id": "e85",
+   "kind": "asset",
+   "name": "苏晓雯的新洗衣机",
+   "aliases": [
+    "10公斤滚筒新洗衣机"
+   ],
+   "desc": "周明已订购的滚筒洗衣机"
+  },
+  {
+   "id": "e86",
+   "kind": "asset",
+   "name": "苏晓雯的三台空调",
+   "desc": "家中已完成清洗的三台空调"
+  },
+  {
+   "id": "e87",
+   "kind": "document",
+   "name": "何桂英的新身份证",
+   "aliases": [
+    "新证"
+   ],
+   "desc": "已申请换领的身份证"
+  },
+  {
+   "id": "e88",
+   "kind": "vehicle",
+   "name": "苏晓雯的白色SUV",
+   "aliases": [
+    "白色SUV"
+   ],
+   "desc": "交强险和商业险即将到期"
+  },
+  {
+   "id": "e89",
+   "kind": "asset",
+   "name": "子航的天文望远镜",
+   "aliases": [
+    "天文望远镜"
+   ],
+   "desc": "陈玉兰购买的生日礼物"
+  },
+  {
+   "id": "e90",
+   "kind": "asset",
+   "name": "周德民的血糖仪",
+   "aliases": [
+    "血糖仪"
+   ],
+   "desc": "厦门旅行需携带的血糖仪"
+  },
+  {
+   "id": "e91",
+   "kind": "event",
+   "name": "苏晓雯的结婚12周年纪念日",
+   "aliases": [
+    "结婚纪念日"
+   ],
+   "desc": "苏晓雯与周明的周年纪念日"
+  },
+  {
+   "id": "e92",
+   "kind": "trip",
+   "name": "苏晓雯的厦门家庭旅行",
+   "aliases": [
+    "五一厦门旅行"
+   ],
+   "desc": "五一一家六人的厦门旅行"
+  },
+  {
+   "id": "e93",
+   "kind": "document",
+   "name": "苏晓雯的厦门往返机票",
+   "desc": "家庭厦门旅行已订机票"
+  },
+  {
+   "id": "e94",
+   "kind": "service",
+   "name": "苏晓雯的鹭岛海景酒店预订",
+   "aliases": [
+    "LD20260501"
+   ],
+   "desc": "两间含早餐海景家庭房预订"
+  },
+  {
+   "id": "e95",
+   "kind": "document",
+   "name": "苏晓雯的鼓浪屿船票",
+   "desc": "东渡码头至鼓浪屿六张船票"
+  },
+  {
+   "id": "e96",
+   "kind": "event",
+   "name": "周德民的内分泌科复查",
+   "aliases": [
+    "4月27日复查"
+   ],
+   "desc": "改期至4月27日的复查"
+  },
+  {
+   "id": "e97",
+   "kind": "event",
+   "name": "子航的期中考试",
+   "desc": "四（3）班两天期中考试"
+  },
+  {
+   "id": "e98",
+   "kind": "event",
+   "name": "子航的家长会",
+   "aliases": [
+    "四（3）班家长会"
+   ],
+   "desc": "改期至4月28日的家长会"
+  },
+  {
+   "id": "e99",
+   "kind": "event",
+   "name": "小满的春游",
+   "aliases": [
+    "大二班绿博园春游"
+   ],
+   "desc": "4月24日班级春游"
+  },
+  {
+   "id": "e100",
+   "kind": "event",
+   "name": "小满的疫苗接种",
+   "desc": "4月25日上午预约接种"
+  },
+  {
+   "id": "e101",
+   "kind": "event",
+   "name": "子航的游泳课",
+   "desc": "4月25日上午游泳课"
+  },
+  {
+   "id": "e102",
+   "kind": "trip",
+   "name": "陈玉兰的南京行程",
+   "desc": "4月25日至30日来南京"
+  },
+  {
+   "id": "e103",
+   "kind": "document",
+   "name": "陈玉兰的高铁票",
+   "aliases": [
+    "G7618车票"
+   ],
+   "desc": "改签至25日的二等座车票"
+  },
+  {
+   "id": "e104",
+   "kind": "event",
+   "name": "苏晓雯的年度燃气安全检查",
+   "desc": "4月24日下午上门检查"
+  },
+  {
+   "id": "e105",
+   "kind": "document",
+   "name": "苏晓雯的第二季度物业费账单",
+   "desc": "2026年第二季度物业费"
+  },
+  {
+   "id": "e106",
+   "kind": "trip",
+   "name": "周明的成都出差",
+   "desc": "4月26日至29日出差"
+  },
+  {
+   "id": "e107",
+   "kind": "event",
+   "name": "子航的生日派对",
+   "aliases": [
+    "生日小派对"
+   ],
+   "desc": "计划在家举办的同学生日派对"
+  },
+  {
+   "id": "e108",
+   "kind": "asset",
+   "name": "子航的生日蛋糕",
+   "desc": "尚未订购且不能带芒果"
+  },
+  {
+   "id": "e109",
+   "kind": "person",
+   "name": "苏晓雯的小满的哥哥",
+   "aliases": [
+    "哥哥"
+   ],
+   "desc": "小满的哥哥，就读梧桐路小学"
+  },
+  {
+   "id": "e110",
+   "kind": "asset",
+   "name": "苏晓雯的相关文件袋",
+   "aliases": [
+    "周明的文件袋"
+   ],
+   "desc": "周明的文件袋，存放户口本"
+  },
+  {
+   "id": "e111",
+   "kind": "document",
+   "name": "苏晓雯的相关户口本",
+   "aliases": [
+    "户口本"
+   ],
+   "desc": "小满幼升小报名所需材料"
+  },
+  {
+   "id": "e112",
+   "kind": "document",
+   "name": "苏晓雯的相关房产证",
+   "aliases": [
+    "房产证"
+   ],
+   "desc": "小满幼升小报名所需材料"
+  },
+  {
+   "id": "e113",
+   "kind": "document",
+   "name": "苏晓雯的小满出生证明",
+   "aliases": [
+    "小满的出生证明"
+   ],
+   "desc": "小满幼升小报名所需材料"
+  },
+  {
+   "id": "e114",
+   "kind": "document",
+   "name": "苏晓雯的小满预防接种证",
+   "aliases": [
+    "小满的预防接种证"
+   ],
+   "desc": "小满幼升小报名所需材料"
+  },
+  {
+   "id": "e115",
+   "kind": "event",
+   "name": "苏晓雯的小满幼升小报名",
+   "aliases": [
+    "小满梧桐路小学幼升小报名"
+   ],
+   "desc": "小满报读梧桐路小学的报名"
+  }
+ ],
+ "edges": [
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "spouse_of",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "lives_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "employed_by",
+   "dst": "e6",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e7",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e8",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e9",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e10",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "pet_owner_of",
+   "dst": "e11",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "treated_by",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "attends",
+   "dst": "e13",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "student_at",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e16",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "student_at",
+   "dst": "e18",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "custom.mentions",
+   "dst": "e19",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "enrolled_in",
+   "dst": "e20",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e20",
+   "rel": "located_at",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "enrolled_in",
+   "dst": "e23",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e23",
+   "rel": "custom.mentions",
+   "dst": "e24",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e23",
+   "rel": "custom.mentions",
+   "dst": "e25",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "member_of",
+   "dst": "e26",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "attends",
+   "dst": "e27",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "attends",
+   "dst": "e28",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "owns",
+   "dst": "e29",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e30",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e7",
+   "rel": "owns",
+   "dst": "e31",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "lives_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "lives_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "uses",
+   "dst": "e7",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e10",
+   "rel": "works_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e13",
+   "rel": "located_at",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e16",
+   "rel": "teacher_of",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e19",
+   "rel": "teacher_of",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e22",
+   "rel": "teacher_of",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "custom.mentions",
+   "dst": "e20",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "custom.mentions",
+   "dst": "e23",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e30",
+   "rel": "located_at",
+   "dst": "e31",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e31",
+   "rel": "part_of",
+   "dst": "e7",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "child_of",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "sibling_of",
+   "dst": "e33",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "spouse_of",
+   "dst": "e34",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "parent_of",
+   "dst": "e35",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "student_at",
+   "dst": "e36",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "student_at",
+   "dst": "e37",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "enrolled_in",
+   "dst": "e38",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "enrolled_in",
+   "dst": "e39",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e39",
+   "rel": "located_at",
+   "dst": "e40",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "student_at",
+   "dst": "e41",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "uses",
+   "dst": "e42",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "uses",
+   "dst": "e43",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "owns",
+   "dst": "e44",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "owns",
+   "dst": "e45",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e46",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "member_of",
+   "dst": "e47",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "custom.mentions",
+   "dst": "e48",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "lives_at",
+   "dst": "e49",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "owns",
+   "dst": "e50",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "frequently_visits",
+   "dst": "e51",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "custom.mentions",
+   "dst": "e52",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e35",
+   "rel": "attends",
+   "dst": "e53",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e54",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e54",
+   "rel": "custom.mentions",
+   "dst": "e55",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e56",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e57",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e58",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "lives_at",
+   "dst": "e59",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "custom.mentions",
+   "dst": "e60",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "parent_of",
+   "dst": "e33",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e38",
+   "rel": "part_of",
+   "dst": "e36",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e39",
+   "rel": "part_of",
+   "dst": "e37",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e44",
+   "rel": "located_at",
+   "dst": "e46",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e45",
+   "rel": "located_at",
+   "dst": "e46",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e49",
+   "rel": "located_at",
+   "dst": "e59",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e55",
+   "rel": "part_of",
+   "dst": "e54",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e56",
+   "rel": "located_at",
+   "dst": "e55",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e33",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e61",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e62",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e63",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e64",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e65",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e66",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "custom.mentions",
+   "dst": "e59",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "custom.mentions",
+   "dst": "e67",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e68",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e69",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e70",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e71",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e72",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e73",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "treated_by",
+   "dst": "e74",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e74",
+   "rel": "custom.mentions",
+   "dst": "e75",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "member_of",
+   "dst": "e76",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "member_of",
+   "dst": "e77",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e77",
+   "rel": "custom.mentions",
+   "dst": "e78",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "treated_by",
+   "dst": "e79",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "custom.mentions",
+   "dst": "e80",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e81",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e9",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e82",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "owns",
+   "dst": "e83",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e84",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e85",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e86",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "custom.mentions",
+   "dst": "e87",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e88",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "custom.mentions",
+   "dst": "e89",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "uses",
+   "dst": "e90",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e91",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e92",
+   "rel": "custom.mentions",
+   "dst": "e93",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e92",
+   "rel": "custom.mentions",
+   "dst": "e94",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e92",
+   "rel": "custom.mentions",
+   "dst": "e95",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "attends",
+   "dst": "e96",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "attends",
+   "dst": "e97",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e76",
+   "rel": "organizes",
+   "dst": "e98",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "attends",
+   "dst": "e99",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "attends",
+   "dst": "e100",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "attends",
+   "dst": "e101",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "attends",
+   "dst": "e102",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "owns",
+   "dst": "e103",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e104",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e105",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "attends",
+   "dst": "e106",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "organizes",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e107",
+   "rel": "custom.mentions",
+   "dst": "e108",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e75",
+   "rel": "part_of",
+   "dst": "e74",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "treated_by",
+   "dst": "e75",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e77",
+   "rel": "organizes",
+   "dst": "e99",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "attends",
+   "dst": "e91",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e2",
+   "rel": "attends",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "attends",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e93",
+   "rel": "part_of",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e94",
+   "rel": "part_of",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e95",
+   "rel": "part_of",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e94",
+   "rel": "custom.mentions",
+   "dst": "e71",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e81",
+   "rel": "organizes",
+   "dst": "e104",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e104",
+   "rel": "located_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e14",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e62",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e63",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e64",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e65",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "attends",
+   "dst": "e107",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e107",
+   "rel": "located_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "custom.mentions",
+   "dst": "e89",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "sibling_of",
+   "dst": "e109",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "owns",
+   "dst": "e110",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e111",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e112",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "custom.mentions",
+   "dst": "e113",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "custom.mentions",
+   "dst": "e114",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "attends",
+   "dst": "e115",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e109",
+   "rel": "student_at",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e111",
+   "rel": "located_at",
+   "dst": "e110",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e115",
+   "rel": "custom.mentions",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e115",
+   "rel": "custom.mentions",
+   "dst": "e111",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e115",
+   "rel": "custom.mentions",
+   "dst": "e112",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e115",
+   "rel": "custom.mentions",
+   "dst": "e113",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e115",
+   "rel": "custom.mentions",
+   "dst": "e114",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "subject": "e0",
+   "module": "identity.residency",
+   "value": "[2026-01-05] 苏晓雯一家住在南京市建邺区江畔花园7栋1802。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#1"
+   ]
+  },
+  {
+   "id": "f2",
+   "subject": "e0",
+   "module": "identity.residency",
+   "value": "[2026-01-05] 苏晓雯居住在南京市。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#1"
+   ]
+  },
+  {
+   "id": "f3",
+   "subject": "e1",
+   "module": "identity.residency",
+   "value": "[2026-01-05] 周德民与苏晓雯一家同住。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e4"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#1"
+   ]
+  },
+  {
+   "id": "f4",
+   "subject": "e2",
+   "module": "identity.residency",
+   "value": "[2026-01-05] 何桂英与苏晓雯一家同住。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e4"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#1"
+   ]
+  },
+  {
+   "id": "f5",
+   "subject": "e0",
+   "module": "work.organization",
+   "value": "[2026-01-05] 苏晓雯在银行河西支行工作。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e5"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "employer",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#2"
+   ]
+  },
+  {
+   "id": "f6",
+   "subject": "e0",
+   "module": "work.role",
+   "value": "[2026-01-05] 苏晓雯的职位是客户经理。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#2"
+   ]
+  },
+  {
+   "id": "f7",
+   "subject": "e0",
+   "module": "health.allergies",
+   "value": "[2026-01-05] 苏晓雯对头孢过敏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#3"
+   ]
+  },
+  {
+   "id": "f8",
+   "subject": "e3",
+   "module": "relationship.roles",
+   "value": "[2026-01-05] 周明是苏晓雯的丈夫。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#4"
+   ]
+  },
+  {
+   "id": "f9",
+   "subject": "e3",
+   "module": "work.organization",
+   "value": "[2026-01-05] 周明在市建筑设计院工作。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e6"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "employer",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#4"
+   ]
+  },
+  {
+   "id": "f10",
+   "subject": "e3",
+   "module": "work.role",
+   "value": "[2026-01-05] 周明是结构工程师。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#4"
+   ]
+  },
+  {
+   "id": "f11",
+   "subject": "e3",
+   "module": "health.allergies",
+   "value": "[2026-02-20] 周明对虾过敏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#5"
+   ]
+  },
+  {
+   "id": "f12",
+   "subject": "e3",
+   "module": "health.allergies",
+   "value": "[2026-02-20] 周明对蟹过敏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#5"
+   ]
+  },
+  {
+   "id": "f13",
+   "subject": "e3",
+   "module": "relationship.obligations",
+   "value": "[2026-02-20] 为周明订餐时需提前告知餐厅其虾蟹过敏情况。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#5"
+   ]
+  },
+  {
+   "id": "f14",
+   "subject": "e7",
+   "module": "vehicle.state",
+   "value": "[2026-01-05] 苏晓雯家的车是白色SUV。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "car model",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#6"
+   ]
+  },
+  {
+   "id": "f15",
+   "subject": "e3",
+   "module": "schedule.routines",
+   "value": "[2026-01-05] 周明平时驾驶家里的白色SUV。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e7"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#6"
+   ]
+  },
+  {
+   "id": "f16",
+   "subject": "e8",
+   "module": "work.role",
+   "value": "[2026-01-05] 小陈是苏晓雯小区的物业管家。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#7"
+   ]
+  },
+  {
+   "id": "f17",
+   "subject": "e9",
+   "module": "location.address",
+   "value": "[2026-01-05] 江畔花园物业服务中心在小区北门。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#7"
+   ]
+  },
+  {
+   "id": "f18",
+   "subject": "e10",
+   "module": "schedule.recurring",
+   "value": "[2026-03-28] 刘阿姨四月起每周三、周六上午九点至十二点到苏晓雯家上班。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e4"
+   ],
+   "observed_at": "2026-03-28",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "slot": "上门时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#8"
+   ]
+  },
+  {
+   "id": "f19",
+   "subject": "e10",
+   "module": "schedule.recurring",
+   "value": "[2026-03-28] 刘阿姨调整前每周二、周五到苏晓雯家上班。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e4"
+   ],
+   "observed_at": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#8"
+   ]
+  },
+  {
+   "id": "f20",
+   "subject": "e2",
+   "module": "relationship.obligations",
+   "value": "[2026-03-28] 何桂英负责在家给刘阿姨开门。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e10"
+   ],
+   "observed_at": "2026-03-28",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#8"
+   ]
+  },
+  {
+   "id": "f21",
+   "subject": "e10",
+   "module": "schedule.availability",
+   "value": "[2026-03-03] 刘阿姨春节休假后于三月三日回来上班。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#9"
+   ]
+  },
+  {
+   "id": "f22",
+   "subject": "e11",
+   "module": "pet.identity",
+   "value": "[2026-01-05] 年糕是苏晓雯家养的猫。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#10"
+   ]
+  },
+  {
+   "id": "f23",
+   "subject": "e11",
+   "module": "pet.species",
+   "value": "[2026-01-05] 年糕是英短猫。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "slot": "品种",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#10"
+   ]
+  },
+  {
+   "id": "f24",
+   "subject": "e11",
+   "module": "pet.identity",
+   "value": "[2026-01-05] 年糕三岁。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "年龄",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#10"
+   ]
+  },
+  {
+   "id": "f25",
+   "subject": "e11",
+   "module": "pet.diet",
+   "value": "[2026-01-05] 年糕只吃鱼肉味的猫粮。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#11"
+   ]
+  },
+  {
+   "id": "f26",
+   "subject": "e11",
+   "module": "pet.care_routine",
+   "value": "[2026-01-05] 年糕一天吃两顿，早晚各一小碗。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-05",
+   "valid_from": "2026-01-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#11"
+   ]
+  },
+  {
+   "id": "f27",
+   "subject": "e13",
+   "module": "event.status",
+   "value": "[2026-04-12] 年糕年度疫苗已预约。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-04-12",
+   "slot": "预约状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#12"
+   ]
+  },
+  {
+   "id": "f28",
+   "subject": "e13",
+   "module": "event.schedule",
+   "value": "[2026-04-12] 年糕年度疫苗预约时间为五月六日周三下午三点。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-05-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#12"
+   ]
+  },
+  {
+   "id": "f29",
+   "subject": "e13",
+   "module": "event.location",
+   "value": "[2026-04-12] 年糕年度疫苗预约地点是小橘宠物医院。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11",
+    "e12"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-05-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#12"
+   ]
+  },
+  {
+   "id": "f30",
+   "subject": "e11",
+   "module": "pet.health",
+   "value": "[2026-04-12] 年糕最近换季掉毛厉害。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-04-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#13"
+   ]
+  },
+  {
+   "id": "f31",
+   "subject": "e11",
+   "module": "pet.care_routine",
+   "value": "[2026-04-12] 年糕换季掉毛期间需要多梳毛。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-04-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#13"
+   ]
+  },
+  {
+   "id": "f32",
+   "subject": "e14",
+   "module": "identity.demographics",
+   "value": "[2026-01-08] 周子航十岁。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "年龄",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f33",
+   "subject": "e14",
+   "module": "education.enrollment",
+   "value": "[2026-01-08] 周子航就读梧桐路小学。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f34",
+   "subject": "e14",
+   "module": "education.enrollment",
+   "value": "[2026-01-08] 周子航在四（3）班。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "班级",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f35",
+   "subject": "e16",
+   "module": "work.role",
+   "value": "[2026-01-08] 王丽是周子航的班主任。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f36",
+   "subject": "e16",
+   "module": "work.responsibilities",
+   "value": "[2026-01-08] 王丽教周子航数学。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f37",
+   "subject": "e14",
+   "module": "relationship.important_dates",
+   "value": "[2026-01-08] 周子航的生日是五月九日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-05-09",
+   "slot": "生日",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#15"
+   ]
+  },
+  {
+   "id": "f38",
+   "subject": "e14",
+   "module": "health.allergies",
+   "value": "[2026-01-08] 周子航对芒果过敏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#16"
+   ]
+  },
+  {
+   "id": "f39",
+   "subject": "e14",
+   "module": "health.allergies",
+   "value": "[2026-01-08] 周子航在去年夏天吃芒果后嘴唇肿。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2025-01-01",
+   "valid_to": "2025-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#16"
+   ]
+  },
+  {
+   "id": "f40",
+   "subject": "e14",
+   "module": "health.allergies",
+   "value": "[2026-01-08] 医生要求周子航以后不要吃芒果。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#16"
+   ]
+  },
+  {
+   "id": "f41",
+   "subject": "e14",
+   "module": "health.conditions",
+   "value": "[2026-01-08] 周子航近视，左眼二百度。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "左眼近视度数",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#17"
+   ]
+  },
+  {
+   "id": "f42",
+   "subject": "e14",
+   "module": "health.conditions",
+   "value": "[2026-01-08] 周子航右眼近视一百七十五度。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "右眼近视度数",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#17"
+   ]
+  },
+  {
+   "id": "f43",
+   "subject": "e14",
+   "module": "schedule.recurring",
+   "value": "[2026-01-08] 周子航每半年复查一次眼睛。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "眼睛复查周期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#17"
+   ]
+  },
+  {
+   "id": "f44",
+   "subject": "e14",
+   "module": "health.providers",
+   "value": "[2026-01-08] 周子航上次眼睛复查在二〇二五年十一月。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2025-11-01",
+   "valid_to": "2025-11-30",
+   "slot": "上次眼睛复查",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#17"
+   ]
+  },
+  {
+   "id": "f45",
+   "subject": "e3",
+   "module": "relationship.obligations",
+   "value": "[2026-04-12] 周明计划五月中旬带周子航复查眼睛。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-12",
+   "valid_from": "2026-05-01",
+   "valid_to": "2026-05-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#18"
+   ]
+  },
+  {
+   "id": "f46",
+   "subject": "e14",
+   "module": "preferences.entertainment",
+   "value": "[2026-01-08] 周子航喜欢乐高。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#19"
+   ]
+  },
+  {
+   "id": "f47",
+   "subject": "e14",
+   "module": "preferences.entertainment",
+   "value": "[2026-01-08] 周子航喜欢篮球。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#19"
+   ]
+  },
+  {
+   "id": "f48",
+   "subject": "e14",
+   "module": "health.providers",
+   "value": "[2026-01-31] 周子航一月三十一日看过牙医。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-31",
+   "valid_from": "2026-01-31",
+   "slot": "上次牙科检查",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#20"
+   ]
+  },
+  {
+   "id": "f49",
+   "subject": "e14",
+   "module": "health.conditions",
+   "value": "[2026-01-31] 周子航的牙还没换完。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-31",
+   "valid_from": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#20"
+   ]
+  },
+  {
+   "id": "f50",
+   "subject": "e14",
+   "module": "health.providers",
+   "value": "[2026-01-31] 医生建议周子航等十二岁左右换完牙后再评估矫正。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-31",
+   "valid_from": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#20"
+   ]
+  },
+  {
+   "id": "f51",
+   "subject": "e14",
+   "module": "schedule.recurring",
+   "value": "[2026-01-31] 周子航目前每半年检查一次牙齿。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-31",
+   "valid_from": "2026-01-31",
+   "slot": "牙科检查周期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#20"
+   ]
+  },
+  {
+   "id": "f52",
+   "subject": "e14",
+   "module": "health.conditions",
+   "value": "[2026-04-05] 周子航会晕车。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#21"
+   ]
+  },
+  {
+   "id": "f53",
+   "subject": "e14",
+   "module": "health.medications",
+   "value": "[2026-04-05] 家人计划下次出门前给周子航吃晕车药。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e30"
+   ],
+   "observed_at": "2026-04-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#21"
+   ]
+  },
+  {
+   "id": "f54",
+   "subject": "e30",
+   "module": "asset.state",
+   "value": "[2026-04-05] 苏晓雯家的晕车药放在车里的储物箱。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e7",
+    "e31"
+   ],
+   "observed_at": "2026-04-05",
+   "valid_from": "2026-04-05",
+   "slot": "存放位置",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#21"
+   ]
+  },
+  {
+   "id": "f55",
+   "subject": "e14",
+   "module": "preferences.dressing",
+   "value": "[2026-02-24] 周子航的校服小了，需要换一百五十码。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "slot": "所需校服尺码",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#22"
+   ]
+  },
+  {
+   "id": "f56",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-02-24] 苏晓雯已在学校群登记周子航更换校服。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#22"
+   ]
+  },
+  {
+   "id": "f57",
+   "subject": "e14",
+   "module": "preferences.shopping",
+   "value": "[2026-03-15] 周子航想要的新篮球鞋是三十七码。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-15",
+   "slot": "所需篮球鞋尺码",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#23"
+   ]
+  },
+  {
+   "id": "f58",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2026-03-15] 苏晓雯三月十五日说下周带周子航买新篮球鞋。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#23"
+   ]
+  },
+  {
+   "id": "f59",
+   "subject": "e14",
+   "module": "schedule.recurring",
+   "value": "[2026-03-05] 周子航每周六上午九点上游泳课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e20"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "slot": "游泳课时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#24"
+   ]
+  },
+  {
+   "id": "f60",
+   "subject": "e20",
+   "module": "service.provider",
+   "value": "[2026-03-05] 周子航的游泳课由李教练执教。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e22"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "slot": "教练",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#24"
+   ]
+  },
+  {
+   "id": "f61",
+   "subject": "e20",
+   "module": "notes.general",
+   "value": "[2026-03-05] 周子航的游泳课在市体育中心游泳馆上。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e21"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "slot": "上课地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#24"
+   ]
+  },
+  {
+   "id": "f62",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-03-05] 周德民带周子航去上游泳课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e20"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#24"
+   ]
+  },
+  {
+   "id": "f63",
+   "subject": "e20",
+   "module": "notes.general",
+   "value": "[2026-03-05] 周子航游泳课请假需提前一天告诉李教练。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e22"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#25"
+   ]
+  },
+  {
+   "id": "f64",
+   "subject": "e20",
+   "module": "service.history",
+   "value": "[2026-03-05] 周子航游泳课学费已交到六月底。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "slot": "已缴费至",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#25"
+   ]
+  },
+  {
+   "id": "f65",
+   "subject": "e14",
+   "module": "schedule.recurring",
+   "value": "[2026-03-03] 周子航的启明英语课仍为每周日上午十点。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e23"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "slot": "英语课时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#26"
+   ]
+  },
+  {
+   "id": "f66",
+   "subject": "e23",
+   "module": "service.history",
+   "value": "[2026-03-03] 启明英语课四月前的老师是Amy。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e24"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#26"
+   ]
+  },
+  {
+   "id": "f67",
+   "subject": "e23",
+   "module": "service.provider",
+   "value": "[2026-03-03] 启明英语课从四月起由Kevin替代Amy执教。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e24",
+    "e25"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "slot": "老师",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#26"
+   ]
+  },
+  {
+   "id": "f68",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-03-03] 周德民送周子航去上启明英语课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e23"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#26"
+   ]
+  },
+  {
+   "id": "f69",
+   "subject": "e26",
+   "module": "group.schedule",
+   "value": "[2026-01-15] 篮球校队开学后每周一、三放学后四点半至五点半训练。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-01-15",
+   "slot": "训练时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#27"
+   ]
+  },
+  {
+   "id": "f70",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-03-05] 周子航想学编程。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#28"
+   ]
+  },
+  {
+   "id": "f71",
+   "subject": "e3",
+   "module": "relationship.obligations",
+   "value": "[2026-03-05] 周明说周子航学编程的事等期中考完再说。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#28"
+   ]
+  },
+  {
+   "id": "f72",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-01-15] 周子航期末语文成绩为九十二分。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#29"
+   ]
+  },
+  {
+   "id": "f73",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-01-15] 周子航期末数学成绩为九十八分。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#29"
+   ]
+  },
+  {
+   "id": "f74",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-01-15] 周子航期末英语成绩为九十五分。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#29"
+   ]
+  },
+  {
+   "id": "f75",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-01-15] 王丽老师说周子航上课爱讲话。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e16"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#29"
+   ]
+  },
+  {
+   "id": "f76",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-03-15] 周子航三月数学单元测验考了九十五分。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#30"
+   ]
+  },
+  {
+   "id": "f77",
+   "subject": "e16",
+   "module": "work.responsibilities",
+   "value": "[2026-03-15] 王丽老师在群里表扬了周子航。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#30"
+   ]
+  },
+  {
+   "id": "f78",
+   "subject": "e27",
+   "module": "event.outcome",
+   "value": "[2026-04-09] 周子航的篮球比赛赢了。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-09",
+   "valid_from": "2026-04-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#31"
+   ]
+  },
+  {
+   "id": "f79",
+   "subject": "e14",
+   "module": "education.activities",
+   "value": "[2026-04-09] 周子航在篮球比赛中投进了两个球。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e27"
+   ],
+   "observed_at": "2026-04-09",
+   "valid_from": "2026-04-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#31"
+   ]
+  },
+  {
+   "id": "f80",
+   "subject": "e28",
+   "module": "event.schedule",
+   "value": "[2026-04-17] 周子航学校科技节在四月十七日举行。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#32"
+   ]
+  },
+  {
+   "id": "f81",
+   "subject": "e29",
+   "module": "asset.lifecycle",
+   "value": "[2026-04-17] 周子航在四月十七日学校科技节做的水火箭获得二等奖。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e28"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#32"
+   ]
+  },
+  {
+   "id": "f82",
+   "subject": "e17",
+   "module": "identity.demographics",
+   "value": "[2026-01-08] 周小满五岁。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "年龄",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#33"
+   ]
+  },
+  {
+   "id": "f83",
+   "subject": "e17",
+   "module": "education.enrollment",
+   "value": "[2026-01-08] 周小满就读向日葵幼儿园。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#33"
+   ]
+  },
+  {
+   "id": "f84",
+   "subject": "e17",
+   "module": "education.enrollment",
+   "value": "[2026-01-08] 周小满在大二班。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "slot": "班级",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#33"
+   ]
+  },
+  {
+   "id": "f85",
+   "subject": "e19",
+   "module": "work.role",
+   "value": "[2026-01-08] 王欣老师是周小满的班主任。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#33"
+   ]
+  },
+  {
+   "id": "f86",
+   "subject": "e17",
+   "module": "relationship.important_dates",
+   "value": "[2026-01-08] 周小满的生日是九月十八日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "valid_from": "2025-09-18",
+   "slot": "生日",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#34"
+   ]
+  },
+  {
+   "id": "f87",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-01-08] 周小满乳糖不耐受。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#35"
+   ]
+  },
+  {
+   "id": "f88",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-01-08] 周小满喝普通牛奶会肚子疼。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#35"
+   ]
+  },
+  {
+   "id": "f89",
+   "subject": "e17",
+   "module": "preferences.food",
+   "value": "[2026-01-08] 周小满只能喝无乳糖牛奶。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "slot": "牛奶选择",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#35"
+   ]
+  },
+  {
+   "id": "f90",
+   "subject": "e17",
+   "module": "preferences.entertainment",
+   "value": "[2026-01-08] 周小满喜欢画画。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#36"
+   ]
+  },
+  {
+   "id": "f91",
+   "subject": "e17",
+   "module": "preferences.entertainment",
+   "value": "[2026-01-08] 周小满喜欢跳舞。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#36"
+   ]
+  },
+  {
+   "id": "f92",
+   "subject": "e17",
+   "module": "preferences.dressing",
+   "value": "[2026-01-04] 周小满的鞋码是二十八码。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-04",
+   "valid_from": "2026-01-04",
+   "slot": "鞋码",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#37"
+   ]
+  },
+  {
+   "id": "f93",
+   "subject": "e17",
+   "module": "preferences.dressing",
+   "value": "[2026-03-08] 周小满现在穿一百二十码衣服。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-08",
+   "valid_from": "2026-03-08",
+   "slot": "衣服尺码",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#38"
+   ]
+  },
+  {
+   "id": "f94",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2026-03-08] 苏晓雯三月八日带周小满买了春装。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-03-08",
+   "valid_from": "2026-03-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#38"
+   ]
+  },
+  {
+   "id": "f95",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-03-30] 周小满三月幼儿园体检身高为一百一十二厘米。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-30",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "slot": "身高",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#39"
+   ]
+  },
+  {
+   "id": "f96",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-03-30] 周小满三月幼儿园体检体重为十九公斤。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-30",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "slot": "体重",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#39"
+   ]
+  },
+  {
+   "id": "f97",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-03-30] 周小满三月幼儿园体检视力正常。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-30",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "slot": "视力",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#39"
+   ]
+  },
+  {
+   "id": "f98",
+   "subject": "e17",
+   "module": "preferences.food",
+   "value": "[2026-03-30] 周小满挑食。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-30",
+   "valid_from": "2026-03-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#40"
+   ]
+  },
+  {
+   "id": "f99",
+   "subject": "e17",
+   "module": "preferences.food",
+   "value": "[2026-03-30] 周小满不吃胡萝卜，在幼儿园也会把胡萝卜挑出来。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-30",
+   "valid_from": "2026-03-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#40"
+   ]
+  },
+  {
+   "id": "f100",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-03-21] 小满的一颗蛀牙已补好。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-21",
+   "valid_from": "2026-03-19",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#41"
+   ]
+  },
+  {
+   "id": "f101",
+   "subject": "e17",
+   "module": "health.conditions",
+   "value": "[2026-03-21] 医生建议小满以后少吃糖。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-21",
+   "valid_from": "2026-03-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#41"
+   ]
+  },
+  {
+   "id": "f102",
+   "subject": "e38",
+   "module": "event.schedule",
+   "value": "[2026-02-26] 小满的美术班从3月4日开始，每周三16:30至17:30上课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-03-04",
+   "slot": "上课时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#42"
+   ]
+  },
+  {
+   "id": "f103",
+   "subject": "e2",
+   "module": "relationship.obligations",
+   "value": "[2026-02-26] 何桂英负责送小满去小画家美术上课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e36"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-02-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#42"
+   ]
+  },
+  {
+   "id": "f104",
+   "subject": "e36",
+   "module": "organization.locations",
+   "value": "[2026-02-26] 小画家美术的上课地点离小满的幼儿园近。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e41"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-02-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#42"
+   ]
+  },
+  {
+   "id": "f105",
+   "subject": "e17",
+   "module": "finance.budgets",
+   "value": "[2026-02-26] 小满在小画家美术的一学期学费为1280元。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e36"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-02-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#43"
+   ]
+  },
+  {
+   "id": "f106",
+   "subject": "e17",
+   "module": "finance.budgets",
+   "value": "[2026-02-26] 小满在小画家美术的一学期学费已经交清。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e36"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-02-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#43"
+   ]
+  },
+  {
+   "id": "f107",
+   "subject": "e39",
+   "module": "event.schedule",
+   "value": "[2026-04-10] 小满舞蹈启蒙班原定每周日15:00上课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-10",
+   "valid_from": "2026-04-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#44"
+   ]
+  },
+  {
+   "id": "f108",
+   "subject": "e39",
+   "module": "event.schedule",
+   "value": "[2026-04-17] 小满舞蹈启蒙班自4月16日起改为每周四16:30上课，17:30下课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-16",
+   "slot": "上课时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#44",
+    "memory_list#45"
+   ]
+  },
+  {
+   "id": "f109",
+   "subject": "e39",
+   "module": "event.location",
+   "value": "[2026-04-17] 小满舞蹈启蒙班在河西文体中心三楼上课，调整时间后地点不变。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e40"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-16",
+   "slot": "上课地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#44",
+    "memory_list#45"
+   ]
+  },
+  {
+   "id": "f110",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-04-17] 周德民于4月16日送小满去舞蹈课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e39"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#45"
+   ]
+  },
+  {
+   "id": "f111",
+   "subject": "e3",
+   "module": "schedule.availability",
+   "value": "[2026-04-17] 周明周四若能早走，也可以接小满下舞蹈课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e39"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#45"
+   ]
+  },
+  {
+   "id": "f112",
+   "subject": "e14",
+   "module": "education.enrollment",
+   "value": "[2026-02-24] 子航已于3月2日开学。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#46"
+   ]
+  },
+  {
+   "id": "f113",
+   "subject": "e17",
+   "module": "education.enrollment",
+   "value": "[2026-02-24] 小满已于3月2日开学。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#46"
+   ]
+  },
+  {
+   "id": "f114",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-02-24] 开学后周德民平时周二、周四接子航。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#47"
+   ]
+  },
+  {
+   "id": "f115",
+   "subject": "e3",
+   "module": "relationship.obligations",
+   "value": "[2026-02-24] 开学后周明周一、周三、周五下班顺路接子航。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#47"
+   ]
+  },
+  {
+   "id": "f116",
+   "subject": "e2",
+   "module": "schedule.recurring",
+   "value": "[2026-02-24] 何桂英每天下午四点去幼儿园接小满。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e41"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#48"
+   ]
+  },
+  {
+   "id": "f117",
+   "subject": "e2",
+   "module": "health.medications",
+   "value": "[2026-04-01] 何桂英的降压药已由氨氯地平换成缬沙坦。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-01",
+   "valid_from": "2026-04-01",
+   "slot": "降压药",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#49"
+   ]
+  },
+  {
+   "id": "f118",
+   "subject": "e2",
+   "module": "health.medications",
+   "value": "[2026-04-01] 何桂英每天早上服用一片80毫克缬沙坦。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-01",
+   "valid_from": "2026-04-01",
+   "slot": "缬沙坦用法",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#49"
+   ]
+  },
+  {
+   "id": "f119",
+   "subject": "e2",
+   "module": "health.medications",
+   "value": "[2026-04-01] 何桂英不再服用原来的氨氯地平。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-01",
+   "valid_from": "2026-04-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#49"
+   ]
+  },
+  {
+   "id": "f120",
+   "subject": "e2",
+   "module": "health.conditions",
+   "value": "[2026-04-01] 医生认为何桂英的脚踝肿可能与氨氯地平有关。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-01",
+   "valid_from": "2026-04-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#49"
+   ]
+  },
+  {
+   "id": "f121",
+   "subject": "e42",
+   "module": "asset.state",
+   "value": "[2026-04-01] 餐桌上的药盒里放着何桂英的缬沙坦。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2"
+   ],
+   "observed_at": "2026-04-01",
+   "valid_from": "2026-04-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#50"
+   ]
+  },
+  {
+   "id": "f122",
+   "subject": "e2",
+   "module": "health.conditions",
+   "value": "[2026-01-10] 何桂英1月10日测得血压150/95。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-10",
+   "valid_from": "2026-01-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#51"
+   ]
+  },
+  {
+   "id": "f123",
+   "subject": "e2",
+   "module": "health.conditions",
+   "value": "[2026-02-05] 何桂英松动的假牙已于2月5日调好，可以正常吃饭。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-05",
+   "slot": "假牙状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#52"
+   ]
+  },
+  {
+   "id": "f124",
+   "subject": "e1",
+   "module": "health.medications",
+   "value": "[2026-01-20] 周德民服用二甲双胍，早饭后、晚饭后各一片。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-20",
+   "valid_from": "2026-01-20",
+   "slot": "二甲双胍用法",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#53"
+   ]
+  },
+  {
+   "id": "f125",
+   "subject": "e1",
+   "module": "schedule.routines",
+   "value": "[2026-01-10] 周德民每天早上测空腹血糖，记在小本子上。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e43"
+   ],
+   "observed_at": "2026-01-10",
+   "valid_from": "2026-01-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#54"
+   ]
+  },
+  {
+   "id": "f126",
+   "subject": "e1",
+   "module": "health.conditions",
+   "value": "[2026-01-10] 周德民1月10日空腹血糖为8.1。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-10",
+   "valid_from": "2026-01-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#54"
+   ]
+  },
+  {
+   "id": "f127",
+   "subject": "e44",
+   "module": "notes.general",
+   "value": "[2026-01-20] 周德民的医保卡放在客厅电视柜左边的抽屉里。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e46"
+   ],
+   "observed_at": "2026-01-20",
+   "valid_from": "2026-01-20",
+   "slot": "存放位置",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#55"
+   ]
+  },
+  {
+   "id": "f128",
+   "subject": "e45",
+   "module": "notes.general",
+   "value": "[2026-01-20] 何桂英的医保卡放在客厅电视柜左边的抽屉里。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2",
+    "e46"
+   ],
+   "observed_at": "2026-01-20",
+   "valid_from": "2026-01-20",
+   "slot": "存放位置",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#55"
+   ]
+  },
+  {
+   "id": "f129",
+   "subject": "e1",
+   "module": "schedule.routines",
+   "value": "[2026-01-28] 周德民早上六点半出门去公园打太极。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-28",
+   "valid_from": "2026-01-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#56"
+   ]
+  },
+  {
+   "id": "f130",
+   "subject": "e1",
+   "module": "preferences.food",
+   "value": "[2026-04-21] 周德民爱喝龙井。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#57"
+   ]
+  },
+  {
+   "id": "f131",
+   "subject": "e1",
+   "module": "education.activities",
+   "value": "[2026-04-18] 周德民计划4月19日去老年大学上书法课，下午回来。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e48"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-04-19",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#58"
+   ]
+  },
+  {
+   "id": "f132",
+   "subject": "e47",
+   "module": "group.history",
+   "value": "[2026-03-21] 何桂英所在小区广场舞队在3月21日比赛中获得二等奖。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2"
+   ],
+   "observed_at": "2026-03-21",
+   "valid_from": "2026-03-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#59"
+   ]
+  },
+  {
+   "id": "f133",
+   "subject": "e3",
+   "module": "health.conditions",
+   "value": "[2026-02-05] 周明体检发现尿酸偏高。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#60"
+   ]
+  },
+  {
+   "id": "f134",
+   "subject": "e3",
+   "module": "health.conditions",
+   "value": "[2026-02-05] 医生建议周明少喝啤酒、少吃内脏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#60"
+   ]
+  },
+  {
+   "id": "f135",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-02-05] 苏晓雯已把家里的啤酒收起来。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#60"
+   ]
+  },
+  {
+   "id": "f136",
+   "subject": "e3",
+   "module": "schedule.recurring",
+   "value": "[2026-04-09] 周明周四晚上八点到十点打羽毛球。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-09",
+   "valid_from": "2026-04-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#61"
+   ]
+  },
+  {
+   "id": "f137",
+   "subject": "e0",
+   "module": "health.conditions",
+   "value": "[2026-04-09] 苏晓雯4月9日说上周已完成体检，一切正常。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-09",
+   "valid_from": "2026-04-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#62"
+   ]
+  },
+  {
+   "id": "f138",
+   "subject": "e0",
+   "module": "relationship.roles",
+   "value": "[2026-01-12] 苏晓雯的妈妈是陈玉兰。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-01-12",
+   "slot": "母亲",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#63"
+   ]
+  },
+  {
+   "id": "f139",
+   "subject": "e0",
+   "module": "relationship.roles",
+   "value": "[2026-01-12] 苏晓雯的哥哥是苏晓峰。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e33"
+   ],
+   "observed_at": "2026-01-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#63"
+   ]
+  },
+  {
+   "id": "f140",
+   "subject": "e33",
+   "module": "identity.residency",
+   "value": "[2026-01-12] 苏晓峰在上海。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e60"
+   ],
+   "observed_at": "2026-01-12",
+   "valid_from": "2026-01-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#63"
+   ]
+  },
+  {
+   "id": "f141",
+   "subject": "e32",
+   "module": "health.conditions",
+   "value": "[2026-01-12] 陈玉兰有腰椎间盘突出。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-12",
+   "valid_from": "2026-01-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#64"
+   ]
+  },
+  {
+   "id": "f142",
+   "subject": "e32",
+   "module": "health.conditions",
+   "value": "[2026-01-12] 医生说陈玉兰不能提重物。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-12",
+   "valid_from": "2026-01-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#64"
+   ]
+  },
+  {
+   "id": "f143",
+   "subject": "e32",
+   "module": "health.conditions",
+   "value": "[2026-01-22] 陈玉兰血脂仍有点高。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#65"
+   ]
+  },
+  {
+   "id": "f144",
+   "subject": "e32",
+   "module": "health.conditions",
+   "value": "[2026-01-22] 医生要求陈玉兰少吃肥肉。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#65"
+   ]
+  },
+  {
+   "id": "f145",
+   "subject": "e32",
+   "module": "health.medications",
+   "value": "[2026-01-22] 医生要求陈玉兰继续吃阿托伐他汀。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#65"
+   ]
+  },
+  {
+   "id": "f146",
+   "subject": "e32",
+   "module": "health.allergies",
+   "value": "[2026-01-22] 陈玉兰对百合花粉过敏，一闻就打喷嚏。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#66"
+   ]
+  },
+  {
+   "id": "f147",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-01-22] 苏晓雯家接待陈玉兰时不要摆百合。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#66"
+   ]
+  },
+  {
+   "id": "f148",
+   "subject": "e32",
+   "module": "preferences.food",
+   "value": "[2026-04-11] 陈玉兰喜欢杭帮菜。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#67"
+   ]
+  },
+  {
+   "id": "f149",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-04-11] 苏晓雯已让周明学做陈玉兰喜欢的杭帮菜。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e32"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#67"
+   ]
+  },
+  {
+   "id": "f150",
+   "subject": "e32",
+   "module": "schedule.routines",
+   "value": "[2026-01-22] 陈玉兰每天晚饭后去西溪那边走走。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e51"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#68"
+   ]
+  },
+  {
+   "id": "f151",
+   "subject": "e32",
+   "module": "identity.residency",
+   "value": "[2026-03-16] 陈玉兰已于3月14日搬到杭州市余杭区桂语苑3幢2单元502。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e49",
+    "e59"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-14",
+   "slot": "住址",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f152",
+   "subject": "e49",
+   "module": "location.address",
+   "value": "[2026-03-16] 陈玉兰的新住所位于杭州市余杭区桂语苑3幢2单元502。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e59"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-14",
+   "slot": "地址",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f153",
+   "subject": "e49",
+   "module": "location.amenities",
+   "value": "[2026-03-16] 陈玉兰桂语苑住所的宽带已开通。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f154",
+   "subject": "e49",
+   "module": "location.amenities",
+   "value": "[2026-03-16] 陈玉兰桂语苑住所的燃气已开通。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f155",
+   "subject": "e49",
+   "module": "location.amenities",
+   "value": "[2026-03-16] 陈玉兰桂语苑住所楼下有菜市场。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f156",
+   "subject": "e32",
+   "module": "notes.general",
+   "value": "[2026-03-16] 陈玉兰已换新手机号，材料未提供具体号码。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#70"
+   ]
+  },
+  {
+   "id": "f157",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-03-16] 苏晓雯将陈玉兰的新手机号存为“妈妈（新号）”。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#70"
+   ]
+  },
+  {
+   "id": "f158",
+   "subject": "e32",
+   "module": "notes.general",
+   "value": "[2026-03-16] 陈玉兰原来的手机号将于4月停用。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#70"
+   ]
+  },
+  {
+   "id": "f159",
+   "subject": "e50",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-16] 陈玉兰文二路老房子的买家已确定。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#71"
+   ]
+  },
+  {
+   "id": "f160",
+   "subject": "e50",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-16] 陈玉兰文二路老房子计划4月底过户。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#71"
+   ]
+  },
+  {
+   "id": "f161",
+   "subject": "e32",
+   "module": "health.providers",
+   "value": "[2026-03-01] 陈玉兰已预约下周在社区医院做年度体检。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e52"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#72"
+   ]
+  },
+  {
+   "id": "f162",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-03-01] 苏晓雯让陈玉兰把年度体检结果发群里。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#72"
+   ]
+  },
+  {
+   "id": "f163",
+   "subject": "e33",
+   "module": "relationship.roles",
+   "value": "[2026-03-01] 苏晓峰的妻子叫林蕾。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e34"
+   ],
+   "observed_at": "2026-03-01",
+   "slot": "妻子",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#73"
+   ]
+  },
+  {
+   "id": "f164",
+   "subject": "e33",
+   "module": "relationship.roles",
+   "value": "[2026-03-01] 苏晓峰的孩子叫念念。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e35"
+   ],
+   "observed_at": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#73"
+   ]
+  },
+  {
+   "id": "f165",
+   "subject": "e34",
+   "module": "work.role",
+   "value": "[2026-03-01] 林蕾3月在急诊，夜班多。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#74"
+   ]
+  },
+  {
+   "id": "f166",
+   "subject": "e33",
+   "module": "relationship.obligations",
+   "value": "[2026-03-01] 林蕾3月夜班多，苏晓峰因此多带孩子。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e34"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "valid_to": "2026-03-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#74"
+   ]
+  },
+  {
+   "id": "f167",
+   "subject": "e35",
+   "module": "education.activities",
+   "value": "[2026-03-01] 念念这学期开始学钢琴。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#75"
+   ]
+  },
+  {
+   "id": "f168",
+   "subject": "e35",
+   "module": "schedule.recurring",
+   "value": "[2026-03-01] 念念每周六上午上钢琴课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#75"
+   ]
+  },
+  {
+   "id": "f169",
+   "subject": "e53",
+   "module": "event.schedule",
+   "value": "[2026-04-11] 念念计划5月16日在学校参加钢琴表演。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e35"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-05-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#76"
+   ]
+  },
+  {
+   "id": "f170",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-04-11] 苏晓雯希望念念的钢琴表演录成视频发群里。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e35",
+    "e53"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#76"
+   ]
+  },
+  {
+   "id": "f171",
+   "subject": "e32",
+   "module": "notes.general",
+   "value": "[2026-02-20] 陈玉兰春节来南京住苏晓雯家，已于2月20日返回杭州。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e58",
+    "e59"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2026-02-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#77"
+   ]
+  },
+  {
+   "id": "f172",
+   "subject": "e33",
+   "module": "notes.general",
+   "value": "[2026-02-20] 苏晓峰春节来南京住苏晓雯家，2月20日送妈妈回杭州后回上海。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e32",
+    "e58",
+    "e59",
+    "e60"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2026-02-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#77"
+   ]
+  },
+  {
+   "id": "f173",
+   "subject": "e56",
+   "module": "event.schedule",
+   "value": "[2026-02-17] 苏晓雯一家已于2月16日除夕吃过年夜饭。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-02-17",
+   "valid_from": "2026-02-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#78"
+   ]
+  },
+  {
+   "id": "f174",
+   "subject": "e56",
+   "module": "event.attendees",
+   "value": "[2026-02-17] 苏晓雯家的除夕年夜饭共有八人参加。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-02-17",
+   "valid_from": "2026-02-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#78"
+   ]
+  },
+  {
+   "id": "f175",
+   "subject": "e56",
+   "module": "event.location",
+   "value": "[2026-02-17] 苏晓雯家的除夕年夜饭在金陵小馆牡丹厅举行。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0",
+    "e54",
+    "e55"
+   ],
+   "observed_at": "2026-02-17",
+   "valid_from": "2026-02-16",
+   "slot": "地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#78"
+   ]
+  },
+  {
+   "id": "f176",
+   "subject": "e1",
+   "module": "preferences.gifts",
+   "value": "[2026-01-25] 周德民取消给子航买烟花的打算，改买灯笼。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-01-25",
+   "valid_from": "2026-01-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#79"
+   ]
+  },
+  {
+   "id": "f177",
+   "subject": "e58",
+   "module": "notes.general",
+   "value": "[2026-01-25] 南京市区不让放烟花，是周德民取消买烟花的原因。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-01-25",
+   "valid_from": "2026-01-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#79"
+   ]
+  },
+  {
+   "id": "f178",
+   "subject": "e57",
+   "module": "event.status",
+   "value": "[2026-02-14] 苏晓雯家2月14日的大扫除已经完成。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-02-14",
+   "valid_from": "2026-02-14",
+   "slot": "状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#80"
+   ]
+  },
+  {
+   "id": "f179",
+   "subject": "e83",
+   "module": "asset.state",
+   "value": "[2026-02-17] 子航的压岁钱已存入他的储蓄卡。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-02-17",
+   "valid_from": "2026-02-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#81"
+   ]
+  },
+  {
+   "id": "f180",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-02-17] 苏晓雯暂时保管小满的压岁钱。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-02-17",
+   "valid_from": "2026-02-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#81"
+   ]
+  },
+  {
+   "id": "f181",
+   "subject": "e91",
+   "module": "event.schedule",
+   "value": "[2026-02-20] 苏晓雯和周明的结婚12周年纪念日是2026年6月6日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2026-06-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#82"
+   ]
+  },
+  {
+   "id": "f182",
+   "subject": "e0",
+   "module": "relationship.important_dates",
+   "value": "[2026-02-20] 苏晓雯和周明去年结婚纪念日在江南春晓吃淮扬菜。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e69"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2025-06-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#83"
+   ]
+  },
+  {
+   "id": "f183",
+   "subject": "e3",
+   "module": "preferences.food",
+   "value": "[2026-02-20] 周明很喜欢去年结婚纪念日在江南春晓吃的淮扬菜。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e69"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2025-06-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#83"
+   ]
+  },
+  {
+   "id": "f184",
+   "subject": "e0",
+   "module": "preferences.gifts",
+   "value": "[2026-02-20] 苏晓雯想在结婚纪念日送周明一块手表。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e91"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2026-06-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#84"
+   ]
+  },
+  {
+   "id": "f185",
+   "subject": "e0",
+   "module": "finance.budgets",
+   "value": "[2026-02-20] 苏晓雯给周明买纪念日手表的预算为三千元以内。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e91"
+   ],
+   "observed_at": "2026-02-20",
+   "valid_from": "2026-06-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#84"
+   ]
+  },
+  {
+   "id": "f186",
+   "subject": "e84",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-24] 苏晓雯家的旧洗衣机已经修过两次。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f187",
+   "subject": "e84",
+   "module": "asset.state",
+   "value": "[2026-03-24] 苏晓雯家的旧洗衣机又不脱水。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-24",
+   "slot": "脱水状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f188",
+   "subject": "e85",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-24] 周明已订购10公斤滚筒新洗衣机。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f189",
+   "subject": "e85",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-24] 新洗衣机约定3月26日上午送货安装。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f190",
+   "subject": "e84",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-24] 旧洗衣机计划在新洗衣机送装时回收。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e85"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f191",
+   "subject": "e2",
+   "module": "schedule.availability",
+   "value": "[2026-03-24] 何桂英在新洗衣机送装当天上午在家。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e85"
+   ],
+   "observed_at": "2026-03-24",
+   "valid_from": "2026-03-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f192",
+   "subject": "e86",
+   "module": "asset.lifecycle",
+   "value": "[2026-04-18] 苏晓雯家的三台空调已于4月18日清洗完成。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-04-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#86"
+   ]
+  },
+  {
+   "id": "f193",
+   "subject": "e86",
+   "module": "notes.general",
+   "value": "[2026-04-18] 苏晓雯家的三台空调清洗共花费240元。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-04-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#86"
+   ]
+  },
+  {
+   "id": "f194",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-04-05] 苏晓雯家人4月4日已开车回扬州老家扫墓，一切顺利。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e66"
+   ],
+   "observed_at": "2026-04-05",
+   "valid_from": "2026-04-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#87"
+   ]
+  },
+  {
+   "id": "f195",
+   "subject": "e61",
+   "module": "notes.general",
+   "value": "[2026-04-05] 二叔计划2026年夏天来南京玩几天。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e58"
+   ],
+   "observed_at": "2026-04-05",
+   "valid_from": "2026-01-01",
+   "valid_to": "2026-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#88"
+   ]
+  },
+  {
+   "id": "f196",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-04-05] 苏晓雯已邀请二叔来南京时住家里。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e58",
+    "e61"
+   ],
+   "observed_at": "2026-04-05",
+   "valid_from": "2026-04-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#88"
+   ]
+  },
+  {
+   "id": "f197",
+   "subject": "e2",
+   "module": "notes.general",
+   "value": "[2026-03-20] 何桂英原身份证于3月10日到期。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-20",
+   "valid_from": "2026-03-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#89"
+   ]
+  },
+  {
+   "id": "f198",
+   "subject": "e87",
+   "module": "document.status",
+   "value": "[2026-03-20] 苏晓雯3月20日已陪何桂英去派出所办理新身份证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2"
+   ],
+   "observed_at": "2026-03-20",
+   "valid_from": "2026-03-20",
+   "slot": "办理状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#89"
+   ]
+  },
+  {
+   "id": "f199",
+   "subject": "e87",
+   "module": "document.status",
+   "value": "[2026-03-20] 何桂英的新身份证4月28日以后可以领取。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2"
+   ],
+   "observed_at": "2026-03-20",
+   "valid_from": "2026-04-28",
+   "slot": "可领取时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#89"
+   ]
+  },
+  {
+   "id": "f200",
+   "subject": "e2",
+   "module": "relationship.obligations",
+   "value": "[2026-03-20] 何桂英五一坐飞机要带新身份证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e87",
+    "e92"
+   ],
+   "observed_at": "2026-03-20",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#90"
+   ]
+  },
+  {
+   "id": "f201",
+   "subject": "e2",
+   "module": "notes.general",
+   "value": "[2026-03-20] 何桂英若拿不到新身份证，可在机场办理临时乘机证明。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e87"
+   ],
+   "observed_at": "2026-03-20",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#90"
+   ]
+  },
+  {
+   "id": "f202",
+   "subject": "e92",
+   "module": "trip.travelers",
+   "value": "[2026-03-25] 苏晓雯一家六个人计划五一去厦门。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e68"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#91"
+   ]
+  },
+  {
+   "id": "f203",
+   "subject": "e93",
+   "module": "document.status",
+   "value": "[2026-03-25] 苏晓雯一家厦门旅行的往返机票已订。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e92"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-03-25",
+   "slot": "预订状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#91"
+   ]
+  },
+  {
+   "id": "f204",
+   "subject": "e92",
+   "module": "trip.itinerary",
+   "value": "[2026-03-25] 厦门家庭旅行5月1日早上7点50从禄口机场起飞。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e70"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#91"
+   ]
+  },
+  {
+   "id": "f205",
+   "subject": "e92",
+   "module": "trip.itinerary",
+   "value": "[2026-03-25] 厦门家庭旅行5月4日下午4点20从厦门起飞返回。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e68"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#91"
+   ]
+  },
+  {
+   "id": "f206",
+   "subject": "e92",
+   "module": "trip.itinerary",
+   "value": "[2026-03-25] 苏晓雯一家计划5月1日早上5点出门去机场。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e70"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#92"
+   ]
+  },
+  {
+   "id": "f207",
+   "subject": "e94",
+   "module": "notes.general",
+   "value": "[2026-03-25] 鹭岛海景酒店预订已确认，确认号为LD20260501。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e71"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-03-25",
+   "slot": "预订状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#93"
+   ]
+  },
+  {
+   "id": "f208",
+   "subject": "e94",
+   "module": "notes.general",
+   "value": "[2026-03-25] 鹭岛海景酒店预订入住日期为5月1日，离店日期为5月4日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e71"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "slot": "住宿日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#93"
+   ]
+  },
+  {
+   "id": "f209",
+   "subject": "e94",
+   "module": "service.capabilities",
+   "value": "[2026-03-25] 鹭岛海景酒店预订包含两间海景家庭房。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e71"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "slot": "房型数量",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#93"
+   ]
+  },
+  {
+   "id": "f210",
+   "subject": "e94",
+   "module": "service.capabilities",
+   "value": "[2026-03-25] 鹭岛海景酒店预订含早餐。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e71"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#93"
+   ]
+  },
+  {
+   "id": "f211",
+   "subject": "e94",
+   "module": "notes.general",
+   "value": "[2026-03-25] 鹭岛海景酒店预订若需取消，须至少提前48小时联系酒店。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e71"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-03-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#94"
+   ]
+  },
+  {
+   "id": "f212",
+   "subject": "e95",
+   "module": "document.status",
+   "value": "[2026-03-27] 5月2日上午9点30东渡码头至鼓浪屿的六张船票已出票。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e72",
+    "e73"
+   ],
+   "observed_at": "2026-03-27",
+   "valid_from": "2026-05-02",
+   "slot": "出票状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#95"
+   ]
+  },
+  {
+   "id": "f213",
+   "subject": "e92",
+   "module": "trip.itinerary",
+   "value": "[2026-03-27] 厦门家庭旅行安排5月2日上午9点30从东渡码头乘船到鼓浪屿。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e72",
+    "e73",
+    "e95"
+   ],
+   "observed_at": "2026-03-27",
+   "valid_from": "2026-05-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#95"
+   ]
+  },
+  {
+   "id": "f214",
+   "subject": "e95",
+   "module": "notes.general",
+   "value": "[2026-03-27] 鼓浪屿船票登船须携带身份证原件。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-27",
+   "valid_from": "2026-05-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#95"
+   ]
+  },
+  {
+   "id": "f215",
+   "subject": "e2",
+   "module": "relationship.obligations",
+   "value": "[2026-03-27] 何桂英乘船去鼓浪屿要带新身份证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e73",
+    "e87"
+   ],
+   "observed_at": "2026-03-27",
+   "valid_from": "2026-05-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#95"
+   ]
+  },
+  {
+   "id": "f216",
+   "subject": "e1",
+   "module": "health.medications",
+   "value": "[2026-03-25] 周德民厦门旅行要带药。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e92"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#96"
+   ]
+  },
+  {
+   "id": "f217",
+   "subject": "e1",
+   "module": "notes.general",
+   "value": "[2026-03-25] 周德民厦门旅行要带血糖仪。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e90",
+    "e92"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#96"
+   ]
+  },
+  {
+   "id": "f218",
+   "subject": "e1",
+   "module": "schedule.routines",
+   "value": "[2026-03-25] 周德民厦门旅行期间每天要测血糖。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e92"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#96"
+   ]
+  },
+  {
+   "id": "f219",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-03-25] 苏晓雯负责将周德民厦门旅行的药装入随身包。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e92"
+   ],
+   "observed_at": "2026-03-25",
+   "valid_from": "2026-05-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#96"
+   ]
+  },
+  {
+   "id": "f220",
+   "subject": "e96",
+   "module": "event.schedule",
+   "value": "[2026-04-14] 周德民复查已因医生出诊变更，从4月20日改到4月27日周一早上8点。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-04-14",
+   "valid_from": "2026-04-27",
+   "slot": "复查时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#97"
+   ]
+  },
+  {
+   "id": "f221",
+   "subject": "e96",
+   "module": "event.location",
+   "value": "[2026-04-14] 周德民复查地点为青枫医院内分泌科。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e74",
+    "e75"
+   ],
+   "observed_at": "2026-04-14",
+   "valid_from": "2026-04-27",
+   "slot": "复查地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#97"
+   ]
+  },
+  {
+   "id": "f222",
+   "subject": "e96",
+   "module": "notes.general",
+   "value": "[2026-04-03] 周德民4月27日复查需要空腹抽血。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2026-04-03",
+   "valid_from": "2026-04-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#98"
+   ]
+  },
+  {
+   "id": "f223",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-04-03] 周德民复查前一天晚上10点以后不能吃东西。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e96"
+   ],
+   "observed_at": "2026-04-03",
+   "valid_from": "2026-04-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#98"
+   ]
+  },
+  {
+   "id": "f224",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-04-14] 苏晓雯计划4月27日上午请半天假送周德民复查。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e96"
+   ],
+   "observed_at": "2026-04-14",
+   "valid_from": "2026-04-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#99"
+   ]
+  },
+  {
+   "id": "f225",
+   "subject": "e97",
+   "module": "event.schedule",
+   "value": "[2026-04-07] 子航四（3）班期中考试定于4月29日和30日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e76"
+   ],
+   "observed_at": "2026-04-07",
+   "valid_from": "2026-04-29",
+   "slot": "考试日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#100"
+   ]
+  },
+  {
+   "id": "f226",
+   "subject": "e98",
+   "module": "event.schedule",
+   "value": "[2026-04-17] 子航家长会因学校教研活动，从4月23日改到4月28日周二晚上7点。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-28",
+   "slot": "家长会时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#101"
+   ]
+  },
+  {
+   "id": "f227",
+   "subject": "e98",
+   "module": "event.location",
+   "value": "[2026-04-17] 子航家长会地点仍为四（3）班教室。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e76"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-28",
+   "slot": "家长会地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#101"
+   ]
+  },
+  {
+   "id": "f228",
+   "subject": "e98",
+   "module": "event.attendees",
+   "value": "[2026-04-17] 子航家长会要求每家至少一位家长参加。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-17",
+   "valid_from": "2026-04-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#101"
+   ]
+  },
+  {
+   "id": "f229",
+   "subject": "e3",
+   "module": "schedule.availability",
+   "value": "[2026-04-20] 周明4月28日在成都，不能参加子航家长会。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e67",
+    "e98"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#102"
+   ]
+  },
+  {
+   "id": "f230",
+   "subject": "e98",
+   "module": "event.status",
+   "value": "[2026-04-20] 截至4月20日，苏晓雯尚未确定由谁参加子航家长会。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-20",
+   "slot": "家庭参会人选",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#102"
+   ]
+  },
+  {
+   "id": "f231",
+   "subject": "e99",
+   "module": "event.schedule",
+   "value": "[2026-04-08] 小满大二班春游定于4月24日周五。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e77"
+   ],
+   "observed_at": "2026-04-08",
+   "valid_from": "2026-04-24",
+   "slot": "春游日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f232",
+   "subject": "e99",
+   "module": "event.location",
+   "value": "[2026-04-08] 小满大二班春游目的地为绿博园。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e77",
+    "e78"
+   ],
+   "observed_at": "2026-04-08",
+   "valid_from": "2026-04-24",
+   "slot": "春游地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f233",
+   "subject": "e99",
+   "module": "notes.general",
+   "value": "[2026-04-08] 小满春游当天要求早上8点前到园。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-08",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f234",
+   "subject": "e99",
+   "module": "notes.general",
+   "value": "[2026-04-08] 小满春游需要携带水壶、帽子和一点小零食。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-08",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f235",
+   "subject": "e99",
+   "module": "notes.general",
+   "value": "[2026-04-08] 小满春游不能携带坚果类零食。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-08",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f236",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-04-22] 4月24日小满春游当天由周德民送她到幼儿园。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e41",
+    "e99"
+   ],
+   "observed_at": "2026-04-22",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#104"
+   ]
+  },
+  {
+   "id": "f237",
+   "subject": "e100",
+   "module": "event.status",
+   "value": "[2026-04-15] 小满的疫苗接种已预约。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-15",
+   "valid_from": "2026-04-15",
+   "slot": "预约状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#105"
+   ]
+  },
+  {
+   "id": "f238",
+   "subject": "e100",
+   "module": "event.schedule",
+   "value": "[2026-04-15] 小满的疫苗接种时间为4月25日周六上午9点30。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-15",
+   "valid_from": "2026-04-25",
+   "slot": "接种时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#105"
+   ]
+  },
+  {
+   "id": "f239",
+   "subject": "e100",
+   "module": "event.location",
+   "value": "[2026-04-15] 小满在社区卫生服务中心接种疫苗。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e79"
+   ],
+   "observed_at": "2026-04-15",
+   "valid_from": "2026-04-25",
+   "slot": "接种地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#105"
+   ]
+  },
+  {
+   "id": "f240",
+   "subject": "e100",
+   "module": "notes.general",
+   "value": "[2026-04-15] 小满接种疫苗时要带接种本。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17"
+   ],
+   "observed_at": "2026-04-15",
+   "valid_from": "2026-04-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#105"
+   ]
+  },
+  {
+   "id": "f241",
+   "subject": "e101",
+   "module": "event.schedule",
+   "value": "[2026-04-22] 子航4月25日仍在上午9点上游泳课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-22",
+   "valid_from": "2026-04-25",
+   "slot": "上课时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#106"
+   ]
+  },
+  {
+   "id": "f242",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-04-22] 周德民负责4月25日带子航去游泳课。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e101"
+   ],
+   "observed_at": "2026-04-22",
+   "valid_from": "2026-04-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#106"
+   ]
+  },
+  {
+   "id": "f243",
+   "subject": "e103",
+   "module": "document.status",
+   "value": "[2026-04-19] 陈玉兰来南京的高铁已从4月24日改签到4月25日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e58"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-25",
+   "slot": "乘车日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#107"
+   ]
+  },
+  {
+   "id": "f244",
+   "subject": "e103",
+   "module": "notes.general",
+   "value": "[2026-04-19] 陈玉兰的高铁车次为G7618。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-25",
+   "slot": "车次",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#107"
+   ]
+  },
+  {
+   "id": "f245",
+   "subject": "e103",
+   "module": "notes.general",
+   "value": "[2026-04-19] 陈玉兰的高铁座位在二等座8车。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-25",
+   "slot": "席位",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#107"
+   ]
+  },
+  {
+   "id": "f246",
+   "subject": "e102",
+   "module": "trip.itinerary",
+   "value": "[2026-04-19] 陈玉兰4月25日上午10点42到南京南站。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e80"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-25",
+   "slot": "抵达安排",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#107"
+   ]
+  },
+  {
+   "id": "f247",
+   "subject": "e33",
+   "module": "relationship.obligations",
+   "value": "[2026-04-21] 苏晓峰负责4月25日早上送陈玉兰去车站并送上车。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e102"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#108"
+   ]
+  },
+  {
+   "id": "f248",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-04-21] 苏晓雯一家负责4月25日在南京南站出站口接陈玉兰。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e80",
+    "e102"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#108"
+   ]
+  },
+  {
+   "id": "f249",
+   "subject": "e102",
+   "module": "trip.itinerary",
+   "value": "[2026-04-19] 陈玉兰此次来南京住苏晓雯家客房。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e32"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-25",
+   "slot": "住宿安排",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#109"
+   ]
+  },
+  {
+   "id": "f250",
+   "subject": "e102",
+   "module": "trip.itinerary",
+   "value": "[2026-04-19] 陈玉兰4月30日下午回杭州的车票安排不变。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e32",
+    "e59"
+   ],
+   "observed_at": "2026-04-19",
+   "valid_from": "2026-04-30",
+   "slot": "返程安排",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#109"
+   ]
+  },
+  {
+   "id": "f251",
+   "subject": "e89",
+   "module": "asset.lifecycle",
+   "value": "[2026-04-11] 陈玉兰已给子航买了一套天文望远镜作生日礼物。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e32"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#110"
+   ]
+  },
+  {
+   "id": "f252",
+   "subject": "e32",
+   "module": "notes.general",
+   "value": "[2026-04-11] 陈玉兰此次来南京会提前把天文望远镜带给子航。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e58",
+    "e89"
+   ],
+   "observed_at": "2026-04-11",
+   "valid_from": "2026-04-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#110"
+   ]
+  },
+  {
+   "id": "f253",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-04-21] 苏晓雯请陈玉兰来南京时给周德民带一盒龙井，别的不用带。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e32",
+    "e58"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#111"
+   ]
+  },
+  {
+   "id": "f254",
+   "subject": "e104",
+   "module": "event.schedule",
+   "value": "[2026-04-20] 年度燃气安全检查定于4月24日周五下午1点至5点。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-24",
+   "slot": "检查时间",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#112"
+   ]
+  },
+  {
+   "id": "f255",
+   "subject": "e104",
+   "module": "event.location",
+   "value": "[2026-04-20] 年度燃气安全检查地点为江畔花园7栋1802。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-24",
+   "slot": "检查地址",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#112"
+   ]
+  },
+  {
+   "id": "f256",
+   "subject": "e104",
+   "module": "event.attendees",
+   "value": "[2026-04-20] 燃气公司将上门进行年度燃气安全检查。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e81"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#112"
+   ]
+  },
+  {
+   "id": "f257",
+   "subject": "e104",
+   "module": "notes.general",
+   "value": "[2026-04-20] 年度燃气安全检查期间家里需要留一名成年人。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#112"
+   ]
+  },
+  {
+   "id": "f258",
+   "subject": "e105",
+   "module": "notes.general",
+   "value": "[2026-04-18] 江畔花园7栋1802的2026年第二季度物业费为1860元。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-01-01",
+   "valid_to": "2026-12-31",
+   "slot": "应缴金额",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#113"
+   ]
+  },
+  {
+   "id": "f259",
+   "subject": "e105",
+   "module": "notes.general",
+   "value": "[2026-04-18] 第二季度物业费需于4月30日前缴纳。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-04-30",
+   "slot": "缴费期限",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#113"
+   ]
+  },
+  {
+   "id": "f260",
+   "subject": "e105",
+   "module": "notes.general",
+   "value": "[2026-04-18] 第二季度物业费可在物业App或物业服务中心缴纳。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e9",
+    "e82"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-04-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#113"
+   ]
+  },
+  {
+   "id": "f261",
+   "subject": "e106",
+   "module": "trip.itinerary",
+   "value": "[2026-04-20] 周明计划4月26日周日去成都出差，4月29日周三回来。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e67"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-26",
+   "slot": "出差日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#114"
+   ]
+  },
+  {
+   "id": "f262",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-04-20] 周明4月26日至29日出差期间，原由他接孩子的安排由苏晓雯接替。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e106"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#115"
+   ]
+  },
+  {
+   "id": "f263",
+   "subject": "e2",
+   "module": "relationship.obligations",
+   "value": "[2026-04-20] 周明4月26日至29日出差期间，小满仍由何桂英接。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e17",
+    "e106"
+   ],
+   "observed_at": "2026-04-20",
+   "valid_from": "2026-04-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#115"
+   ]
+  },
+  {
+   "id": "f264",
+   "subject": "e88",
+   "module": "vehicle.maintenance",
+   "value": "[2026-04-21] 白色SUV的交强险5月8日到期。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-08",
+   "slot": "交强险到期日",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#116"
+   ]
+  },
+  {
+   "id": "f265",
+   "subject": "e88",
+   "module": "vehicle.maintenance",
+   "value": "[2026-04-21] 白色SUV的商业险5月8日到期。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-08",
+   "slot": "商业险到期日",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#116"
+   ]
+  },
+  {
+   "id": "f266",
+   "subject": "e88",
+   "module": "vehicle.maintenance",
+   "value": "[2026-04-21] 白色SUV续保需带行驶证和周明的身份证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#116"
+   ]
+  },
+  {
+   "id": "f267",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2026-04-21] 苏晓雯今年为白色SUV续保时想多找一家保险公司比价。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e88"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-01-01",
+   "valid_to": "2026-12-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#116"
+   ]
+  },
+  {
+   "id": "f268",
+   "subject": "e107",
+   "module": "event.schedule",
+   "value": "[2026-04-21] 苏晓雯计划5月9日周六给子航办生日小派对。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "slot": "派对日期",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#117"
+   ]
+  },
+  {
+   "id": "f269",
+   "subject": "e107",
+   "module": "event.location",
+   "value": "[2026-04-21] 子航生日派对计划在家里举办。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e14"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "slot": "派对地点",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#117"
+   ]
+  },
+  {
+   "id": "f270",
+   "subject": "e107",
+   "module": "event.attendees",
+   "value": "[2026-04-21] 子航生日派对计划邀请四个同学。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#117"
+   ]
+  },
+  {
+   "id": "f271",
+   "subject": "e107",
+   "module": "event.attendees",
+   "value": "[2026-04-18] 子航生日派对的四位同学是李浩然、陈一诺、王子墨、刘思远。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e62",
+    "e63",
+    "e64",
+    "e65"
+   ],
+   "observed_at": "2026-04-18",
+   "valid_from": "2026-05-09",
+   "slot": "同学名单",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#118"
+   ]
+  },
+  {
+   "id": "f272",
+   "subject": "e108",
+   "module": "asset.state",
+   "value": "[2026-04-21] 截至4月21日，子航的生日蛋糕还没有订。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-04-21",
+   "slot": "订购状态",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#119"
+   ]
+  },
+  {
+   "id": "f273",
+   "subject": "e108",
+   "module": "notes.general",
+   "value": "[2026-04-21] 子航的生日蛋糕不能买带芒果的。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#119"
+   ]
+  },
+  {
+   "id": "f274",
+   "subject": "e1",
+   "module": "relationship.obligations",
+   "value": "[2026-04-21] 周德民负责购买子航生日派对的气球和彩带。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14",
+    "e107"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#120"
+   ]
+  },
+  {
+   "id": "f275",
+   "subject": "e3",
+   "module": "relationship.obligations",
+   "value": "[2026-04-21] 周明在子航生日派对当天在家带孩子们玩桌游。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e14",
+    "e107"
+   ],
+   "observed_at": "2026-04-21",
+   "valid_from": "2026-05-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#120"
+   ]
+  },
+  {
+   "id": "f276",
+   "subject": "e17",
+   "module": "education.enrollment",
+   "value": "[2026-03-10] 小满计划于2026年9月上小学。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-09-01",
+   "valid_to": "2026-09-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#121"
+   ]
+  },
+  {
+   "id": "f277",
+   "subject": "e17",
+   "module": "education.enrollment",
+   "value": "[2026-03-10] 小满计划就读梧桐路小学，与哥哥同校。",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e109"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-09-01",
+   "valid_to": "2026-09-30",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#121"
+   ]
+  },
+  {
+   "id": "f278",
+   "subject": "e109",
+   "module": "education.enrollment",
+   "value": "[2026-03-10] 小满的哥哥就读梧桐路小学。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e17"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-10",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#121"
+   ]
+  },
+  {
+   "id": "f279",
+   "subject": "e115",
+   "module": "event.schedule",
+   "value": "[2026-03-09] 小满梧桐路小学幼升小网上报名时间为5月11日至15日。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15",
+    "e17"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-05-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#122"
+   ]
+  },
+  {
+   "id": "f280",
+   "subject": "e115",
+   "module": "notes.general",
+   "value": "[2026-03-09] 小满幼升小报名需要准备户口本。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e111"
+   ],
+   "observed_at": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#123"
+   ]
+  },
+  {
+   "id": "f281",
+   "subject": "e115",
+   "module": "notes.general",
+   "value": "[2026-03-09] 小满幼升小报名需要准备房产证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e112"
+   ],
+   "observed_at": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#123"
+   ]
+  },
+  {
+   "id": "f282",
+   "subject": "e115",
+   "module": "notes.general",
+   "value": "[2026-03-09] 小满幼升小报名需要准备小满的出生证明。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e113"
+   ],
+   "observed_at": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#123"
+   ]
+  },
+  {
+   "id": "f283",
+   "subject": "e115",
+   "module": "notes.general",
+   "value": "[2026-03-09] 小满幼升小报名需要准备小满的预防接种证。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e17",
+    "e114"
+   ],
+   "observed_at": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#123"
+   ]
+  },
+  {
+   "id": "f284",
+   "subject": "e111",
+   "module": "document.status",
+   "value": "[2026-03-10] 户口本放在周明的文件袋里。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e110"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-10",
+   "slot": "存放位置",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#124"
+   ]
+  },
+  {
+   "id": "f285",
+   "subject": "e115",
+   "module": "event.followup",
+   "value": "[2026-03-09] 梧桐路小学会于6月初通知现场验证幼升小报名材料的时间。",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e15"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-06-01",
+   "valid_to": "2026-06-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#125"
+   ]
+  }
+ ],
+ "novel_relations": {
+  "custom.mentions": "The person talked about this entity in conversation; no more specific relation is known (person -> entity)."
+ }
+}

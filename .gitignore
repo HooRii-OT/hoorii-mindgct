@@ -9,3 +9,7 @@ graphs/
 *.safetensors
 *.pt
 *.bin
+
+# written by the graph builder and the build documents
+cache/
+my_memory/

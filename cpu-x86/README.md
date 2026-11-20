@@ -53,14 +53,24 @@ python cpu-x86/quickstart_x86.py --save-graphs graphs      # compile and save th
 python cpu-x86/quickstart_x86.py --from-saved graphs       # serve them without the encoders
 ```
 
-`--save-graphs DIR` and `gct.save_graph(graph, path)` write into a new directory and stop with `FileExistsError`
-when it already exists: choose another name, or remove the old directory, before running them again.
+`gct.save_graph(graph, path)` writes into `path`, which must not exist yet, and stops with `FileExistsError`
+otherwise. `--save-graphs DIR` saves each example graph as `DIR/<graph name>` (`DIR/example_graph` and
+`DIR/example_graph_zh`), creating `DIR` if needed, and stops in the same way when one of them already exists: choose
+another `DIR`, or remove the old graph directories, before running it again.
 
 A saved graph can only be loaded with the same release and weights. Its files contain the graph's content (what the
 caller may see): store and transfer them as you store the graph itself.
 
+A graph saved on one device loads on another, but its scores then differ more from those of a graph compiled where it
+is served: on our test requests for the case graphs, graphs compiled on an A100 and served by the x86 path returned
+the five best units in the same order as graphs compiled with the x86 path for 11 of 72 requests. Compile with the
+path you serve with. `save_graph` creates the directory and both files readable by their owner only.
+
 ## Notes
 
+`x86.install` replaces the close-read state function for the whole process, so keep instances without the x86 path out
+of that process; mixing them raises a `RuntimeError` about mismatched dtypes (float and BFloat16) on the first
+request.
 Pin the process to the cores of one socket and give it one thread per physical core. Each graph is compiled with its
 own caches, so a graph's scores do not depend on the graphs compiled before it. The scores depend on the number of
 threads: units with nearly equal scores can swap ranks between thread counts, so compare runs at the same thread count.

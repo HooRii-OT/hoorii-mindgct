@@ -2,7 +2,7 @@
 
 Reference implementation of GCT, the retrieval model of HooRii Mind, with an accelerated path for x86 CPU servers. The GCT-0.6B weights are on Hugging Face at **[HooRiiTechnology/hoorii-mindgct](https://huggingface.co/HooRiiTechnology/hoorii-mindgct)**, and the code in this repository downloads them from there.
 
-[Installation](#installation) · [Results](#results) · [How it works](#how-it-works) · [Deployment](#deployment) · [Notes](#notes) · [Repository structure](#repository-structure) · [License](#license)
+[Installation](#installation) · [Build a graph from your own data](#build-a-graph-from-your-own-data) · [Results](#results) · [How it works](#how-it-works) · [Deployment](#deployment) · [Notes](#notes) · [Repository structure](#repository-structure) · [License](#license)
 
 HooRii Mind is HooRii's personal graph system. It manages memory and retrieves context for personal AI: assistants, agents and any application that works with one user over time. GCT is its retrieval model. On each turn it reads the user's graph and the recent conversation in one forward pass and returns the facts the AI needs for that turn. With GCT-0.6B this takes about 27 ms on an A100.
 
@@ -42,7 +42,7 @@ There are three ways to run GCT-0.6B, all with the same weights and the same cod
 - Python 3.11 or newer.
 - The packages in `requirements.txt`: PyTorch 2.5 or newer, transformers 5.13.1 or newer within 5.x, safetensors, huggingface_hub, and ninja for the x86 path.
 - For the x86 path only: a C++ compiler with OpenMP, such as g++, and the Python headers (the `python3-dev` package on Debian and Ubuntu). The first `install` compiles a small C++ extension with the PyTorch toolchain, which takes about a minute, and reuses it afterwards.
-- About 4 GB of free disk for the two downloads: the Hugging Face repository of GCT (about 2.5 GB, most of it the unit-key encoder) and the frozen Qwen3-0.6B backbone (about 1.5 GB).
+- About 4 GB of free disk for the two downloads: the Hugging Face repository of GCT (about 2.5 GB, most of it the unit-key encoder) and the frozen Qwen3-0.6B backbone (about 1.5 GB). PyTorch comes on top: its CPU build took about 0.8 GB once installed in the environment below, and a CUDA build is larger, with the NVIDIA libraries it installs.
 - Memory on a CPU, as peak resident size in our runs: 4.4 GiB for the reference quickstart, 8.4 GiB for the x86 quickstart and 3.5 GiB for the x86 quickstart serving saved graphs (`--from-saved`). With the x86 path, a process that compiles graphs and serves requests reached 14 GiB (graphs of a few hundred units) to 17 GiB (24,988 units), and a process that only loads saved graphs (`encoders=False`) 4.8 GiB (1,962 units) to 6.8 GiB (24,988 units), growing with the close-read states it caches (8.2 GiB after 400 different requests on the 24,988-unit graph).
 
 The CPU steps below were run in a new virtual environment on Linux x86-64 with Python 3.13.12, PyTorch 2.15.0 (CPU build), transformers 5.23.0, safetensors 0.8.0, huggingface_hub 2.4.0, ninja 1.13.2 and g++ 11.4.0.
@@ -86,7 +86,7 @@ python examples/quickstart.py --model HooRiiTechnology/hoorii-mindgct
 python examples/quickstart.py --model HooRiiTechnology/hoorii-mindgct --device cpu
 ```
 
-The first run downloads both repositories, about 4 GB in all. Depending on the network this takes from a few minutes to tens of minutes, and meanwhile only a "Fetching … files" progress bar is shown. The quickstart compiles the two example graphs in `examples/` (one in English, one in Chinese), sends the seven requests of `examples/example_requests.json` and prints the three best units of each request with their must-mention scores. A positive score means "must mention", and the scores are logits, not calibrated probabilities. Other options: `--top-k N`, `--positive-only` (list only units with a positive score), `--base-model DIR` (a local copy of the backbone) and `--requests FILE`.
+The first run downloads both repositories, about 4 GB in all. Depending on the network this takes from a few minutes to tens of minutes, and meanwhile only a "Fetching … files" progress bar is shown. The quickstart compiles the two example graphs in `examples/` (one in English, one in Chinese), sends the seven requests of `examples/example_requests.json` and prints the three best units of each request with their must-mention scores. A positive score means "must mention", and the scores are logits, not calibrated probabilities. Other options: `--top-k N`, `--positive-only` (list only units with a positive score, as the default `retrieve` call does; on graphs built from chat histories this list is often empty), `--base-model DIR` (a local copy of the backbone) and `--requests FILE`.
 
 Expected output on a CPU with the versions above and 16 threads (`OMP_NUM_THREADS=16`), without the progress bars of weight loading and with timings left out. The quickstarts print each unit's `display_text`, which leaves out the default "confirmed" state and keeps the others, such as "pending confirmation":
 
@@ -135,7 +135,7 @@ request: 今天心情不错。
    -14.677                  f2  周宁的妈妈｜过敏与禁忌：妈妈对青霉素过敏。
 ```
 
-Scores can differ slightly with other versions of PyTorch or transformers, with another number of CPU threads and on other hardware, and units with nearly equal scores can swap ranks.
+On a GPU the quickstart lists the same units in the same order, with scores up to about 0.7 away from those above. Scores can differ slightly with other versions of PyTorch or transformers, with another number of CPU threads and on other hardware, and units with nearly equal scores can swap ranks.
 
 ### Run the accelerated x86 CPU path
 
@@ -163,6 +163,8 @@ for unit in out["results"]:
     print(unit["score"], unit["display_text"])
 ```
 
+`x86.install` replaces, for the whole process, the function that computes close-read states. Use the x86 path in a process of its own: a GCT instance without the x86 path in the same process stops at its first request with a `RuntimeError` about mismatched dtypes (float and BFloat16).
+
 `x86.install(gct, kind="w8a8", close_read=32, threads=None)`: `kind` is `"w8a8"` (INT8 weights and activations, the measured configuration) or `"fp32"` (the same fused kernels without INT8), `close_read` the number of close-read candidates per request (32 is the measured configuration), and `threads` the number of PyTorch threads (by default the current setting is kept). GCT must be loaded with `device="cpu"`. Each graph is compiled with its own caches, so a graph's scores do not depend on the graphs compiled before it. The scores depend on the number of threads: units with close scores can swap ranks between thread counts, so compare runs at the same thread count. The INT8 layers make the scores differ slightly from the GPU release.
 
 A process that only serves requests does not need the two encoders that compilation uses. Compile once, save the graph, and load it in the serving process:
@@ -180,7 +182,7 @@ python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --save-
 python cpu-x86/quickstart_x86.py --model HooRiiTechnology/hoorii-mindgct --from-saved graphs    # serve them without the encoders
 ```
 
-`--save-graphs DIR` and `gct.save_graph(graph, path)` write into a new directory and stop with `FileExistsError` when it already exists: choose another name, or remove the old directory, before running them again. A saved graph can only be loaded with the same release and weights, and its files contain the graph's content (what the caller may see): store and transfer them as you store the graph itself.
+`gct.save_graph(graph, path)` writes into `path`, which must not exist yet, and stops with `FileExistsError` otherwise. `--save-graphs DIR` saves each example graph as `DIR/<graph name>` (`DIR/example_graph` and `DIR/example_graph_zh`), creating `DIR` if needed, and stops in the same way when one of them already exists: choose another `DIR`, or remove the old graph directories, before running it again. A saved graph can only be loaded with the same release and weights, and its files contain the graph's content (what the caller may see): store and transfer them as you store the graph itself. A graph saved on one device loads on another, but its scores then differ more from those of a graph compiled where it is served: on our test requests for the case graphs, graphs compiled on an A100 and served by the x86 path returned the five best units in the same order as graphs compiled with the x86 path for 11 of 72 requests. Compile with the path you serve with. `save_graph` creates the directory and both files readable by their owner only.
 
 Expected output of `cpu-x86/quickstart_x86.py` with the versions above and `--threads 16`, without the progress bars of weight loading and with timings left out:
 
@@ -246,14 +248,16 @@ for unit in out["results"]:                 # must-mention facts only (positive 
     print(unit["score"], unit["display_text"])
 ```
 
-`compile_graph` builds the caller's view of the graph: items whose `vis` list does not include the caller are left out before anything is encoded. A compiled graph is derived from the unit texts by frozen encoders, and together with the public weights it carries the content of the graph, so store and transfer it with the same protection as the graph itself.
+`compile_graph` builds the caller's view of the graph. Facts and edges whose `vis` list does not include the caller are left out before anything is encoded. Entities have no `vis` field: every entity enters the view with its name, aliases and description. Before compiling for a restricted caller, remove the entities that caller may not see and the facts that mention them. Facts in the state `superseded` stay in the view and are marked as an old value. Remove them first if the view should hold no history. [Compiling a graph](docs/COMPILE.md) shows both steps. A compiled graph is derived from the unit texts by frozen encoders, and together with the public weights it carries the content of the graph, so store and transfer it with the same protection as the graph itself.
+
+[Compiling a graph](docs/COMPILE.md) explains what `compile_graph` encodes, when a graph needs compiling again, how to compile on a GPU or a CPU and save the result, how to prepare a view for an assistant with restricted access, what compiling costs on our hardware, and how to store compiled graphs.
 
 The interface, in `gct/runtime.py`:
 
 - `GCT.from_pretrained(path_or_repo, revision=None, base_model=None, device=None, close_read=None, encoders=True)`. `path_or_repo` is the Hugging Face id or a local copy of that repository, and `revision` a revision of it. `base_model` is a local copy of Qwen3-0.6B at the pinned revision, with every file identical to it; by default that revision is downloaded. `device` is `"cuda"` or `"cpu"`, by default CUDA when it is available. `close_read` sets the number of close-read candidates, 32 by default from `config.json`. With `encoders=False` the unit and key encoders, which only compilation uses, are not loaded: such an instance loads saved graphs and cannot compile them.
-- `gct.compile_graph(world, caller="o")` compiles the view of `caller`. A graph is one JSON object with `entities`, `facts`, `edges` and a `meta` block (`owner`, `now`, `timezone`), and every item lists in `vis` the callers that may see it. Entity kinds, fact modules and relations come from the vocabulary in `gct/vocab.json`. In `examples/example_graph.json` one fact has an empty `vis` list and stays out of the view.
+- `gct.compile_graph(world, caller="o")` compiles the view of `caller`. A graph is one JSON object with `entities`, `facts`, `edges` and a `meta` block (`owner`, `now`, `timezone`), and every fact and edge lists in `vis` the callers that may see it (entities are not filtered). Entity kinds, fact modules and relations come from the vocabulary in `gct/vocab.json`. In `examples/example_graph.json` one fact has an empty `vis` list and stays out of the view.
 - `gct.save_graph(graph, path)` writes a compiled graph to `path`, a directory that must not exist yet, as `graph.json` and `tensors.safetensors`, without pickle, and `gct.load_graph(path)` loads it for the same release and weights; the loaded graph gives the same scores as the compiled one.
-- `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True, hide_states=None)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The result is `{"results": [{"id", "type", "text", "state", "display_text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`. `text` is the unit text as the model reads it. `state` is the state of a fact (`confirmed`, `hearsay`, `pending`, `superseded` or `asserted`; `None` for an entity), and `display_text` is `text` without the state word for the states in `hide_states`: by default only `confirmed` (`gct.hide_states`), and `hide_states="all"` hides every state. A source or date in the same brackets stays.
+- `gct.retrieve(graph, text, context=(), now=None, previous_unit_ids=(), top_k=5, positive_only=True, hide_states=None)` returns the must-mention units of one request, best first. `text` is the current turn, and `context` the earlier turns as `[{"role": "user" | "assistant", "content": str}]`, oldest first. `now` is the reference time of the request, best given as `"YYYY-MM-DD HH:MM"` in the graph's local time; by default it is `meta.now` of the graph. `previous_unit_ids` lists units already handed to the assistant earlier in the conversation and still in force. With `positive_only=True` it returns only units with a positive score, at most `top_k`; with `positive_only=False` it returns the `top_k` best units whatever their sign. The scores are logits. Zero separates must mention from the rest in the model's output; it is not a threshold calibrated for your graphs. On graphs built from chat histories with `gct.build`, whatever their size, few units score above zero, and the default call often returns nothing. To give the assistant candidates on every turn, call `retrieve` with `positive_only=False` and the `top_k` you want, or choose a threshold on requests and graphs of your own. The result is `{"results": [{"id", "type", "text", "state", "display_text", "score"}, ...], "input_tokens": int, "request_truncated": bool}`. `text` is the unit text as the model reads it. `state` is the state of a fact (`confirmed`, `hearsay`, `pending`, `superseded` or `asserted`; `None` for an entity), and `display_text` is `text` without the state word for the states in `hide_states`: by default only `confirmed` (`gct.hide_states`), and `hide_states="all"` hides every state. A source or date in the same brackets stays.
 
 ### Offline use
 
@@ -281,7 +285,29 @@ In Python: `GCT.from_pretrained("weights/hoorii-mindgct", base_model="weights/qw
 - **`ValueError: the x86 path runs on the CPU: load GCT with device='cpu'`.** Load GCT with `device="cpu"` before `x86.install`.
 - **A warning about an incorrect regex pattern in the tokenizer (`fix_mistral_regex`).** Some transformers versions print it when they load the Qwen3 tokenizer. Our own runtime loads the same tokenizer files and prints the same warning, and nothing needs to change.
 - **`Warning: You are sending unauthenticated requests to the HF Hub`.** This can be ignored: both repositories are public and need no token.
+- **`RuntimeError: expected m1 and m2 to have the same dtype, but got: float != c10::BFloat16`** after `x86.install`. Another GCT instance without the x86 path runs in the same process. Run it in a separate process.
+- **Recompiling an edited graph in the same process.** Versions of `gct/timex.py` before this release reused the time features of an earlier compile when the edited graph had the same numbers of entities and facts. Update the code, or compile the edited graph in a new process.
 - **Scores differ slightly from the expected output.** See the note under the expected output.
+
+## Build a graph from your own data
+
+`gct/build/` builds a HooRii Mind graph from a user's material with an LLM behind an OpenAI-compatible API: chats between people, conversations with an AI assistant, notes and documents, and memories another AI has already summarised. We build our graphs with GPT-6.1 Sol (`gpt-6.1-sol`) through the OpenAI API; the same code runs against an open model served on your own GPU.
+
+```bash
+export OPENAI_API_KEY=...            # your key
+python -m gct.build --case examples/cases/chat_en --out graphs/chat_en.json --cache cache/chat_en
+python -m gct.build.validate graphs/chat_en.json
+```
+
+The build extracts entities, facts and relations session by session, resolves relative times ("yesterday", "next Friday") against the date of each source, merges the same people and things across sessions, groups facts into occasions, and marks facts that a later correction, cancellation or change replaced. The output is a graph in the format of `examples/example_graph.json`, ready for `gct.compile_graph`.
+
+| Document | Contents |
+|---|---|
+| [docs/BUILD_INPUTS.md](docs/BUILD_INPUTS.md) | The input files: six forms of material, with examples |
+| [docs/BUILD_GRAPH.md](docs/BUILD_GRAPH.md) | Building with GPT-6.1 Sol: what each step does, time, corrections, checking a graph, cost |
+| [docs/BUILD_LOCAL.md](docs/BUILD_LOCAL.md) | Building with Qwen3.6-35B-A3B or Qwen3.5-9B served by vLLM, and how their graphs compare |
+
+The three example cases in `examples/cases/` each come with the graphs we built from their raw material and from AI-summarised versions of it.
 
 ## Results
 
@@ -505,7 +531,13 @@ We computed 95% bootstrap intervals and paired differences by resampling whole c
 - The results depend on the request form: with the original PerLTQA questions asked on their own, without dialogue, zero-shot retrievers and rerankers match or lead GCT, the best of them reaching 0.895 (EN) and 0.923 (ZH) against 0.889 and 0.904 for GCT-4B and 0.816 and 0.872 for GCT-0.6B.
 - A view holds up to 2,048 units, a request reads up to 384 tokens, and the supported languages are Chinese and English.
 - AI agents and virtual personas are an optional extension of the graph format, and GCT has not been trained or evaluated on graphs that use them.
-- Scores are raw model outputs that rank units within one request, and units with nearly equal scores can swap ranks between GPU architectures, so thresholds are best calibrated on the target hardware.
+- Scores are raw model outputs that rank units within one request. A positive score marks a unit as must mention, but zero is not calibrated: on graphs built from chat histories with `gct.build`, whatever their size, few units score above zero and the default call often returns nothing, so use `positive_only=False` with a `top_k`, or calibrate a threshold on your own data and hardware. Units with nearly equal scores can swap ranks between GPU architectures.
+
+### Changes in this version
+
+- Fix: when a graph was compiled again in the same process after an edit that left its number of entities and facts unchanged (for example a corrected date, or a new `meta.now`), the compiler reused the time features of the earlier version. The time table is now cached by the content of the graph. Graphs that were not edited compile exactly as before, and saved graphs are not affected: a graph written with `save_graph` keeps the time table it was compiled with.
+- `save_graph` now creates the directory and both files readable by their owner only; before, `graph.json` and the directory had the system's default permissions.
+- New: the graph builder `gct/build/` with [docs/BUILD_GRAPH.md](docs/BUILD_GRAPH.md), [docs/BUILD_INPUTS.md](docs/BUILD_INPUTS.md) and [docs/BUILD_LOCAL.md](docs/BUILD_LOCAL.md); three example cases in `examples/cases/` with their raw material, AI-memory versions of it and the graphs built from them; and [docs/COMPILE.md](docs/COMPILE.md).
 
 ### Intended use and privacy
 
@@ -519,7 +551,10 @@ Personal graphs are sensitive. HooRii Mind applies the privacy levels and cleara
 |---|---|
 | `gct/` | Reference implementation in plain PyTorch: model, graph compiler, retrieval, saving and loading compiled graphs |
 | `gct/edge/` | The accelerated x86 CPU path (`gct/edge/x86/`) and the CPU graph-layer parts it uses |
+| `gct/build/` | The graph builder: turns chats, notes, documents and AI-summarised memories into a HooRii Mind graph with an LLM ([docs/BUILD_GRAPH.md](docs/BUILD_GRAPH.md)) |
 | `examples/` | Two small example graphs, example requests and `quickstart.py` |
+| `examples/cases/` | Three example cases: raw material, AI-memory versions of it, and the graphs built from them |
+| `docs/` | How to build a graph ([BUILD_GRAPH.md](docs/BUILD_GRAPH.md), [BUILD_INPUTS.md](docs/BUILD_INPUTS.md), [BUILD_LOCAL.md](docs/BUILD_LOCAL.md)) and compile it ([COMPILE.md](docs/COMPILE.md)) |
 | `cpu-x86/` | A short guide to the x86 path and `quickstart_x86.py` |
 | `requirements.txt` | The Python packages the code needs |
 | `assets/` | The figures of this page |
@@ -535,6 +570,8 @@ The model files are in the Hugging Face repository [HooRiiTechnology/hoorii-mind
 | `config.json` | Model structure and inference settings, with the pinned revision of the frozen base model |
 | `key_encoder/` | The unit-key encoder, fine-tuned from Qwen3-Embedding-0.6B |
 | `tokenizer/` | The Qwen3 tokenizer used by the backbone |
+
+The Hugging Face repository also carries a copy of the code (`gct/`, `examples/`, `cpu-x86/` and `requirements.txt`), so that it runs on its own. Both places hold the same code, and the code of this release is the reference.
 
 ## License
 

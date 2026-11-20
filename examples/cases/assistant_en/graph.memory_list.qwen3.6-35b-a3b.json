@@ -1,0 +1,5576 @@
+{
+ "world_id": "assistant_en",
+ "lang": "en",
+ "meta": {
+  "owner": "e0",
+  "now": "2026-03-19 18:40",
+  "timezone": "America/Los_Angeles",
+  "build": {
+   "input_form": "memory_list",
+   "builder_model": "qwen3.6-35b-a3b"
+  }
+ },
+ "entities": [
+  {
+   "id": "e0",
+   "kind": "person",
+   "name": "Rachel Moreno"
+  },
+  {
+   "id": "e1",
+   "kind": "person",
+   "name": "Tom",
+   "aliases": [
+    "Tom Moreno"
+   ],
+   "desc": "Rachel's husband, ER nurse"
+  },
+  {
+   "id": "e2",
+   "kind": "organization",
+   "name": "Halverson Medical Center",
+   "desc": "Hospital where Tom works as ER nurse"
+  },
+  {
+   "id": "e3",
+   "kind": "person",
+   "name": "Lily",
+   "aliases": [
+    "Lily Moreno"
+   ],
+   "desc": "Rachel and Tom's 9-year-old daughter"
+  },
+  {
+   "id": "e4",
+   "kind": "organization",
+   "name": "Maplewood Elementary",
+   "desc": "School where Lily is in 4th grade"
+  },
+  {
+   "id": "e5",
+   "kind": "person",
+   "name": "Ms. Alvarez",
+   "desc": "Lily's 4th grade teacher in Room 14"
+  },
+  {
+   "id": "e6",
+   "kind": "pet",
+   "name": "Pepper",
+   "desc": "Rachel's 6-year-old female beagle"
+  },
+  {
+   "id": "e7",
+   "kind": "person",
+   "name": "Dr. Ana Huang",
+   "aliases": [
+    "Dr. Huang"
+   ],
+   "desc": "Veterinarian at Larchmont Animal Hospital"
+  },
+  {
+   "id": "e8",
+   "kind": "organization",
+   "name": "Larchmont Animal Hospital",
+   "desc": "Animal hospital where Pepper receives care"
+  },
+  {
+   "id": "e9",
+   "kind": "person",
+   "name": "Greg Pullman",
+   "aliases": [
+    "Greg"
+   ],
+   "desc": "Neighbor at 4421 NE Brookside Ave"
+  },
+  {
+   "id": "e10",
+   "kind": "organization",
+   "name": "Fernhill Software",
+   "desc": "Company where Rachel works"
+  },
+  {
+   "id": "e11",
+   "kind": "person",
+   "name": "Priya",
+   "desc": "Architect, allergic to shellfish"
+  },
+  {
+   "id": "e12",
+   "kind": "organization",
+   "name": "Okafor & Lind",
+   "desc": "Architecture firm where Priya works"
+  },
+  {
+   "id": "e13",
+   "kind": "person",
+   "name": "Dev Shah",
+   "aliases": [
+    "Dev"
+   ],
+   "desc": "Priya's partner"
+  },
+  {
+   "id": "e14",
+   "kind": "person",
+   "name": "Owen Fischer",
+   "aliases": [
+    "Owen"
+   ],
+   "desc": "Tom's college best friend"
+  },
+  {
+   "id": "e15",
+   "kind": "person",
+   "name": "Jordan Hale",
+   "desc": "Rachel's manager, Director of Design"
+  },
+  {
+   "id": "e16",
+   "kind": "asset",
+   "name": "Tandem",
+   "desc": "Scheduling app made by Fernhill Software"
+  },
+  {
+   "id": "e17",
+   "kind": "project",
+   "name": "Atlas study",
+   "aliases": [
+    "Atlas Study"
+   ],
+   "desc": "Rachel leads study on Tandem onboarding flow"
+  },
+  {
+   "id": "e18",
+   "kind": "person",
+   "name": "Marcus Lee",
+   "aliases": [
+    "Marcus"
+   ],
+   "desc": "Research coordinator for Atlas study"
+  },
+  {
+   "id": "e19",
+   "kind": "person",
+   "name": "Dana Kim",
+   "desc": "Research ops for Atlas study"
+  },
+  {
+   "id": "e20",
+   "kind": "person",
+   "name": "June",
+   "desc": "Rachel's neighbor"
+  },
+  {
+   "id": "e21",
+   "kind": "person",
+   "name": "Luis",
+   "desc": "Tom's brother"
+  },
+  {
+   "id": "e22",
+   "kind": "person",
+   "name": "Carmen",
+   "desc": "Luis's wife"
+  },
+  {
+   "id": "e23",
+   "kind": "person",
+   "name": "Mateo",
+   "desc": "Luis and Carmen's son"
+  },
+  {
+   "id": "e24",
+   "kind": "person",
+   "name": "Sofia",
+   "desc": "Luis and Carmen's daughter"
+  },
+  {
+   "id": "e25",
+   "kind": "person",
+   "name": "Ana",
+   "desc": "Tom's mother"
+  },
+  {
+   "id": "e26",
+   "kind": "person",
+   "name": "Ricardo",
+   "desc": "Tom's father"
+  },
+  {
+   "id": "e27",
+   "kind": "vehicle",
+   "name": "Blue 2019 Hatchback",
+   "desc": "Family car"
+  },
+  {
+   "id": "e28",
+   "kind": "event",
+   "name": "Tom's Birthday",
+   "desc": "Tom's annual birthday"
+  },
+  {
+   "id": "e29",
+   "kind": "person",
+   "name": "Dr. Okonkwo",
+   "desc": "Lily's allergist"
+  },
+  {
+   "id": "e30",
+   "kind": "person",
+   "name": "Dr. Sato",
+   "desc": "Lily's pediatrician"
+  },
+  {
+   "id": "e32",
+   "kind": "place",
+   "name": "Beaverton",
+   "desc": "Luis's residence"
+  },
+  {
+   "id": "e33",
+   "kind": "organization",
+   "name": "Clay & Code",
+   "desc": "Art camp provider"
+  },
+  {
+   "id": "e34",
+   "kind": "place",
+   "name": "Phoenix",
+   "desc": "Ana and Ricardo's residence"
+  },
+  {
+   "id": "e35",
+   "kind": "person",
+   "name": "Sam Whitford",
+   "desc": "Rachel's physiotherapist"
+  },
+  {
+   "id": "e36",
+   "kind": "organization",
+   "name": "Kestrel Physio",
+   "desc": "Physiotherapy clinic"
+  },
+  {
+   "id": "e37",
+   "kind": "person",
+   "name": "Dr. Lewis",
+   "desc": "Rachel's doctor"
+  },
+  {
+   "id": "e38",
+   "kind": "organization",
+   "name": "Hawthorne Family Medicine",
+   "desc": "Rachel's medical practice"
+  },
+  {
+   "id": "e39",
+   "kind": "event",
+   "name": "Christmas Korean Dinner",
+   "desc": "Dinner at Luis's place"
+  },
+  {
+   "id": "e40",
+   "kind": "event",
+   "name": "Lily's Art Camp",
+   "desc": "Art camp for Lily"
+  },
+  {
+   "id": "e41",
+   "kind": "person",
+   "name": "Elena Ruiz",
+   "aliases": [
+    "Elena"
+   ],
+   "desc": "Rachel's mother, retired teacher"
+  },
+  {
+   "id": "e42",
+   "kind": "place",
+   "name": "Sacramento",
+   "desc": "City where Elena Ruiz lives"
+  },
+  {
+   "id": "e43",
+   "kind": "person",
+   "name": "Dr. Meera Patel",
+   "desc": "Elena's doctor"
+  },
+  {
+   "id": "e44",
+   "kind": "event",
+   "name": "Field Research Forum",
+   "desc": "Professional conference in February"
+  },
+  {
+   "id": "e45",
+   "kind": "person",
+   "name": "Junior UX Researcher",
+   "desc": "Job role Rachel is hiring for"
+  },
+  {
+   "id": "e46",
+   "kind": "place",
+   "name": "Vancouver",
+   "desc": "Destination for family trip"
+  },
+  {
+   "id": "e47",
+   "kind": "document",
+   "name": "Lily's Passport",
+   "desc": "Expired, needs renewal"
+  },
+  {
+   "id": "e48",
+   "kind": "document",
+   "name": "Tom's Passport",
+   "desc": "Valid until 2029"
+  },
+  {
+   "id": "e49",
+   "kind": "document",
+   "name": "Rachel's Passport",
+   "desc": "Valid until 2027"
+  },
+  {
+   "id": "e50",
+   "kind": "organization",
+   "name": "Rose Appliance",
+   "desc": "Appliance repair service"
+  },
+  {
+   "id": "e51",
+   "kind": "asset",
+   "name": "Dishwasher",
+   "desc": "Rachel's dishwasher"
+  },
+  {
+   "id": "e52",
+   "kind": "service",
+   "name": "Cascadia Fiber",
+   "desc": "Internet service provider"
+  },
+  {
+   "id": "e53",
+   "kind": "place",
+   "name": "Austin",
+   "desc": "City for Field Research Forum"
+  },
+  {
+   "id": "e54",
+   "kind": "person",
+   "name": "Ava Brooks",
+   "desc": "Lily's best friend"
+  },
+  {
+   "id": "e55",
+   "kind": "person",
+   "name": "Nicole Brooks",
+   "desc": "Ava's mother"
+  },
+  {
+   "id": "e56",
+   "kind": "service",
+   "name": "Happy Tails Lodge",
+   "desc": "Pet boarding facility"
+  },
+  {
+   "id": "e57",
+   "kind": "group",
+   "name": "School Art Club",
+   "desc": "Lily's after-school activity"
+  },
+  {
+   "id": "e58",
+   "kind": "project",
+   "name": "Moon Fox",
+   "desc": "Graphic novel series"
+  },
+  {
+   "id": "e59",
+   "kind": "group",
+   "name": "Book Club",
+   "desc": "Rachel's monthly meeting group"
+  },
+  {
+   "id": "e60",
+   "kind": "person",
+   "name": "Rachel's Mom",
+   "desc": "Rachel's mother"
+  },
+  {
+   "id": "e61",
+   "kind": "person",
+   "name": "Imani Cole",
+   "desc": "Junior UX researcher"
+  },
+  {
+   "id": "e62",
+   "kind": "organization",
+   "name": "Atlas",
+   "desc": "Company where Imani works"
+  },
+  {
+   "id": "e63",
+   "kind": "document",
+   "name": "Passport",
+   "desc": "Lily's passport"
+  },
+  {
+   "id": "e64",
+   "kind": "place",
+   "name": "Congress Avenue Inn",
+   "desc": "Hotel in Austin"
+  },
+  {
+   "id": "e65",
+   "kind": "place",
+   "name": "Harbourview Suites",
+   "desc": "Hotel in Vancouver"
+  },
+  {
+   "id": "e66",
+   "kind": "trip",
+   "name": "Vancouver Trip",
+   "desc": "Family trip to Vancouver"
+  },
+  {
+   "id": "e67",
+   "kind": "place",
+   "name": "Luce on Division",
+   "desc": "Restaurant"
+  },
+  {
+   "id": "e68",
+   "kind": "person",
+   "name": "Kendra",
+   "desc": "Tom's coworker"
+  },
+  {
+   "id": "e69",
+   "kind": "organization",
+   "name": "Happy Tails",
+   "desc": "Pet boarding or daycare service"
+  },
+  {
+   "id": "e70",
+   "kind": "place",
+   "name": "Saltbox Kitchen",
+   "desc": "Restaurant offering cooking classes"
+  },
+  {
+   "id": "e71",
+   "kind": "person",
+   "name": "Jordan Pike",
+   "aliases": [
+    "Coach Jordan"
+   ],
+   "desc": "Lily's swim instructor"
+  },
+  {
+   "id": "e72",
+   "kind": "place",
+   "name": "Eastside Aquatic Center",
+   "desc": "Location of Lily's swim lessons"
+  },
+  {
+   "id": "e73",
+   "kind": "organization",
+   "name": "Trailhead Outfitters",
+   "desc": "Retailer selling outdoor gear"
+  },
+  {
+   "id": "e74",
+   "kind": "asset",
+   "name": "Rain Jacket",
+   "aliases": [
+    "TO-55817"
+   ],
+   "desc": "Teal kids' rain jacket, size 10"
+  },
+  {
+   "id": "e75",
+   "kind": "place",
+   "name": "Vancouver Aquarium",
+   "desc": "Aquarium in Vancouver"
+  },
+  {
+   "id": "e76",
+   "kind": "place",
+   "name": "Granville Island",
+   "desc": "Public market and arts district"
+  },
+  {
+   "id": "e77",
+   "kind": "place",
+   "name": "Vancouver Suspension Bridge",
+   "desc": "Suspension bridge in Vancouver"
+  },
+  {
+   "id": "e78",
+   "kind": "place",
+   "name": "Kitsilano",
+   "desc": "Neighborhood in Vancouver"
+  },
+  {
+   "id": "e79",
+   "kind": "place",
+   "name": "2290 SE Linnet St, Apt 4B",
+   "desc": "Priya and Dev's new apartment address"
+  },
+  {
+   "id": "e80",
+   "kind": "place",
+   "name": "Olive & Ash",
+   "desc": "Restaurant on Belmont"
+  },
+  {
+   "id": "e81",
+   "kind": "organization",
+   "name": "Lumberlane Furniture",
+   "desc": "Furniture retailer"
+  },
+  {
+   "id": "e82",
+   "kind": "asset",
+   "name": "Elevate Standing Desk",
+   "aliases": [
+    "LL-20931"
+   ],
+   "desc": "Standing desk with oak top"
+  },
+  {
+   "id": "e83",
+   "kind": "organization",
+   "name": "Clearline Gutters",
+   "desc": "Gutter cleaning service provider"
+  },
+  {
+   "id": "e84",
+   "kind": "organization",
+   "name": "Bell & Sons Plumbing",
+   "desc": "Plumbing service provider"
+  },
+  {
+   "id": "e85",
+   "kind": "event",
+   "name": "Tom's Birthday Cooking Class",
+   "desc": "Pasta cooking class at Saltbox Kitchen"
+  },
+  {
+   "id": "e86",
+   "kind": "event",
+   "name": "Priya's Housewarming",
+   "desc": "Party at Priya's new apartment"
+  },
+  {
+   "id": "e87",
+   "kind": "project",
+   "name": "Olive & Ash Reservation",
+   "desc": "Reservation for Priya's birthday dinner"
+  },
+  {
+   "id": "e88",
+   "kind": "service",
+   "name": "Furnace Filter Change",
+   "desc": "Routine home maintenance"
+  },
+  {
+   "id": "e89",
+   "kind": "service",
+   "name": "Gutter Cleaning",
+   "desc": "Scheduled home maintenance"
+  },
+  {
+   "id": "e90",
+   "kind": "person",
+   "name": "Ava",
+   "desc": "Rachel's daughter"
+  },
+  {
+   "id": "e91",
+   "kind": "project",
+   "name": "Atlas",
+   "desc": "Recruitment study project"
+  },
+  {
+   "id": "e92",
+   "kind": "organization",
+   "name": "Kiln & Co",
+   "desc": "Pottery studio"
+  },
+  {
+   "id": "e93",
+   "kind": "person",
+   "name": "Dr. Feld",
+   "desc": "Dentist"
+  },
+  {
+   "id": "e94",
+   "kind": "place",
+   "name": "Fennel Street Dental",
+   "desc": "Dental clinic"
+  },
+  {
+   "id": "e96",
+   "kind": "organization",
+   "name": "Eastside Auto Care",
+   "desc": "Auto repair shop"
+  },
+  {
+   "id": "e97",
+   "kind": "person",
+   "name": "Mike",
+   "desc": "Coworker"
+  }
+ ],
+ "edges": [
+  {
+   "src": "e0",
+   "rel": "spouse_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "works_at",
+   "dst": "e2",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "child_of",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "student_at",
+   "dst": "e4",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e4",
+   "rel": "teacher_of",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "pet_owner_of",
+   "dst": "e6",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e6",
+   "rel": "treated_by",
+   "dst": "e7",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e7",
+   "rel": "works_at",
+   "dst": "e8",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "neighbor_of",
+   "dst": "e9",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "works_at",
+   "dst": "e10",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e11",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "works_at",
+   "dst": "e12",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "partner_of",
+   "dst": "e13",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "friend_of",
+   "dst": "e14",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e15",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e10",
+   "rel": "part_of",
+   "dst": "e16",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "leads",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "colleague_of",
+   "dst": "e18",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e17",
+   "rel": "colleague_of",
+   "dst": "e19",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "child_of",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e5",
+   "rel": "teacher_of",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e18",
+   "rel": "colleague_of",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e19",
+   "rel": "colleague_of",
+   "dst": "e17",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "neighbor_of",
+   "dst": "e20",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "sibling_of",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "spouse_of",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "child_of",
+   "dst": "e23",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "child_of",
+   "dst": "e24",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "parent_of",
+   "dst": "e25",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "parent_of",
+   "dst": "e26",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e27",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "part_of",
+   "dst": "e28",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e29",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e30",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "located_at",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "located_at",
+   "dst": "e34",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e35",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e37",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e32",
+   "rel": "located_at",
+   "dst": "e39",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e33",
+   "rel": "organizes",
+   "dst": "e40",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "treated_by",
+   "dst": "e29",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "treated_by",
+   "dst": "e30",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "enrolled_in",
+   "dst": "e40",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e23",
+   "rel": "child_of",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e23",
+   "rel": "child_of",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e24",
+   "rel": "child_of",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e24",
+   "rel": "child_of",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "lives_at",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e25",
+   "rel": "parent_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e26",
+   "rel": "parent_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e25",
+   "rel": "lives_at",
+   "dst": "e34",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e26",
+   "rel": "lives_at",
+   "dst": "e34",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e39",
+   "rel": "located_at",
+   "dst": "e32",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "treated_by",
+   "dst": "e35",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "treated_by",
+   "dst": "e37",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "parent_of",
+   "dst": "e41",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e41",
+   "rel": "lives_at",
+   "dst": "e42",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e21",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "relative_of",
+   "dst": "e22",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "partner_of",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e41",
+   "rel": "treated_by",
+   "dst": "e43",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "attends",
+   "dst": "e44",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "frequently_visits",
+   "dst": "e46",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "owns",
+   "dst": "e47",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "owns",
+   "dst": "e48",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e49",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e50",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e51",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "subscribes_to",
+   "dst": "e52",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e44",
+   "rel": "located_at",
+   "dst": "e53",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e41",
+   "rel": "relative_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e43",
+   "rel": "treated_by",
+   "dst": "e41",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e21",
+   "rel": "relative_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e22",
+   "rel": "relative_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "partner_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e50",
+   "rel": "client_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "friend_of",
+   "dst": "e9",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e9",
+   "rel": "spouse_of",
+   "dst": "e20",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "friend_of",
+   "dst": "e54",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e54",
+   "rel": "parent_of",
+   "dst": "e55",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e56",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "member_of",
+   "dst": "e57",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "subscribes_to",
+   "dst": "e58",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "organizes",
+   "dst": "e59",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "parent_of",
+   "dst": "e60",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "employed_by",
+   "dst": "e61",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e61",
+   "rel": "works_at",
+   "dst": "e62",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "owns",
+   "dst": "e63",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "lives_at",
+   "dst": "e64",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "lives_at",
+   "dst": "e65",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "frequently_visits",
+   "dst": "e67",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "colleague_of",
+   "dst": "e68",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e69",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "frequently_visits",
+   "dst": "e70",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "teacher_of",
+   "dst": "e71",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "located_at",
+   "dst": "e72",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "teacher_of",
+   "dst": "e5",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e73",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "owns",
+   "dst": "e74",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "organizes",
+   "dst": "e66",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e66",
+   "rel": "part_of",
+   "dst": "e75",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e66",
+   "rel": "part_of",
+   "dst": "e76",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e66",
+   "rel": "part_of",
+   "dst": "e77",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e66",
+   "rel": "located_at",
+   "dst": "e78",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "lives_at",
+   "dst": "e79",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "frequently_visits",
+   "dst": "e80",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e81",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e82",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e83",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "uses",
+   "dst": "e84",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "organizes",
+   "dst": "e28",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "organizes",
+   "dst": "e85",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "organizes",
+   "dst": "e86",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e87",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e88",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e89",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "child_of",
+   "dst": "e90",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e90",
+   "rel": "friend_of",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e18",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "colleague_of",
+   "dst": "e19",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "client_of",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "treated_by",
+   "dst": "e93",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e93",
+   "rel": "works_at",
+   "dst": "e94",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e18",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e18",
+   "rel": "works_at",
+   "dst": "e84",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e11",
+   "rel": "attends",
+   "dst": "e80",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e96",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e1",
+   "rel": "colleague_of",
+   "dst": "e97",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e90",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e3",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e1",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "owns",
+   "dst": "e6",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "leads",
+   "dst": "e91",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e90",
+   "rel": "child_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e3",
+   "rel": "friend_of",
+   "dst": "e90",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "works_at",
+   "dst": "e91",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "client_of",
+   "dst": "e92",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e9",
+   "rel": "neighbor_of",
+   "dst": "e0",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e36",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e38",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  },
+  {
+   "src": "e0",
+   "rel": "custom.mentions",
+   "dst": "e45",
+   "state": "cur",
+   "vis": [
+    "o"
+   ]
+  }
+ ],
+ "facts": [
+  {
+   "id": "f1",
+   "subject": "e1",
+   "module": "work.role",
+   "value": "[2025-12-02] Tom is an ER nurse at Halverson Medical Center.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e2"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#3"
+   ]
+  },
+  {
+   "id": "f2",
+   "subject": "e1",
+   "module": "schedule.routines",
+   "value": "[2025-12-02] Tom works nights Wednesday, Thursday, and Friday from 7 pm to 7 am.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#4"
+   ]
+  },
+  {
+   "id": "f3",
+   "subject": "e1",
+   "module": "schedule.availability",
+   "value": "[2025-12-02] Tom sleeps until about 2 pm after shifts, so avoid scheduling before mid-afternoon on work days.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#5"
+   ]
+  },
+  {
+   "id": "f4",
+   "subject": "e3",
+   "module": "identity.demographics",
+   "value": "[2025-12-02] Lily is nine years old.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#6"
+   ]
+  },
+  {
+   "id": "f5",
+   "subject": "e3",
+   "module": "education.enrollment",
+   "value": "[2025-12-02] Lily is in 4th grade at Maplewood Elementary in Ms. Alvarez's class in Room 14.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e4",
+    "e5"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "slot": "school",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#7"
+   ]
+  },
+  {
+   "id": "f6",
+   "subject": "e3",
+   "module": "schedule.routines",
+   "value": "[2025-12-02] Lily's school lets out at 2:50 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#8"
+   ]
+  },
+  {
+   "id": "f7",
+   "subject": "e6",
+   "module": "pet.identity",
+   "value": "[2025-12-02] Pepper is a six-year-old female beagle.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#9"
+   ]
+  },
+  {
+   "id": "f8",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2025-12-02] Pepper's vet is Dr. Ana Huang at Larchmont Animal Hospital.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e7",
+    "e8"
+   ],
+   "observed_at": "2025-12-02",
+   "valid_from": "2025-12-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#10"
+   ]
+  },
+  {
+   "id": "f9",
+   "subject": "e1",
+   "module": "health.allergies",
+   "value": "[2025-12-03] Tom is allergic to penicillin.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#14"
+   ]
+  },
+  {
+   "id": "f10",
+   "subject": "e1",
+   "module": "communication.style",
+   "value": "[2025-12-03] Tom's cell number is (503) 555-0161.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#15"
+   ]
+  },
+  {
+   "id": "f11",
+   "subject": "e1",
+   "module": "preferences.food",
+   "value": "[2025-12-03] Tom loves Thai food and anything spicy.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#16"
+   ]
+  },
+  {
+   "id": "f12",
+   "subject": "e1",
+   "module": "preferences.food",
+   "value": "[2025-12-03] Tom can't stand cilantro.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#17"
+   ]
+  },
+  {
+   "id": "f13",
+   "subject": "e1",
+   "module": "relationship.roles",
+   "value": "[2025-12-03] Tom's best friend from college is Owen Fischer, who lives in Vancouver, in Kitsilano.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#18"
+   ]
+  },
+  {
+   "id": "f14",
+   "subject": "e1",
+   "module": "schedule.recurring",
+   "value": "[2025-12-03] Tom has a mandatory training day once a month, usually the first Tuesday, 8 am to 4 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-03",
+   "valid_from": "2025-12-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#19"
+   ]
+  },
+  {
+   "id": "f15",
+   "subject": "e11",
+   "module": "health.allergies",
+   "value": "[2025-12-05] Priya is allergic to all shellfish, cooked or raw, including shrimp, crab, lobster, and scallops.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#20"
+   ]
+  },
+  {
+   "id": "f16",
+   "subject": "e11",
+   "module": "health.allergies",
+   "value": "[2025-12-05] Priya's allergist made her shellfish allergy official last spring, and she carries an epinephrine auto-injector.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-11-01",
+   "valid_to": "2025-11-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#21"
+   ]
+  },
+  {
+   "id": "f17",
+   "subject": "e11",
+   "module": "health.allergies",
+   "value": "[2025-12-05] Priya had an allergic reaction to undisclosed shrimp in dumplings at her office party on 2025-12-05 and recovered after an antihistamine.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#22"
+   ]
+  },
+  {
+   "id": "f18",
+   "subject": "e11",
+   "module": "communication.style",
+   "value": "[2025-12-05] Priya hates phone calls; always text her.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#23"
+   ]
+  },
+  {
+   "id": "f19",
+   "subject": "e11",
+   "module": "work.role",
+   "value": "[2025-12-05] Priya is an architect at Okafor & Lind.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e12"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#24"
+   ]
+  },
+  {
+   "id": "f20",
+   "subject": "e11",
+   "module": "relationship.roles",
+   "value": "[2025-12-05] Priya's partner is Dev Shah.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e13"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#25"
+   ]
+  },
+  {
+   "id": "f21",
+   "subject": "e11",
+   "module": "relationship.important_dates",
+   "value": "[2025-12-05] Priya's birthday is March 28.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#26"
+   ]
+  },
+  {
+   "id": "f22",
+   "subject": "e11",
+   "module": "identity.residency",
+   "value": "[2025-12-05] Priya lives at 1835 NE Alder St for now.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-05",
+   "valid_from": "2025-12-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#27"
+   ]
+  },
+  {
+   "id": "f23",
+   "subject": "e3",
+   "module": "notes.general",
+   "value": "[2025-12-07] Lily's winter concert was scheduled for Wednesday the 17th at 6 pm in the school gym.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-07",
+   "valid_from": "2025-12-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#28"
+   ]
+  },
+  {
+   "id": "f24",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2025-12-07] Lily plays the recorder.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-07",
+   "valid_from": "2025-12-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#29"
+   ]
+  },
+  {
+   "id": "f25",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2025-12-07] Lily's homework routine includes a reading log for 20 minutes every night, signed by a parent on Fridays.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-07",
+   "valid_from": "2025-12-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#30"
+   ]
+  },
+  {
+   "id": "f26",
+   "subject": "e17",
+   "module": "project.people",
+   "value": "[2025-12-09] Marcus Lee is the research coordinator for the Atlas study.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2025-12-09",
+   "valid_from": "2025-12-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#35"
+   ]
+  },
+  {
+   "id": "f27",
+   "subject": "e17",
+   "module": "project.people",
+   "value": "[2025-12-09] Dana Kim is in research ops and handles incentives and tools for the Atlas study.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e19"
+   ],
+   "observed_at": "2025-12-09",
+   "valid_from": "2025-12-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#36"
+   ]
+  },
+  {
+   "id": "f28",
+   "subject": "e3",
+   "module": "preferences.gifts",
+   "value": "[2025-12-27] Lily received and loved the watercolor set from Rachel's holiday gift list.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#38"
+   ]
+  },
+  {
+   "id": "f29",
+   "subject": "e3",
+   "module": "preferences.gifts",
+   "value": "[2025-12-11] Rachel's holiday gift list included Moon Fox book 5 for Lily.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-11",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#39"
+   ]
+  },
+  {
+   "id": "f30",
+   "subject": "e1",
+   "module": "preferences.gifts",
+   "value": "[2025-12-27] Tom received and loved the chef's knife from Rachel's holiday gift list.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#40"
+   ]
+  },
+  {
+   "id": "f31",
+   "subject": "e3",
+   "module": "health.allergies",
+   "value": "[2025-12-14] Lily is allergic to sesame, diagnosed at age four.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#45"
+   ]
+  },
+  {
+   "id": "f32",
+   "subject": "e3",
+   "module": "health.allergies",
+   "value": "[2025-12-14] Lily's epinephrine auto-injectors are in her backpack front pocket and kitchen drawer.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#46",
+    "memory_list#47"
+   ]
+  },
+  {
+   "id": "f33",
+   "subject": "e3",
+   "module": "health.allergies",
+   "value": "[2025-12-14] Avoid tahini, hummus, sesame oil, seeded buns, and restaurant oils with Lily.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#50"
+   ]
+  },
+  {
+   "id": "f34",
+   "subject": "e3",
+   "module": "preferences.food",
+   "value": "[2025-12-14] Lily dislikes mushrooms, which is a preference, not an allergy.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#51"
+   ]
+  },
+  {
+   "id": "f35",
+   "subject": "e3",
+   "module": "schedule.availability",
+   "value": "[2025-12-16] Lily's winter break is from December 22 to January 2.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-16",
+   "valid_from": "2025-12-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#52"
+   ]
+  },
+  {
+   "id": "f36",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2025-12-16] Lily attends Clay & Code art camp Dec 29-31, 9-3, paid $165.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e33"
+   ],
+   "observed_at": "2025-12-16",
+   "valid_from": "2025-12-29",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#53",
+    "memory_list#54"
+   ]
+  },
+  {
+   "id": "f37",
+   "subject": "e3",
+   "module": "schedule.routines",
+   "value": "[2025-12-16] Rachel needs drop-off reminders the night before art camp days.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#55"
+   ]
+  },
+  {
+   "id": "f38",
+   "subject": "e0",
+   "module": "health.conditions",
+   "value": "[2025-12-20] Rachel is lactose intolerant.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-20",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#58"
+   ]
+  },
+  {
+   "id": "f39",
+   "subject": "e6",
+   "module": "pet.health",
+   "value": "[2025-12-22] Pepper received annual shots on Thursday and is up to date for the year.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-22",
+   "valid_from": "2025-12-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#61"
+   ]
+  },
+  {
+   "id": "f40",
+   "subject": "e6",
+   "module": "pet.diet",
+   "value": "[2025-12-22] Pepper eats salmon and rice kibble, one cup twice daily.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#62"
+   ]
+  },
+  {
+   "id": "f41",
+   "subject": "e6",
+   "module": "pet.health",
+   "value": "[2025-12-22] Pepper weighs 26 lb; Dr. Huang wants her to lose two pounds.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e7"
+   ],
+   "observed_at": "2025-12-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#63"
+   ]
+  },
+  {
+   "id": "f42",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2025-12-22] Pepper must have no table scraps; Tom needs reminding.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2025-12-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#64"
+   ]
+  },
+  {
+   "id": "f43",
+   "subject": "e0",
+   "module": "preferences.gifts",
+   "value": "[2025-12-11] Rachel ordered a fig candle for Priya as a holiday gift.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2025-12-11",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#42"
+   ]
+  },
+  {
+   "id": "f44",
+   "subject": "e0",
+   "module": "preferences.gifts",
+   "value": "[2025-12-11] Rachel planned ginger cookies for Greg and June as holiday gifts.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e9",
+    "e20"
+   ],
+   "observed_at": "2025-12-11",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#43"
+   ]
+  },
+  {
+   "id": "f45",
+   "subject": "e0",
+   "module": "preferences.gifts",
+   "value": "[2025-12-11] Rachel wants to track her holiday gift purchases.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-11",
+   "valid_from": "2025-12-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#44"
+   ]
+  },
+  {
+   "id": "f46",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2025-12-27] Rachel's mom's photo calendar with Lily's pictures arrived late.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_from": "2025-12-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#41"
+   ]
+  },
+  {
+   "id": "f47",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2025-12-20] Rachel planned a dairy-free pear tart for Christmas Eve at Luis's.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e21",
+    "e32"
+   ],
+   "observed_at": "2025-12-20",
+   "valid_from": "2025-12-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#59"
+   ]
+  },
+  {
+   "id": "f48",
+   "subject": "e39",
+   "module": "event.outcome",
+   "value": "[2025-12-27] Luis's Korean dinner went well; Lily's plate was kept sesame-free.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e21"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_from": "2025-12-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#60"
+   ]
+  },
+  {
+   "id": "f49",
+   "subject": "e0",
+   "module": "relationship.important_dates",
+   "value": "[2025-12-29] Tom's birthday is April 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2025-12-29",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#70"
+   ]
+  },
+  {
+   "id": "f50",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2025-12-29] Rachel plans to keep a list of ideas for Tom's birthday.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1"
+   ],
+   "observed_at": "2025-12-29",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#71"
+   ]
+  },
+  {
+   "id": "f51",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2025-12-29] Rachel's New Year resolution is to run 5 km with Priya on Sunday mornings.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2025-12-29",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#72"
+   ]
+  },
+  {
+   "id": "f52",
+   "subject": "e0",
+   "module": "health.providers",
+   "value": "[2026-01-28] Rachel's left shoulder physio is with Sam Whitford at Kestrel Physio on Mondays at 7:30 am.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e35",
+    "e36"
+   ],
+   "observed_at": "2026-01-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#73"
+   ]
+  },
+  {
+   "id": "f53",
+   "subject": "e0",
+   "module": "health.providers",
+   "value": "[2026-01-28] Rachel's last booked physio session is March 30, with reassessment.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-28",
+   "valid_from": "2026-03-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#74"
+   ]
+  },
+  {
+   "id": "f54",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-01-28] Rachel does band rows and wall slides daily for her left shoulder.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#75"
+   ]
+  },
+  {
+   "id": "f55",
+   "subject": "e0",
+   "module": "health.providers",
+   "value": "[2026-01-04] Rachel's doctor is Dr. Lewis at Hawthorne Family Medicine.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e37",
+    "e38"
+   ],
+   "observed_at": "2026-01-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#76"
+   ]
+  },
+  {
+   "id": "f56",
+   "subject": "e0",
+   "module": "health.providers",
+   "value": "[2026-01-04] Rachel is due for an annual physical in April.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-04",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#77"
+   ]
+  },
+  {
+   "id": "f57",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-01-04] Rachel wants a reminder to book her physical in the first week of April, avoiding Vancouver trip.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-04",
+   "valid_from": "2026-04-01",
+   "valid_to": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#78"
+   ]
+  },
+  {
+   "id": "f58",
+   "subject": "e0",
+   "module": "health.medications",
+   "value": "[2026-01-04] Rachel takes vitamin D every morning.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#79"
+   ]
+  },
+  {
+   "id": "f59",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-01-04] Rachel wears contacts and orders new ones in May.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#80"
+   ]
+  },
+  {
+   "id": "f60",
+   "subject": "e27",
+   "module": "vehicle.maintenance",
+   "value": "[2025-12-29] The family car's registration renewal is due April 30.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-29",
+   "valid_from": "2026-04-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#69"
+   ]
+  },
+  {
+   "id": "f61",
+   "subject": "e0",
+   "module": "relationship.roles",
+   "value": "[2025-12-27] Ana and Ricardo live in Phoenix.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e25",
+    "e26",
+    "e34"
+   ],
+   "observed_at": "2025-12-27",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#65"
+   ]
+  },
+  {
+   "id": "f62",
+   "subject": "e0",
+   "module": "relationship.important_dates",
+   "value": "[2025-12-27] Rachel and Tom call Ana and Ricardo most Sundays.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e25",
+    "e26"
+   ],
+   "observed_at": "2025-12-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#66"
+   ]
+  },
+  {
+   "id": "f63",
+   "subject": "e25",
+   "module": "relationship.obligations",
+   "value": "[2025-12-27] Ana and Ricardo tentatively want to visit in the summer.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2025-12-27",
+   "valid_from": "2026-06-01",
+   "valid_to": "2026-06-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#67"
+   ]
+  },
+  {
+   "id": "f64",
+   "subject": "e21",
+   "module": "identity.residency",
+   "value": "[2025-12-20] Luis lives in Beaverton with his wife Carmen.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e22",
+    "e32"
+   ],
+   "observed_at": "2025-12-20",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#56"
+   ]
+  },
+  {
+   "id": "f65",
+   "subject": "e21",
+   "module": "identity.basic",
+   "value": "[2025-12-20] Luis and Carmen have two children: Mateo (7) and Sofia (4).",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e22",
+    "e23",
+    "e24"
+   ],
+   "observed_at": "2025-12-20",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#57"
+   ]
+  },
+  {
+   "id": "f66",
+   "subject": "e41",
+   "module": "identity.basic",
+   "value": "[2026-01-06] Elena Ruiz is a retired second-grade teacher.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#82"
+   ]
+  },
+  {
+   "id": "f67",
+   "subject": "e41",
+   "module": "identity.residency",
+   "value": "[2026-01-06] Elena Ruiz lives in Sacramento.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e42"
+   ],
+   "observed_at": "2026-01-06",
+   "slot": "home city",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#81"
+   ]
+  },
+  {
+   "id": "f68",
+   "subject": "e41",
+   "module": "relationship.important_dates",
+   "value": "[2026-01-06] Elena Ruiz's birthday is June 14.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "valid_from": "2026-06-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#83"
+   ]
+  },
+  {
+   "id": "f69",
+   "subject": "e41",
+   "module": "health.conditions",
+   "value": "[2026-01-06] Elena has type 2 diabetes.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#84"
+   ]
+  },
+  {
+   "id": "f70",
+   "subject": "e41",
+   "module": "health.medications",
+   "value": "[2026-01-08] Elena takes metformin 500 mg twice a day.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#90"
+   ]
+  },
+  {
+   "id": "f71",
+   "subject": "e41",
+   "module": "health.medications",
+   "value": "[2026-01-08] Elena takes Lisinopril 10 mg every morning.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#91"
+   ]
+  },
+  {
+   "id": "f72",
+   "subject": "e41",
+   "module": "schedule.routines",
+   "value": "[2026-01-08] Elena checks her blood sugar every morning before breakfast.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#92"
+   ]
+  },
+  {
+   "id": "f73",
+   "subject": "e41",
+   "module": "preferences.food",
+   "value": "[2026-01-06] Elena avoids sugar, white rice, and flan due to diabetes.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "slot": "diet",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#85"
+   ]
+  },
+  {
+   "id": "f74",
+   "subject": "e41",
+   "module": "health.allergies",
+   "value": "[2026-01-06] Elena has a bad knee from October surgery and struggles with stairs.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#87"
+   ]
+  },
+  {
+   "id": "f75",
+   "subject": "e41",
+   "module": "health.providers",
+   "value": "[2026-01-08] Elena's doctor is Dr. Meera Patel in Sacramento.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e42",
+    "e43"
+   ],
+   "observed_at": "2026-01-08",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#93"
+   ]
+  },
+  {
+   "id": "f76",
+   "subject": "e0",
+   "module": "preferences.food",
+   "value": "[2026-01-06] Rachel wants low-sugar meals when Elena visits.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e41"
+   ],
+   "observed_at": "2026-01-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#86"
+   ]
+  },
+  {
+   "id": "f77",
+   "subject": "e41",
+   "module": "schedule.availability",
+   "value": "[2026-01-06] Elena plans to visit in late March, around Lily's spring break.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-01-06",
+   "valid_from": "2026-01-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#89"
+   ]
+  },
+  {
+   "id": "f78",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-01-09] Rachel attends the Field Research Forum in Austin from February 17-19.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e44",
+    "e53"
+   ],
+   "observed_at": "2026-01-09",
+   "valid_from": "2026-01-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#95"
+   ]
+  },
+  {
+   "id": "f79",
+   "subject": "e0",
+   "module": "work.responsibilities",
+   "value": "[2026-01-09] Rachel gives a talk at the Field Research Forum on February 18.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e44"
+   ],
+   "observed_at": "2026-01-09",
+   "valid_from": "2026-01-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#96"
+   ]
+  },
+  {
+   "id": "f80",
+   "subject": "e3",
+   "module": "relationship.important_dates",
+   "value": "[2026-01-06] Lily's spring break aligns with late March.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-06",
+   "valid_from": "2026-01-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#89"
+   ]
+  },
+  {
+   "id": "f81",
+   "subject": "e21",
+   "module": "relationship.roles",
+   "value": "[2026-01-09] Luis and Carmen will keep Lily overnight on February 18.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-01-09",
+   "valid_from": "2026-01-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#97"
+   ]
+  },
+  {
+   "id": "f82",
+   "subject": "e1",
+   "module": "work.responsibilities",
+   "value": "[2026-01-09] Tom works Wednesday and Thursday nights during the week of Rachel's Austin trip.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-09",
+   "valid_from": "2026-01-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#97"
+   ]
+  },
+  {
+   "id": "f83",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-01-12] Rachel holds Tuesdays and Thursdays 1-4 PM for interviews week of Jan 26.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e45"
+   ],
+   "observed_at": "2026-01-12",
+   "valid_from": "2026-01-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#101"
+   ]
+  },
+  {
+   "id": "f84",
+   "subject": "e0",
+   "module": "preferences.travel",
+   "value": "[2026-01-14] The family plans a trip to Vancouver.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e46"
+   ],
+   "observed_at": "2026-01-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#102"
+   ]
+  },
+  {
+   "id": "f85",
+   "subject": "e47",
+   "module": "document.type",
+   "value": "[2026-01-14] Lily's passport expired on December 9.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-14",
+   "valid_from": "2025-12-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#103"
+   ]
+  },
+  {
+   "id": "f86",
+   "subject": "e47",
+   "module": "document.status",
+   "value": "[2026-01-14] Lily needs a new photo for passport renewal.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#105"
+   ]
+  },
+  {
+   "id": "f87",
+   "subject": "e48",
+   "module": "document.status",
+   "value": "[2026-01-14] Tom's passport is valid until 2029.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#106"
+   ]
+  },
+  {
+   "id": "f88",
+   "subject": "e49",
+   "module": "document.status",
+   "value": "[2026-01-14] Rachel's passport is valid until 2027.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#107"
+   ]
+  },
+  {
+   "id": "f89",
+   "subject": "e17",
+   "module": "project.objective",
+   "value": "[2026-01-15] The Atlas study finds where Tandem users drop out of onboarding.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#108"
+   ]
+  },
+  {
+   "id": "f90",
+   "subject": "e17",
+   "module": "project.milestones",
+   "value": "[2026-01-15] Atlas study involves 12 participants in 60-minute sessions from Feb 9 to Mar 6.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#109"
+   ]
+  },
+  {
+   "id": "f91",
+   "subject": "e19",
+   "module": "work.responsibilities",
+   "value": "[2026-01-15] Dana Kim handles Atlas study incentives ($75 gift cards).",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#110"
+   ]
+  },
+  {
+   "id": "f92",
+   "subject": "e18",
+   "module": "work.responsibilities",
+   "value": "[2026-01-15] Marcus Lee handles recruiting and scheduling for the Atlas study.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#111"
+   ]
+  },
+  {
+   "id": "f93",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-01-20] Rachel aims to present the Atlas readout on March 24.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-20",
+   "valid_from": "2026-02-01",
+   "valid_to": "2026-02-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#115"
+   ]
+  },
+  {
+   "id": "f94",
+   "subject": "e51",
+   "module": "asset.state",
+   "value": "[2026-01-17] Rachel's dishwasher died.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#113"
+   ]
+  },
+  {
+   "id": "f95",
+   "subject": "e0",
+   "module": "preferences.shopping",
+   "value": "[2026-01-17] Rachel ordered tomato and basil seeds for May planting.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-17",
+   "valid_from": "2026-06-01",
+   "valid_to": "2026-06-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#114"
+   ]
+  },
+  {
+   "id": "f96",
+   "subject": "e0",
+   "module": "finance.budgets",
+   "value": "[2026-01-22] Rachel's mortgage is on autopay on the 1st.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#118"
+   ]
+  },
+  {
+   "id": "f97",
+   "subject": "e52",
+   "module": "service.provider",
+   "value": "[2026-01-22] Rachel subscribes to Cascadia Fiber for $70/month, autopay on the 15th.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#119"
+   ]
+  },
+  {
+   "id": "f98",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2026-01-22] Pepper has pet insurance costing $38/month.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#120"
+   ]
+  },
+  {
+   "id": "f99",
+   "subject": "e0",
+   "module": "finance.budgets",
+   "value": "[2026-01-22] Lily's college savings get $200 auto-transferred on the 1st.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-01-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#121"
+   ]
+  },
+  {
+   "id": "f100",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-01-22] Car insurance renews June 10.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-22",
+   "valid_from": "2026-06-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#122"
+   ]
+  },
+  {
+   "id": "f101",
+   "subject": "e0",
+   "module": "relationship.roles",
+   "value": "[2026-01-25] Greg offered to feed Pepper and water plants when away.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e6",
+    "e9"
+   ],
+   "observed_at": "2026-01-25",
+   "valid_from": "2026-01-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#123"
+   ]
+  },
+  {
+   "id": "f102",
+   "subject": "e9",
+   "module": "schedule.availability",
+   "value": "[2026-01-25] Greg is in Arizona March 28 to April 5.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-25",
+   "valid_from": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#124"
+   ]
+  },
+  {
+   "id": "f103",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2026-01-25] Pepper goes to Happy Tails for the Vancouver trip; booking not confirmed.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e56",
+    "e66"
+   ],
+   "observed_at": "2026-01-25",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#125"
+   ]
+  },
+  {
+   "id": "f104",
+   "subject": "e3",
+   "module": "relationship.roles",
+   "value": "[2026-01-31] Ava Brooks is Lily's best friend.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e54"
+   ],
+   "observed_at": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#126"
+   ]
+  },
+  {
+   "id": "f105",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2026-01-31] Lily signed up for school art club on Jan 31, paid $40.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e57"
+   ],
+   "observed_at": "2026-01-31",
+   "valid_from": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#127"
+   ]
+  },
+  {
+   "id": "f106",
+   "subject": "e3",
+   "module": "preferences.entertainment",
+   "value": "[2026-01-31] Lily is obsessed with Moon Fox graphic novels.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e58"
+   ],
+   "observed_at": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#128"
+   ]
+  },
+  {
+   "id": "f107",
+   "subject": "e59",
+   "module": "group.schedule",
+   "value": "[2026-01-31] Rachel's book club meets the second Thursday of each month.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-01-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#129"
+   ]
+  },
+  {
+   "id": "f108",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-02-05] Book club had eight people on Feb 12 at 7 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#130"
+   ]
+  },
+  {
+   "id": "f109",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-02-05] Book club met at Rachel's place on Feb 12.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e0"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#130"
+   ]
+  },
+  {
+   "id": "f110",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-02-05] Book club read The Lantern Keepers on Feb 12.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#130"
+   ]
+  },
+  {
+   "id": "f111",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-02-05] Rachel requested a shopping reminder for the Wednesday before book club.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#131"
+   ]
+  },
+  {
+   "id": "f112",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-02-05] Jess is vegan and Marie is gluten-free.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#132",
+    "memory_list#133"
+   ]
+  },
+  {
+   "id": "f113",
+   "subject": "e59",
+   "module": "notes.general",
+   "value": "[2026-02-05] Rachel planned lentil salad and flourless chocolate cake for book club.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#134"
+   ]
+  },
+  {
+   "id": "f114",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-02-05] Rachel requested a reminder to borrow two folding chairs from Greg.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e9"
+   ],
+   "observed_at": "2026-02-05",
+   "valid_from": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#135"
+   ]
+  },
+  {
+   "id": "f115",
+   "subject": "e60",
+   "module": "identity.basic",
+   "value": "[2026-02-03] Rachel's mom's phone number is (916) 555-0172.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-03",
+   "valid_from": "2026-02-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#136"
+   ]
+  },
+  {
+   "id": "f116",
+   "subject": "e60",
+   "module": "schedule.availability",
+   "value": "[2026-03-10] Rachel's mom's flight 2214 lands in Portland March 26 at 2:15 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#137"
+   ]
+  },
+  {
+   "id": "f117",
+   "subject": "e60",
+   "module": "preferences.travel",
+   "value": "[2026-03-10] Rachel's mom wants curbside pickup at airport.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-26",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#138"
+   ]
+  },
+  {
+   "id": "f118",
+   "subject": "e60",
+   "module": "schedule.availability",
+   "value": "[2026-03-10] Rachel's mom flies home April 2.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-04-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#139"
+   ]
+  },
+  {
+   "id": "f119",
+   "subject": "e61",
+   "module": "work.role",
+   "value": "[2026-02-06] Imani Cole is a junior UX researcher starting March 2.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-06",
+   "valid_from": "2026-03-02",
+   "slot": "job",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#140"
+   ]
+  },
+  {
+   "id": "f120",
+   "subject": "e0",
+   "module": "work.collaborators",
+   "value": "[2026-02-06] Rachel mentors Imani with weekly 1:1s on Wednesdays at 2 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e61"
+   ],
+   "observed_at": "2026-02-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#141"
+   ]
+  },
+  {
+   "id": "f121",
+   "subject": "e61",
+   "module": "work.role",
+   "value": "[2026-03-04] Imani shadowed Atlas sessions the week of March 4.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e62"
+   ],
+   "observed_at": "2026-03-04",
+   "valid_from": "2026-03-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#142"
+   ]
+  },
+  {
+   "id": "f122",
+   "subject": "e63",
+   "module": "document.status",
+   "value": "[2026-02-09] Lily's passport renewal was mailed Feb 9 with expedited processing.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-02-09",
+   "valid_from": "2026-02-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#143"
+   ]
+  },
+  {
+   "id": "f123",
+   "subject": "e63",
+   "module": "document.status",
+   "value": "[2026-02-09] Passport expected to arrive by March 31.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-09",
+   "valid_from": "2026-03-31",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#144"
+   ]
+  },
+  {
+   "id": "f124",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-02-09] Rachel requested a passport check-in reminder for March 27.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-09",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#145"
+   ]
+  },
+  {
+   "id": "f125",
+   "subject": "e44",
+   "module": "event.schedule",
+   "value": "[2026-02-10] Rachel flew PDX to AUS on Feb 17, arriving 1:10 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-10",
+   "valid_from": "2026-02-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#146"
+   ]
+  },
+  {
+   "id": "f126",
+   "subject": "e0",
+   "module": "preferences.travel",
+   "value": "[2026-02-10] Rachel stayed at Congress Avenue Inn for two nights in Austin.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e64"
+   ],
+   "observed_at": "2026-02-10",
+   "valid_from": "2026-02-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#147"
+   ]
+  },
+  {
+   "id": "f127",
+   "subject": "e44",
+   "module": "event.schedule",
+   "value": "[2026-02-10] Rachel spoke at Field Research Forum on Feb 18 at 11:30 am.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-10",
+   "valid_from": "2026-02-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#148"
+   ]
+  },
+  {
+   "id": "f128",
+   "subject": "e44",
+   "module": "event.schedule",
+   "value": "[2026-02-10] Rachel flew AUS to PDX on Feb 19, departing 3:25 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-10",
+   "valid_from": "2026-02-19",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#149"
+   ]
+  },
+  {
+   "id": "f129",
+   "subject": "e66",
+   "module": "trip.travelers",
+   "value": "[2026-02-12] Rachel booked Harbourview Suites for the Vancouver trip April 3-6.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e65"
+   ],
+   "observed_at": "2026-02-12",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#150",
+    "memory_list#151"
+   ]
+  },
+  {
+   "id": "f130",
+   "subject": "e65",
+   "module": "location.amenities",
+   "value": "[2026-02-12] Harbourview Suites parking is CAD 28/night.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#152"
+   ]
+  },
+  {
+   "id": "f131",
+   "subject": "e66",
+   "module": "trip.preferences",
+   "value": "[2026-02-12] Rachel wants to visit aquarium and Granville Island; Lily wants suspension bridge.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-12",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#155"
+   ]
+  },
+  {
+   "id": "f132",
+   "subject": "e6",
+   "module": "pet.identity",
+   "value": "[2026-02-14] Pepper is a female beagle.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#156"
+   ]
+  },
+  {
+   "id": "f133",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2026-02-14] Pepper booked at Happy Tails Lodge April 3-6 for Vancouver trip.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e56",
+    "e66"
+   ],
+   "observed_at": "2026-02-14",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#157"
+   ]
+  },
+  {
+   "id": "f134",
+   "subject": "e56",
+   "module": "service.capabilities",
+   "value": "[2026-02-14] Happy Tails requires pet's food and medication instructions.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#158"
+   ]
+  },
+  {
+   "id": "f135",
+   "subject": "e0",
+   "module": "preferences.entertainment",
+   "value": "[2026-02-15] Rachel had date night at Luce on Division on Feb 14.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e67"
+   ],
+   "observed_at": "2026-02-15",
+   "valid_from": "2026-02-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#159"
+   ]
+  },
+  {
+   "id": "f136",
+   "subject": "e1",
+   "module": "preferences.food",
+   "value": "[2026-02-15] Tom loved tiramisu at Luce on Division.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e67"
+   ],
+   "observed_at": "2026-02-15",
+   "valid_from": "2026-02-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#160"
+   ]
+  },
+  {
+   "id": "f137",
+   "subject": "e66",
+   "module": "trip.status",
+   "value": "[2026-02-12] Tom's shift swap to join Vancouver trip is unresolved.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e1",
+    "e68"
+   ],
+   "observed_at": "2026-02-12",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#154"
+   ]
+  },
+  {
+   "id": "f138",
+   "subject": "e0",
+   "module": "health.allergies",
+   "value": "[2026-02-15] Rachel cannot consume dairy.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-15",
+   "valid_from": "2026-02-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#161"
+   ]
+  },
+  {
+   "id": "f139",
+   "subject": "e0",
+   "module": "preferences.food",
+   "value": "[2026-02-15] Rachel chose an olive oil cake at Luce on Division.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e67"
+   ],
+   "observed_at": "2026-02-15",
+   "valid_from": "2026-02-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#161"
+   ]
+  },
+  {
+   "id": "f140",
+   "subject": "e1",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-15] Tom's birthday is April 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#162"
+   ]
+  },
+  {
+   "id": "f141",
+   "subject": "e85",
+   "module": "event.schedule",
+   "value": "[2026-02-18] Tom booked two seats at Saltbox Kitchen's handmade pasta cooking class on April 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e70"
+   ],
+   "observed_at": "2026-02-18",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#163"
+   ]
+  },
+  {
+   "id": "f142",
+   "subject": "e85",
+   "module": "event.status",
+   "value": "[2026-02-18] Tom's birthday cooking class is a surprise and must not be mentioned.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-18",
+   "valid_from": "2026-02-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#164"
+   ]
+  },
+  {
+   "id": "f143",
+   "subject": "e66",
+   "module": "trip.travelers",
+   "value": "[2026-02-21] The Vancouver trip travelers are Rachel, Lily, and Pepper.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3",
+    "e6"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-02-21",
+   "slot": "number of pets",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#165"
+   ]
+  },
+  {
+   "id": "f144",
+   "subject": "e66",
+   "module": "trip.itinerary",
+   "value": "[2026-02-21] Rachel drops Pepper at Happy Tails at 7:30 on Fri Apr 3 and leaves by 8:30.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e69"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#165"
+   ]
+  },
+  {
+   "id": "f145",
+   "subject": "e66",
+   "module": "trip.itinerary",
+   "value": "[2026-02-21] The drive to Vancouver is planned to take about 5.5 hours.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-02-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#165"
+   ]
+  },
+  {
+   "id": "f146",
+   "subject": "e66",
+   "module": "trip.status",
+   "value": "[2026-02-21] All three travelers need passports for the Vancouver border crossing.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-02-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#166"
+   ]
+  },
+  {
+   "id": "f147",
+   "subject": "e75",
+   "module": "notes.general",
+   "value": "[2026-02-21] Vancouver aquarium tickets are bought for Sat Apr 4 at 10 am.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#167"
+   ]
+  },
+  {
+   "id": "f148",
+   "subject": "e76",
+   "module": "notes.general",
+   "value": "[2026-02-21] Granville Island visit is planned for the afternoon of Sat Apr 4.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#167"
+   ]
+  },
+  {
+   "id": "f149",
+   "subject": "e77",
+   "module": "notes.general",
+   "value": "[2026-02-21] Vancouver suspension bridge visit is planned for Sun Apr 5.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#168"
+   ]
+  },
+  {
+   "id": "f150",
+   "subject": "e77",
+   "module": "notes.general",
+   "value": "[2026-02-21] Tickets for the Vancouver suspension bridge are not bought yet.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-02-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#168"
+   ]
+  },
+  {
+   "id": "f151",
+   "subject": "e78",
+   "module": "notes.general",
+   "value": "[2026-02-21] Dinner with Tom's college friend Owen is planned for Sun Apr 5 in Kitsilano.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e14"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-05",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#169"
+   ]
+  },
+  {
+   "id": "f152",
+   "subject": "e78",
+   "module": "notes.general",
+   "value": "[2026-02-21] Dinner with Owen in Kitsilano is not confirmed.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-02-21",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#169"
+   ]
+  },
+  {
+   "id": "f153",
+   "subject": "e66",
+   "module": "trip.itinerary",
+   "value": "[2026-02-21] The Vancouver return plan for Mon Apr 6 is to check out by 11, drive home, and pick up Pepper by 6 pm.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-21",
+   "valid_from": "2026-04-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#170"
+   ]
+  },
+  {
+   "id": "f154",
+   "subject": "e3",
+   "module": "education.enrollment",
+   "value": "[2026-02-24] Lily is enrolled in Level 4 swim lessons at Eastside Aquatic Center.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e72"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#171"
+   ]
+  },
+  {
+   "id": "f155",
+   "subject": "e71",
+   "module": "relationship.roles",
+   "value": "[2026-02-24] Lily's swim instructor is Jordan Pike.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#172"
+   ]
+  },
+  {
+   "id": "f156",
+   "subject": "e3",
+   "module": "schedule.routines",
+   "value": "[2026-02-24] Lily's swim lessons are Tuesdays 5:00-5:45 pm from March 3 to May 19.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#171"
+   ]
+  },
+  {
+   "id": "f157",
+   "subject": "e71",
+   "module": "communication.style",
+   "value": "[2026-02-24] Swim lesson cancellations require texting Coach Jordan at (503) 555-0123 before noon.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#172"
+   ]
+  },
+  {
+   "id": "f158",
+   "subject": "e3",
+   "module": "schedule.availability",
+   "value": "[2026-02-24] Lily's missed swim lessons can be made up on Saturday mornings.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#173"
+   ]
+  },
+  {
+   "id": "f159",
+   "subject": "e71",
+   "module": "health.allergies",
+   "value": "[2026-03-15] Lily's swim coach says she is ready for Level 5 after this session.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#174"
+   ]
+  },
+  {
+   "id": "f160",
+   "subject": "e5",
+   "module": "education.enrollment",
+   "value": "[2026-02-24] Ms. Alvarez says Lily needs more practice with multiplication facts.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#175"
+   ]
+  },
+  {
+   "id": "f161",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-02-24] Rachel and Lily do 15 minutes of math games every day after school before screen time.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e3"
+   ],
+   "observed_at": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#176"
+   ]
+  },
+  {
+   "id": "f162",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-02-24] Rachel has a requested weekday reminder for math games at 3:30.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-24",
+   "valid_from": "2026-02-24",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#176"
+   ]
+  },
+  {
+   "id": "f163",
+   "subject": "e74",
+   "module": "asset.kind",
+   "value": "[2026-02-25] Trailhead Outfitters order TO-55817 was a teal kids' rain jacket, size 10.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e73"
+   ],
+   "observed_at": "2026-02-25",
+   "valid_from": "2026-02-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#177"
+   ]
+  },
+  {
+   "id": "f164",
+   "subject": "e74",
+   "module": "asset.state",
+   "value": "[2026-02-25] The rain jacket was delivered February 25, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-25",
+   "valid_from": "2026-02-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#177"
+   ]
+  },
+  {
+   "id": "f165",
+   "subject": "e74",
+   "module": "asset.lifecycle",
+   "value": "[2026-02-25] The Trailhead Outfitters rain jacket can be returned by March 27, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-25",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#178"
+   ]
+  },
+  {
+   "id": "f166",
+   "subject": "e74",
+   "module": "asset.state",
+   "value": "[2026-02-27] Lily's size 10 rain jacket is too big.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-27",
+   "valid_from": "2026-02-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#179"
+   ]
+  },
+  {
+   "id": "f167",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-02-27] Rachel plans to return the jacket at the Trailhead store on Hawthorne and get an 8.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e73"
+   ],
+   "observed_at": "2026-02-27",
+   "valid_from": "2026-02-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#179"
+   ]
+  },
+  {
+   "id": "f168",
+   "subject": "e3",
+   "module": "identity.demographics",
+   "value": "[2026-02-27] Lily wears an 8 in clothes and a size 2 in shoes.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-27",
+   "valid_from": "2026-02-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#180"
+   ]
+  },
+  {
+   "id": "f169",
+   "subject": "e4",
+   "module": "notes.general",
+   "value": "[2026-02-26] Maplewood Elementary spring break is Monday March 30 to Friday April 3.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-03-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#181"
+   ]
+  },
+  {
+   "id": "f170",
+   "subject": "e4",
+   "module": "notes.general",
+   "value": "[2026-02-26] Monday April 6 is a teacher planning day with no school at Maplewood Elementary.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-04-06",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#181"
+   ]
+  },
+  {
+   "id": "f171",
+   "subject": "e4",
+   "module": "notes.general",
+   "value": "[2026-02-26] Classes resume Tuesday April 7 at Maplewood Elementary.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-04-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#181"
+   ]
+  },
+  {
+   "id": "f172",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2026-02-26] Maplewood Elementary's 4th grade science museum field trip is Friday March 27.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#182"
+   ]
+  },
+  {
+   "id": "f173",
+   "subject": "e3",
+   "module": "education.activities",
+   "value": "[2026-02-26] Maplewood Elementary spring picture day is Thursday April 16.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-02-26",
+   "valid_from": "2026-04-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#183"
+   ]
+  },
+  {
+   "id": "f174",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-03-01] Rachel changed the furnace filter on Mar 1, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#184"
+   ]
+  },
+  {
+   "id": "f175",
+   "subject": "e0",
+   "module": "schedule.routines",
+   "value": "[2026-03-01] The next furnace filter change is due in June.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#184"
+   ]
+  },
+  {
+   "id": "f176",
+   "subject": "e89",
+   "module": "notes.general",
+   "value": "[2026-03-01] Gutter cleaning is booked with Clearline Gutters for Saturday April 18.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e83"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2026-04-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#185"
+   ]
+  },
+  {
+   "id": "f177",
+   "subject": "e84",
+   "module": "notes.general",
+   "value": "[2026-03-01] Bell & Sons Plumbing replaced a washer on November 14 after the kitchen sink leaked.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-01",
+   "valid_from": "2025-11-14",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#186"
+   ]
+  },
+  {
+   "id": "f178",
+   "subject": "e5",
+   "module": "education.activities",
+   "value": "[2026-03-02] Lily is doing well in reading, according to Ms. Alvarez.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-02",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#187"
+   ]
+  },
+  {
+   "id": "f179",
+   "subject": "e5",
+   "module": "notes.general",
+   "value": "[2026-03-10] Lily's 20-minute parent-teacher conference with Ms. Alvarez was rescheduled to Monday, March 23, at 4:30 pm in Room 14.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#188"
+   ]
+  },
+  {
+   "id": "f180",
+   "subject": "e5",
+   "module": "notes.general",
+   "value": "[2026-03-10] Rachel should reply if the rescheduled parent-teacher conference time does not work.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-10",
+   "valid_from": "2026-03-10",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#188"
+   ]
+  },
+  {
+   "id": "f181",
+   "subject": "e86",
+   "module": "event.purpose",
+   "value": "[2026-03-02] Lily's parent-teacher conference will cover multiplication facts.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-02",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#189"
+   ]
+  },
+  {
+   "id": "f182",
+   "subject": "e11",
+   "module": "identity.residency",
+   "value": "[2026-03-09] Priya and Dev signed a lease on an apartment in Sellwood and moved in on Saturday before March 9, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e13"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-03-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#190"
+   ]
+  },
+  {
+   "id": "f183",
+   "subject": "e79",
+   "module": "location.address",
+   "value": "[2026-03-09] Priya's new address is 2290 SE Linnet St, Apt 4B, Portland, OR 97202.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#191"
+   ]
+  },
+  {
+   "id": "f184",
+   "subject": "e11",
+   "module": "notes.general",
+   "value": "[2026-03-09] Priya returned her old place's keys, so nothing should go to the old address.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-03-09",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#191"
+   ]
+  },
+  {
+   "id": "f185",
+   "subject": "e13",
+   "module": "health.allergies",
+   "value": "[2026-03-09] Dev threw his back out lifting the couch during the move.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-09",
+   "valid_from": "2026-03-07",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#192"
+   ]
+  },
+  {
+   "id": "f186",
+   "subject": "e0",
+   "module": "schedule.availability",
+   "value": "[2026-03-06] Rachel planned to help Priya pack on March 6, 2026.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-03-06",
+   "valid_from": "2026-03-02",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#193"
+   ]
+  },
+  {
+   "id": "f187",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-03-03] Rachel is treating Priya to birthday dinner on March 28.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#194"
+   ]
+  },
+  {
+   "id": "f188",
+   "subject": "e0",
+   "module": "notes.general",
+   "value": "[2026-03-03] Rachel's birthday dinner with Priya is just the two of them because Dev is away that weekend.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e11",
+    "e13"
+   ],
+   "observed_at": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#194"
+   ]
+  },
+  {
+   "id": "f189",
+   "subject": "e11",
+   "module": "preferences.entertainment",
+   "value": "[2026-03-03] Priya wants her birthday dinner somewhere cozy and not loud.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#195"
+   ]
+  },
+  {
+   "id": "f190",
+   "subject": "e87",
+   "module": "notes.general",
+   "value": "[2026-03-03] Rachel plans Priya's birthday dinner at Olive & Ash on Belmont at 7:30 on March 28.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e80"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#196"
+   ]
+  },
+  {
+   "id": "f191",
+   "subject": "e87",
+   "module": "notes.general",
+   "value": "[2026-03-03] The reservation for Priya's birthday dinner is not confirmed.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#196"
+   ]
+  },
+  {
+   "id": "f192",
+   "subject": "e0",
+   "module": "preferences.food",
+   "value": "[2026-03-03] Rachel likes Olive & Ash's whole grilled fish and veggie plates.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e80"
+   ],
+   "observed_at": "2026-03-03",
+   "valid_from": "2026-03-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#197"
+   ]
+  },
+  {
+   "id": "f193",
+   "subject": "e86",
+   "module": "event.schedule",
+   "value": "[2026-03-15] Priya is planning a housewarming on Saturday April 11 at 6 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-04-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#198"
+   ]
+  },
+  {
+   "id": "f194",
+   "subject": "e0",
+   "module": "relationship.obligations",
+   "value": "[2026-03-15] Rachel told Priya they might arrive late to the housewarming because it is Tom's birthday.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e28"
+   ],
+   "observed_at": "2026-03-15",
+   "valid_from": "2026-03-15",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#198"
+   ]
+  },
+  {
+   "id": "f195",
+   "subject": "e82",
+   "module": "asset.kind",
+   "value": "[2026-03-04] Lumberlane Furniture order LL-20931 is an Elevate standing desk with an oak top, 60 in.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e81"
+   ],
+   "observed_at": "2026-03-04",
+   "valid_from": "2026-03-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#199"
+   ]
+  },
+  {
+   "id": "f196",
+   "subject": "e82",
+   "module": "asset.state",
+   "value": "[2026-03-04] Rachel's standing desk delivery is scheduled for Monday, March 23, 2026, between 1 pm and 5 pm.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-04",
+   "valid_from": "2026-03-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#200"
+   ]
+  },
+  {
+   "id": "f197",
+   "subject": "e82",
+   "module": "asset.lifecycle",
+   "value": "[2026-03-04] An adult must be present to sign for Rachel's standing desk delivery.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-04",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#200"
+   ]
+  },
+  {
+   "id": "f198",
+   "subject": "e91",
+   "module": "notes.general",
+   "value": "[2026-03-05] Atlas readout moved to Wednesday, March 25 at 10 am.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#203"
+   ]
+  },
+  {
+   "id": "f199",
+   "subject": "e91",
+   "module": "project.milestones",
+   "value": "[2026-03-05] Jordan needs the Atlas deck by Monday, March 23 at noon for review.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-05",
+   "valid_from": "2026-03-23",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#204"
+   ]
+  },
+  {
+   "id": "f200",
+   "subject": "e91",
+   "module": "project.status",
+   "value": "[2026-03-11] Atlas has 10 of 12 participants confirmed, with two slots still open.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-11",
+   "valid_from": "2026-03-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#210"
+   ]
+  },
+  {
+   "id": "f201",
+   "subject": "e91",
+   "module": "project.people",
+   "value": "[2026-03-11] Dana Kim is covering Atlas recruiting during Marcus Lee's paternity leave.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e18"
+   ],
+   "observed_at": "2026-03-11",
+   "valid_from": "2026-03-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#209"
+   ]
+  },
+  {
+   "id": "f202",
+   "subject": "e18",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-11] Marcus Lee's last day before paternity leave is the Friday after March 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-11",
+   "valid_from": "2026-03-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#207"
+   ]
+  },
+  {
+   "id": "f203",
+   "subject": "e18",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-11] Marcus Lee returns from paternity leave on May 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-11",
+   "valid_from": "2026-05-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#207"
+   ]
+  },
+  {
+   "id": "f204",
+   "subject": "e18",
+   "module": "relationship.important_dates",
+   "value": "[2026-03-11] Marcus Lee's baby is due the week after March 11.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-11",
+   "valid_from": "2026-03-11",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#208"
+   ]
+  },
+  {
+   "id": "f205",
+   "subject": "e92",
+   "module": "notes.general",
+   "value": "[2026-03-16] Kiln & Co order KC-3390 is a hand-thrown teapot in glaze 'sea fog'.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#217"
+   ]
+  },
+  {
+   "id": "f206",
+   "subject": "e92",
+   "module": "notes.general",
+   "value": "[2026-03-16] Kiln & Co order KC-3390 shipped March 16 with estimated delivery Wednesday, March 25.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#217"
+   ]
+  },
+  {
+   "id": "f207",
+   "subject": "e6",
+   "module": "pet.health",
+   "value": "[2026-03-16] Pepper has another ear infection in her left ear.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#219"
+   ]
+  },
+  {
+   "id": "f208",
+   "subject": "e6",
+   "module": "pet.care_routine",
+   "value": "[2026-03-16] Pepper needs ear drops twice a day, morning and night, through Sunday, March 22.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-22",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#220"
+   ]
+  },
+  {
+   "id": "f209",
+   "subject": "e6",
+   "module": "pet.health",
+   "value": "[2026-03-16] If Pepper is still shaking her head on Sunday, Rachel should call the clinic.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-16",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#221"
+   ]
+  },
+  {
+   "id": "f210",
+   "subject": "e6",
+   "module": "notes.general",
+   "value": "[2026-03-16] Pepper's recheck is March 30 at 5:15 pm.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-16",
+   "valid_from": "2026-03-30",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#222"
+   ]
+  },
+  {
+   "id": "f211",
+   "subject": "e90",
+   "module": "schedule.availability",
+   "value": "[2026-03-17] Lily's science museum field trip is on the 27th.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-17",
+   "valid_from": "2026-03-27",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#223"
+   ]
+  },
+  {
+   "id": "f212",
+   "subject": "e90",
+   "module": "notes.general",
+   "value": "[2026-03-17] Lily's science museum field trip permission slip needs a parent signature and $12 cash, due Friday.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-17",
+   "valid_from": "2026-03-17",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#224"
+   ]
+  },
+  {
+   "id": "f213",
+   "subject": "e11",
+   "module": "notes.general",
+   "value": "[2026-03-18] Priya's birthday dinner is planned for Saturday, March 28 at 7:30 pm.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-18",
+   "valid_from": "2026-03-28",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#226"
+   ]
+  },
+  {
+   "id": "f214",
+   "subject": "e11",
+   "module": "notes.general",
+   "value": "[2026-03-18] Priya's birthday dinner is at Olive & Ash on Belmont.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-18",
+   "valid_from": "2026-03-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#226"
+   ]
+  },
+  {
+   "id": "f215",
+   "subject": "e11",
+   "module": "notes.general",
+   "value": "[2026-03-18] Priya's birthday dinner reservation is not booked yet.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-18",
+   "valid_from": "2026-03-18",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#227"
+   ]
+  },
+  {
+   "id": "f216",
+   "subject": "e11",
+   "module": "preferences.gifts",
+   "value": "[2026-03-18] Rachel's gift for Priya is the teapot from Kiln & Co, arriving the 25th.",
+   "state": "hearsay",
+   "vis": [
+    "o"
+   ],
+   "mentions": [
+    "e92"
+   ],
+   "observed_at": "2026-03-18",
+   "valid_from": "2026-03-25",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#228"
+   ]
+  },
+  {
+   "id": "f217",
+   "subject": "e1",
+   "module": "notes.general",
+   "value": "[2026-03-18] Tom will ask Mike about swapping his April 3 shift if Kendra says no.",
+   "state": "pending",
+   "vis": [
+    "o"
+   ],
+   "observed_at": "2026-03-18",
+   "valid_from": "2026-04-03",
+   "source": "import:AI assistant",
+   "prov": [
+    "memory_list#235"
+   ]
+  }
+ ],
+ "novel_relations": {
+  "custom.mentions": "The person talked about this entity in conversation; no more specific relation is known (person -> entity)."
+ }
+}
