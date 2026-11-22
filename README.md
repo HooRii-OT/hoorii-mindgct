@@ -1,28 +1,59 @@
-# HooRii Mind · GCT (Graph Context Transformer)
+# HooRii Mind · GCT
 
-Reference implementation of GCT, the retrieval model of HooRii Mind, with an accelerated path for x86 CPU servers. The GCT-0.6B weights are on Hugging Face at **[HooRiiTechnology/hoorii-mindgct](https://huggingface.co/HooRiiTechnology/hoorii-mindgct)**, and the code in this repository downloads them from there.
+**Retrieve the personal context your AI needs for this turn.**
 
-[Installation](#installation) · [Build a graph from your own data](#build-a-graph-from-your-own-data) · [Results](#results) · [How it works](#how-it-works) · [Deployment](#deployment) · [Notes](#notes) · [Repository structure](#repository-structure) · [License](#license)
+GCT (Graph Context Transformer) reads a personal graph and the recent conversation, follows relationships inside the model, and returns relevant facts for an assistant or agent to use in its reply.
 
-HooRii Mind is HooRii's personal graph system. It manages memory and retrieves context for personal AI: assistants, agents and any application that works with one user over time. GCT is its retrieval model. On each turn it reads the user's graph and the recent conversation in one forward pass and returns the facts the AI needs for that turn. With GCT-0.6B this takes about 27 ms on an A100.
+This repository contains the **GCT-0.6B reference implementation**, examples in English and Chinese, a graph builder, and an accelerated x86 CPU path. The **[GCT-0.6B weights are on Hugging Face](https://huggingface.co/HooRiiTechnology/hoorii-mindgct)**. Code and released weights are licensed under Apache-2.0.
 
-GCT returns facts, and the AI that calls it writes the reply. **Must-mention** facts are what the AI needs to complete the current task: when the user asks for a dinner booking with a friend, the friend's allergy is one. **Worth-mentioning** facts lie outside the task and are worth bringing up alongside it, such as that friend's recent promotion.
+[Run the examples](#installation) · [Build a graph from your data](#build-a-graph-from-your-own-data) · [Read the evaluation](#results) · [Check limitations](#limitations)
 
-![The user asks the assistant to book a table with a friend, GCT reads the user's graph in one forward pass and returns two must-mention facts and one worth-mentioning fact, and the assistant answers with them.](assets/retrieval_flow_v2.png)
+### Start with one conversation
 
-**Figure 1.** GCT retrieves, and the AI answers. The example is invented.
+The included example has facts about several people, a pet and an event. In the conversation, the user has been talking about **Biscuit**, then asks:
 
-At a glance:
+> “What should I feed him tonight?”
 
-- GCT-4B has the highest recall@5 in Table 1 on LoCoMo and on PerLTQA in English and Chinese, ahead of 15 other systems, and is level with the best reranker on LongMemEval_S (0.933 against 0.934).
-- A request takes 26.9 ms with GCT-0.6B and 50.5 ms with GCT-4B on an A100. The retrieve-and-rerank pipelines closest to them in recall take 213 to 238 ms.
-- Handed to the same reader model, the top five facts from GCT-4B give the most accurate answers in Table 2 on LoCoMo (82.6%), and those from GCT-0.6B the most accurate on PerLTQA in English (92.8%).
-- GCT-0.6B serves from about 5 GiB of GPU memory, and on a card capped at 40 GB one serving process has held 64 registered users within 10.5 GiB.
-- The GCT-0.6B weights run on a GPU server (31.1 ms on an A800-40GB), on an x86 CPU server (201 ms with 32 cores) and on a Raspberry Pi 5 (486 ms).
-- Every record in the graph carries one of four privacy levels, and each AI retrieves only from the part of the graph it is cleared to read.
-- The graph format has kinds for AI agents and for virtual personas such as Miko, HooRii's companion character, and two people's agents can arrange a plan while each reads only its own owner's graph.
+The stored graph includes Biscuit's diet and Lin's different food preferences. Run the example to inspect which records GCT ranks for that request, including their scores. The example data is synthetic; see `examples/example_graph.json` and `examples/example_requests.json`.
 
-This page covers two model sizes. The weights of GCT-0.6B (release `GCT-0.6B-B1`) are on [Hugging Face](https://huggingface.co/HooRiiTechnology/hoorii-mindgct), and its reference implementation and x86 CPU path are in this repository. GCT-4B is reported for reference, and its weights are unreleased. Each size has a Proactive variant, GCT-0.6B-Pro and GCT-4B-Pro, which returns worth-mentioning facts next to the same must-mention facts. The weights of the worth-mentioning stage are outside this release.
+![GCT retrieves context and the connected AI uses it to answer.](assets/retrieval_flow_v2.png)
+
+**Figure 1.** Architecture illustration with an invented example. The figure includes a worth-mentioning stage whose weights are outside this release; the public quickstart runs must-mention retrieval.
+
+### What you can run
+
+| Path | Where to start |
+|---|---|
+| Reference retrieval on a CPU or NVIDIA GPU | [Installation and quickstart](#installation) |
+| Accelerated retrieval on an x86 CPU server | [x86 CPU quickstart](#run-the-accelerated-x86-cpu-path) |
+| Convert chats, notes or documents into a graph | [Graph builder](#build-a-graph-from-your-own-data) |
+
+The documented setup uses **Linux and Python 3.11+**. First use downloads about **4 GB** of model files, with the Python environment additional. GCT-0.6B loads a frozen backbone and a separate key encoder alongside its trained graph components; installation and memory details are below.
+
+### Before you evaluate it
+
+- Inspect the returned records as well as their scores. Scores are raw ranking outputs, and the zero threshold needs calibration on your own data. The quickstart lists the top three records by default; the default Python `retrieve` call keeps only positive scores.
+- The evaluation below reports the authors' development results. Read its request formats, graph construction and limitations alongside the tables.
+- This release includes GCT-0.6B weights and the x86 CPU path. GCT-4B weights, the worth-mentioning stage, and accelerated GPU and Raspberry Pi runtimes are outside this release.
+- GCT retrieves context. The connected AI handles answer generation and tasks. HooRii Mind's broader product experience and access are separate from downloading this repository or the model weights.
+
+After loading the model and compiling a graph as shown in the installation guide, use `positive_only=False` to inspect the ranked records even when their scores are below zero:
+
+```python
+out = gct.retrieve(
+    graph,
+    "What should I feed him tonight?",
+    context=[{"role": "user", "content": "Biscuit has been a bit off today."},
+             {"role": "assistant", "content": "Sorry to hear that. Is he eating normally?"}],
+    now="2026-03-14 18:30",
+    top_k=3,
+    positive_only=False,
+)
+```
+
+This is a ranking inspection mode: a returned record with a negative score is not a calibrated must-mention decision. Compare the output with the graph before passing it to an assistant.
+
+If this is useful for your project, **star the repository** to find the examples and updates again. For weights and the model card, visit **[Hugging Face](https://huggingface.co/HooRiiTechnology/hoorii-mindgct)**.
 
 ## Installation
 
